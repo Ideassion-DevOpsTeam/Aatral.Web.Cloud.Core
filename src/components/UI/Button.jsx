@@ -1,9 +1,12 @@
 import React from "react";
 import "./ui.scss";
 
-const ButtonComponent = ({ cb, children, customClassess }) => {
+const ButtonComponent = ({ onClick, children, optionalClasses }) => {
   return (
-    <button className={`component__button ${customClassess}`} onClick={cb}>
+    <button
+      className={`component__button ${optionalClasses}`}
+      onClick={onClick}
+    >
       {children}
     </button>
   );

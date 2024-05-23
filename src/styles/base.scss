@@ -8,7 +8,10 @@
 
 html,
 body {
-  font-size: 62.5%; // approx 10px
+  @media (max-width: 100em) {
+    font-size: 62.5%; // approx 10px
+  }
+
   box-sizing: border-box;
   font-family: "Manrope", sans-serif;
   line-height: 1.3em;

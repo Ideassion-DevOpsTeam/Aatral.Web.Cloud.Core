@@ -36,13 +36,13 @@
         display: flex;
         flex-wrap: wrap;
         margin-block: 3.3rem;
-        row-gap: 3vh;
+        row-gap: 5vw;
         // grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
       }
 
       &__icon-cont {
         display: flex;
-        min-width: max-content;
+        // min-width: max-content;
         flex: 1 1 42%;
         &:not(:last-of-type) {
           margin-right: 3.2rem;
@@ -77,7 +77,7 @@
       svg {
         width: 41vw;
         max-width: fit-content;
-        height: 50vw;
+        height: 100%;
       }
     }
   }

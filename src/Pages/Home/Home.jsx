@@ -5,6 +5,7 @@ import "./home.scss";
 // components
 import SocialIcons from "../../components/Social/SocialIcons";
 import CustomButton from "../../components/CustomButtom/CustomBtm";
+import NetworkDesign from "../../components/NetworkDesign/network";
 
 // assets
 import { ReactComponent as HomeBuilding } from "../../assets/Icons/Home/homeRightBuilding.svg";
@@ -15,8 +16,6 @@ function Home() {
   const [displayText, setDisplayText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  // console.log("displayText", displayText);
 
   const typingSpeed = 1000;
   const deletingSpeed = 500;
@@ -60,8 +59,13 @@ function Home() {
     <section className="home">
       <SocialIcons />
       <div className="home__map-box">
-        <section className="wid-80">
-          <Map />
+        <section className="wid-90">
+          <div className="home__map-box__map-cont">
+            <Map />
+          </div>
+          <div className="home__map-box__network-cont">
+            <NetworkDesign />
+          </div>
         </section>
       </div>
       <div className="home__desc-box">

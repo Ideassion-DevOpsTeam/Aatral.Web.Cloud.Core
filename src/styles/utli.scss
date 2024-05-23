@@ -61,3 +61,14 @@
   top: 50%;
   transform: translateY(-50%);
 }
+
+.fade-in-from-bottom {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(100%); /* Initially moved below the viewport */
+  transition: opacity 1s ease, transform 1s ease; /* Transition for smooth animation */ /* Transition for smooth animation */
+
+  &.show {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Move to original position */
+  }
+}

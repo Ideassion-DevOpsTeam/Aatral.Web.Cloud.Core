@@ -26,12 +26,6 @@ export const aatral_top_sec_icons_cont = [
   },
 ];
 
-export const aatral_top_sec_desc_cont = {
-  heading_first: "This is",
-  heading_last: "aatral-India",
-  desc: " Aatral, a dynamic arm of The RISE, is an emerging circuit of collective leadership among global Tamil IT entrepreneurs, professionals, executives, and decision-makers, dedicated to transforming the IT ecosystem for sustained future growth.",
-};
-
 export const aatral_name_section = {
   heading_first: "The",
   heading_last: "Name",

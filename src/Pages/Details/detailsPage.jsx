@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 //styles
 import "./details.scss";
 //store
@@ -13,11 +13,18 @@ import { ReactComponent as LeftBlackArrow } from "../../assets/Icons/leftBlackAr
 import detailsPagePersonImage from "../../assets/Images/detailPagePerson.png";
 
 function DetailsPage() {
+  const [isVisible, setIsVisible] = useState(false);
+  // store
   const { aatral_details } = useAatralStore((state) => ({
     aatral_details: state.aatral_details,
   }));
 
-  console.log("aatral_details", aatral_details);
+  useEffect(() => {
+    setIsVisible(true);
+    return () => {
+      setIsVisible(false);
+    };
+  }, []);
 
   return (
     <section className="details pos-rel">
@@ -39,7 +46,12 @@ function DetailsPage() {
             <CustomButton />
           </footer>
         </div>
-        <div className="details__main-cont__img-box">
+        {/* className={`fade-in-from-bottom ${isVisible ? 'show' : ''}`}  */}
+        <div
+          className={`details__main-cont__img-box fade-in-from-bottom ${
+            isVisible ? "show" : ""
+          }`}
+        >
           <div>
             <Image src={detailsPagePersonImage} title="detailsPerson" />
           </div>
@@ -48,6 +60,7 @@ function DetailsPage() {
       <div className="details__arrow-right-box pos-abs pos-abs-y-center">
         <RightBlackArrow />
       </div>
+      <SocialIconsComponent />
     </section>
   );
 }

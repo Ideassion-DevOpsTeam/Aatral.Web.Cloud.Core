@@ -19,7 +19,7 @@ function HeaderComponent() {
           <AatralIcon />
         </div>
         <div className="header__details-cont">
-          <label>Aatral - india</label>
+          <label>Aatral - India</label>
           <Button>
             <p>Become a Member</p>
           </Button>

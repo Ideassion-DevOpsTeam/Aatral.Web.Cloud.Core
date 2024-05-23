@@ -10,7 +10,6 @@ function AatralTopSection() {
     aatral_top_sec_desc_cont: state.aatral_top_sec_desc_cont,
   }));
 
-  console.log("aatral_top_sec_desc_cont", aatral_top_sec_desc_cont);
   let headingSection = (
     <header>
       <h1 className="color-black">{aatral_top_sec_desc_cont.heading_first}</h1>

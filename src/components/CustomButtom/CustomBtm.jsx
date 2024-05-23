@@ -9,7 +9,7 @@ import "./custombtn.scss";
 
 function CustomButton() {
   return (
-    <ButtonComponent customClassess="cutom-btn-yellow">
+    <ButtonComponent optionalClasses="cutom-btn-yellow">
       <Link className="display-in-blck" to="/aatral-india">
         <div>
           <p>Know more about us</p>

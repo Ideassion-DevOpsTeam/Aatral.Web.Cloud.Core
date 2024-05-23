@@ -14,8 +14,6 @@ function AatralNameSection() {
     setNameSection();
   }, []);
 
-  console.log("getNameSection", nameSection);
-
   return (
     <section className="aatral__name-sec">
       <header>

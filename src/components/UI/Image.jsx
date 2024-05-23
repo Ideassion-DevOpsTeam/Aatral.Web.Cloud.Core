@@ -1,13 +1,13 @@
 import React from "react";
 import "./ui.scss";
 
-const ImageComponent = ({ cb, title, customClassess, src }) => {
+const ImageComponent = ({ onClick, title, optionalClasses, src }) => {
   return (
     <img
       src={src}
-      className={`component__img ${customClassess}`}
+      className={`component__img ${optionalClasses}`}
       alt={title}
-      onClick={cb}
+      onClick={onClick}
     />
   );
 };
