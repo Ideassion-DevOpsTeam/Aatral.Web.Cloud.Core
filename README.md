@@ -1,0 +1,1 @@
+# Aatral.Web.Cloud.Core
