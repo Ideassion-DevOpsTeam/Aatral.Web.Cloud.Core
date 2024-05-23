@@ -1,0 +1,38 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html,
+body {
+  @media (max-width: 100em) {
+    font-size: 62.5%; // approx 10px
+  }
+
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+  line-height: 1.3em;
+  background-color: #fbfbfb;
+}
+
+button,
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Gilmer Bold";
+  box-sizing: border-box;
+}
+
+.App {
+}

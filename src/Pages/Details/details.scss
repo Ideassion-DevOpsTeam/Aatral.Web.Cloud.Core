@@ -1,0 +1,72 @@
+@use "../../styles/variables.scss" as *;
+
+.details {
+  padding-top: 11rem;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__arrow-right-box {
+    right: 2%;
+  }
+  &__arrow-left-box {
+    left: 2%;
+  }
+  h1 {
+    line-height: 1.2em;
+  }
+
+  &__main-cont {
+    height: 100%;
+    position: relative;
+    header {
+      //   margin-block: 2.4rem;
+      h1 {
+        font-size: $extra__large;
+      }
+    }
+
+    main {
+      margin-block: 3.2rem;
+      p {
+        font-size: $normal;
+        font-weight: 300;
+        margin-block: 2rem;
+        line-height: 1.5em;
+      }
+    }
+
+    footer {
+    }
+
+    &__content-box {
+      width: 55vw;
+      margin-right: auto;
+    }
+
+    &__img-box {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      border-radius: 50%;
+      top: 50%;
+      left: 55%;
+      background-image: linear-gradient(
+        to right,
+        rgba(252, 176, 26, 1),
+        rgba(252, 176, 26, 0)
+      );
+
+      div {
+        img {
+          top: -36%;
+          width: 60vw;
+          left: -9.5%;
+          position: absolute;
+        }
+      }
+    }
+  }
+}

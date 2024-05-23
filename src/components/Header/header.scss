@@ -1,0 +1,51 @@
+@use "../../styles/variables.scss" as *;
+.header {
+  background-color: $color__white_shade_1;
+  position: fixed;
+  height: 9rem;
+  width: 100%;
+  top: 0;
+  z-index: 11;
+  &__inner-cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 2.3rem;
+  }
+  &__logo-cont {
+    svg {
+      cursor: pointer;
+      width: 14rem;
+      height: 4.2rem;
+    }
+  }
+
+  &__details-cont {
+    display: flex;
+    align-items: center;
+
+    label {
+      font-size: $normal;
+      color: $color__black;
+      cursor: pointer;
+      font-weight: 900;
+    }
+    svg {
+      cursor: pointer;
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    button {
+      border-radius: 2rem;
+      margin-inline: 2rem;
+      background-color: $color__yellow;
+      padding: 1rem 3.2rem;
+      p {
+        font-size: calc($normal - 0.3vw);
+        font-weight: 700;
+        color: $color__white;
+      }
+    }
+  }
+}

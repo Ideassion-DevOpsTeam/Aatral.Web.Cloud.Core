@@ -1,0 +1,74 @@
+@use "../styles/variables.scss" as *;
+.container {
+  &__outer {
+    max-width: 150rem;
+    margin-inline: auto;
+  }
+}
+
+.wid-90 {
+  width: 90%;
+}
+
+.wid-75 {
+  width: 75%;
+}
+
+.wid-80 {
+  width: 80%;
+}
+
+.m-x-auto {
+  margin-inline: auto;
+}
+
+.color-black {
+  color: $color__black;
+}
+
+.color-yellow {
+  color: $color__yellow;
+}
+
+.blink {
+  animation: blink 1.4s infinite;
+}
+@keyframes blink {
+  to {
+    opacity: 0;
+  }
+}
+
+.display-in-blck {
+  display: inline-block;
+}
+
+.arrow-left-box {
+  position: absolute;
+}
+
+.arrow-right-box {
+  position: absolute;
+}
+.pos-rel {
+  position: relative;
+}
+.pos-abs {
+  position: absolute;
+}
+
+.pos-abs-y-center {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.fade-in-from-bottom {
+  opacity: 0; /* Initially hidden */
+  transform: translateY(100%); /* Initially moved below the viewport */
+  transition: opacity 1s ease, transform 1s ease; /* Transition for smooth animation */ /* Transition for smooth animation */
+
+  &.show {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Move to original position */
+  }
+}
