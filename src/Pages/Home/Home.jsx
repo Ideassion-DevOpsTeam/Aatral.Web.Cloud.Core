@@ -17,7 +17,7 @@ function Home() {
   const [isTyping, setIsTyping] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const typingSpeed = 1000;
+  const typingSpeed = 200;
   const deletingSpeed = 500;
 
   useEffect(() => {
