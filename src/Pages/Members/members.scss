@@ -34,9 +34,10 @@
             gap: 3.3rem;
 
             &--user {
-                width: 250px;
-                height: 250px;
                 position: relative;
+                flex-basis: 250px;
+                flex-shrink: 1;
+                flex-grow: 1;
 
                 &:hover {
                     cursor: pointer;
