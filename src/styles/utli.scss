@@ -64,7 +64,7 @@
 
 .fade-in-from-bottom {
   opacity: 0; /* Initially hidden */
-  transform: translateY(100%); /* Initially moved below the viewport */
+  transform: translateY(60%); /* Initially moved below the viewport */
   transition: opacity 1s ease, transform 1s ease; /* Transition for smooth animation */ /* Transition for smooth animation */
 
   &.show {

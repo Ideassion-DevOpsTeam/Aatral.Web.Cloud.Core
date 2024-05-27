@@ -6,6 +6,7 @@ import "./home.scss";
 import SocialIcons from "../../components/Social/SocialIcons";
 import CustomButton from "../../components/CustomButtom/CustomBtm";
 import NetworkDesign from "../../components/NetworkDesign/network";
+import TypingEffect from "../../components/TypingEffect/TypingEffect";
 
 // assets
 import { ReactComponent as HomeBuilding } from "../../assets/Icons/Home/homeRightBuilding.svg";
@@ -13,50 +14,19 @@ import { ReactComponent as Map } from "../../assets/Icons/Home/indiaMap.svg";
 import { ReactComponent as RightBlackArrow } from "../../assets/Icons/rightBlackArrow.svg";
 
 function Home() {
-  const [displayText, setDisplayText] = useState("");
-  const [isTyping, setIsTyping] = useState(true);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
 
-  const typingSpeed = 200;
-  const deletingSpeed = 500;
+  // console.log("rerendering-home");
 
   useEffect(() => {
-    const words = ["Ideas", "People"];
-    const interval = setInterval(
-      () => {
-        if (isTyping) {
-          const newText = words[currentIndex].substring(
-            0,
-            displayText.length + 1
-          );
-          setDisplayText(newText);
-
-          if (newText === words[currentIndex]) {
-            setIsTyping(false);
-          }
-        } else {
-          const newText = words[currentIndex].substring(
-            0,
-            displayText.length - 1
-          );
-          setDisplayText(newText);
-
-          if (newText === "") {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % words.length);
-            setIsTyping(true);
-          }
-        }
-      },
-      isTyping ? typingSpeed : deletingSpeed
-    );
-
-    return () => clearInterval(interval);
-  }, [displayText, isTyping, currentIndex]);
-
-  // return false;
+    setIsVisible(true);
+    return () => {
+      setIsVisible(false);
+    };
+  }, []);
 
   return (
-    <section className="home">
+    <section className={`home fade-in-from-bottom ${isVisible ? "show" : ""}`}>
       <SocialIcons />
       <div className="home__map-box">
         <section className="wid-90">
@@ -85,12 +55,11 @@ function Home() {
             <h1>Connecting People</h1>
             <h1>
               with
-              <span>{displayText}</span>
-              <span className="bigger_cursor">I</span>
+              <TypingEffect />
             </h1>
           </main>
           <footer>
-            <CustomButton />
+            <CustomButton displayText="Know more about us" />
           </footer>
         </div>
         <div className="home__desc-box__icon-cont">

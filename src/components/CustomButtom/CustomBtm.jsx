@@ -7,12 +7,12 @@ import ButtonComponent from "../UI/Button";
 
 import "./custombtn.scss";
 
-function CustomButton() {
+function CustomButton({ displayText }) {
   return (
     <ButtonComponent optionalClasses="cutom-btn-yellow">
       <Link className="display-in-blck" to="/aatral-india">
         <div>
-          <p>Know more about us</p>
+          <p>{displayText}</p>
           <RightWhiteArrow />
         </div>
       </Link>

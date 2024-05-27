@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 //styles
 import "./details.scss";
 //store
@@ -29,7 +30,9 @@ function DetailsPage() {
   return (
     <section className="details pos-rel">
       <div className="pos-abs pos-abs-y-center details__arrow-left-box">
-        <LeftBlackArrow />
+        <Link to="/">
+          <LeftBlackArrow />
+        </Link>
       </div>
       <section className="details__main-cont wid-80 m-x-auto">
         <div className="details__main-cont__content-box">
@@ -43,10 +46,9 @@ function DetailsPage() {
             ))}
           </main>
           <footer>
-            <CustomButton />
+            <CustomButton displayText="Join The Community" />
           </footer>
         </div>
-        {/* className={`fade-in-from-bottom ${isVisible ? 'show' : ''}`}  */}
         <div
           className={`details__main-cont__img-box fade-in-from-bottom ${
             isVisible ? "show" : ""
