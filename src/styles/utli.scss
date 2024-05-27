@@ -10,6 +10,10 @@
   width: 90%;
 }
 
+.wid-95 {
+  width: 90%;
+}
+
 .wid-75 {
   width: 75%;
 }
@@ -37,6 +41,10 @@
   to {
     opacity: 0;
   }
+}
+
+.m-y-block-large {
+  margin-block: $large;
 }
 
 .display-in-blck {
@@ -71,4 +79,15 @@
     opacity: 1; /* Fade in */
     transform: translateY(0); /* Move to original position */
   }
+}
+
+.heading-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: $normal;
+}
+
+.text-center {
+  text-align: center;
 }

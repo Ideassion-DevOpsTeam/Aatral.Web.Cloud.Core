@@ -188,11 +188,6 @@ export const edges = [
   { from: 1, to: 6 },
   { from: 6, to: 7 },
   { from: 2, to: 8 },
-  // { from: 3, to: 4 },
-  // { from: 4, to: 5 },
-  // { from: 8, to: 5 },
-  // { from: 5, to: 6 },
-  // { from: 7, to: 8 },
 ];
 
 export const options = {
