@@ -1,15 +1,15 @@
 @use "../../styles/variables.scss" as *;
 
 .members__section {
-    background: rgba(252, 176, 26, 0.1019607843);
+    background: #fff;
     margin-top: 9rem;
-    height: 20vh;
 
     &__block {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100%;
+        height: 20vh;
+        background: rgba(252, 176, 26, 0.1019607843);
 
         &__title {
             color: #000;

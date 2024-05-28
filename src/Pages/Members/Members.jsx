@@ -14,6 +14,8 @@ const Members = () => {
         founderData: state.founderData
     }));
 
+    console.log(founderData);
+
     useEffect(() => {
         setFounderData();
     }, []);
@@ -37,7 +39,7 @@ const Members = () => {
 
                 <div className="members__section__second__section">
                     <div className="members__section__second__section__members">
-                        {founderData.map((item, index) => (
+                        {founderData?.map((item, index) => (
                             <Fragment key={index}>
                                 <div onClick={() => showModal(item)} className="members__section__second__section__members--user">
                                     <img src={item?.founder_photo} alt="Founder_Photo" />
