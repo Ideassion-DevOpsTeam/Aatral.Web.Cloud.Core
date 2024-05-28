@@ -3,24 +3,25 @@
 .card {
   border: 1px solid $color__yellow;
   border-radius: 0.6rem;
+  background-color: $color__white;
 
   section {
-    margin-block: 2rem;
+    margin-block: 1rem;
   }
   &__heading-box {
-    // display: grid;
     display: flex;
-    margin-block: 2rem;
-    // grid-template-columns: 20% 80%;
+    margin-block: 0.5rem;
+    padding-block: 1.5rem;
     align-items: center;
+    border-bottom: 2px solid $color__black_shade_2_light;
     &__image-cont {
       border-radius: 50%;
-      width: 7rem;
+      width: 6rem;
       overflow: hidden;
     }
 
     &__desc-cont {
-      margin-left: 1.5rem;
+      margin-left: 1rem;
 
       label,
       blockquote {
@@ -39,8 +40,16 @@
     }
   }
 
+  &__icon-box {
+    padding-left: 0.5rem;
+    margin-top: 1rem;
+    svg {
+      width: calc($normal + 0.3vw);
+    }
+  }
+
   &__desc-box {
-    margin-block: 2rem;
+    margin-block: 1rem;
     p {
       font-size: calc($small - 0.2vw);
       line-height: 1.5em;

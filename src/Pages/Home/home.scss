@@ -100,15 +100,46 @@
 
   &__get-page {
     padding-top: 9rem;
-    margin-bottom: 33rem;
-    display: grid;
+
+    align-items: center;
+    display: flex;
+    min-height: 100vh;
     margin-block: auto;
-    grid-template-columns: repeat(2, 1fr);
+
+    &__arrow-left {
+      margin-left: 2rem;
+      cursor: pointer;
+      svg {
+        width: 3.3rem;
+      }
+    }
+
+    &__arrow-right {
+      cursor: pointer;
+      z-index: 2;
+      margin-right: 2rem;
+      svg {
+        width: 3.3rem;
+      }
+    }
+
+    &__inner {
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     // display: flex;
     &__icons-box {
+      // min-height: 100vh;
+      display: flex;
+      section {
+        margin: auto;
+      }
       header {
         h1 {
           line-height: 1.1em;
+          font-size: calc($extra__large - 0.5vw);
         }
       }
 
@@ -118,16 +149,14 @@
         div {
           display: flex;
           align-items: center;
-          // background-color: red;
-          margin-block: 2vw;
-          // margin: 2rem;
+          margin-block: 1.5vw;
           flex: 1 1 42%;
 
           svg {
-            width: 23%;
+            width: 15%;
           }
           label {
-            font-size: $normal;
+            font-size: calc($normal - 0.2vw);
             margin-left: 2rem;
             font-weight: 700;
           }
@@ -136,7 +165,7 @@
       header,
       main,
       footer {
-        margin-block: 3rem;
+        margin-block: 2rem;
       }
       p {
         line-height: 1.5em;
@@ -149,10 +178,21 @@
       }
     }
 
+    &__svg-bg-cont {
+      width: 90vw;
+      position: fixed;
+      // z-index: -1;
+      transform: rotate(-9deg);
+      bottom: -11%;
+      right: -14%;
+    }
+
     &__desc-box {
+      z-index: 1;
+      // position: absolute;
       &__top-sec {
         display: grid;
-        grid-template-columns: 58% 48%;
+        grid-template-columns: 56% 42%;
         column-gap: 2%;
         margin-block: 2rem;
       }
