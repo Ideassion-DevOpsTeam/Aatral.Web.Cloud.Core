@@ -101,7 +101,7 @@
     align-items: center;
     display: flex;
     // min-height: 100vh;
-    margin-block: auto;
+    margin-block: auto 4rem;
 
     &__arrow-left {
       margin-left: 2rem;
@@ -176,12 +176,18 @@
     }
 
     &__svg-bg-cont {
-      width: 90vw;
+      width: 65vw;
       position: fixed;
       // z-index: -1;
-      transform: rotate(-9deg);
-      bottom: -11%;
-      right: -14%;
+      height: fit-content;
+      transform: rotate(-5deg);
+      bottom: 0%;
+      right: 0%;
+
+      svg {
+        width: 100%;
+        height: fit-content;
+      }
     }
 
     &__desc-box {
