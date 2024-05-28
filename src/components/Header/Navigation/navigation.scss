@@ -5,9 +5,8 @@
   bottom: 0;
   top: 0;
   right: 0;
-  // background-color: red;
+  width: 25%;
   height: 100vh;
-  width: min(90%, 41rem);
   background-color: $color__white;
   display: flex;
   flex-direction: column;
@@ -36,11 +35,22 @@
         color: $color__black;
         width: fit-content;
         cursor: pointer;
-        font-weight: 500;
+        font-weight: 700;
         padding-block: 2rem;
-        border-bottom: 2px solid #4444444a;
+        // border-bottom: 2px solid #4444444a;
         line-height: 1.3em;
         font-size: $medium;
+        position: relative;
+
+        &:not(:last-child)::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 100%;
+          width: 50px;
+          height: 1px;
+          background: lightgray;
+      }
 
         a {
           text-decoration: none;
@@ -52,6 +62,7 @@
 
   footer {
     background-color: $color__yellow;
+    padding: 1.2rem;
 
     ul {
       display: flex;

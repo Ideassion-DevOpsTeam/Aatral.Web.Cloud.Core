@@ -16,8 +16,6 @@ import { ReactComponent as RightBlackArrow } from "../../assets/Icons/rightBlack
 function Home() {
   const [isVisible, setIsVisible] = useState(false);
 
-  // console.log("rerendering-home");
-
   useEffect(() => {
     setIsVisible(true);
     return () => {
