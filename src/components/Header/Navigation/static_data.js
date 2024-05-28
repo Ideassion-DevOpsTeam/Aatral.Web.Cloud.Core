@@ -9,7 +9,7 @@ export const nav_menu = [
   },
   {
     title: "Events",
-    path: null,
+    path: "/events",
   },
   {
     title: "Our Members",
