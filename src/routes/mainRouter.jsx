@@ -8,6 +8,7 @@ import Members from "../Pages/Members/Members";
 import HomeGetPage from "../Pages/Home/Get";
 import Partners from "../Pages/Partners/partnersPage";
 import Contact from "../Pages/Contact/Contact";
+import Events from "../Pages/Events/events";
 
 function MainRouter() {
   return (
@@ -18,6 +19,7 @@ function MainRouter() {
       <Route path="/home/get" element={<HomeGetPage />} />
       <Route path="/members" element={<Members />} />
       <Route path="/partners" element={<Partners />} />
+      <Route path="/events" element={<Events />} />
       <Route path="/contact" element={<Contact />} />
     </Routes>
   );
