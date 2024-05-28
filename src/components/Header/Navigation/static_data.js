@@ -17,7 +17,7 @@ export const nav_menu = [
   },
   {
     title: "Our Partners",
-    path: null,
+    path: "/partners",
   },
   {
     title: "Blog",
