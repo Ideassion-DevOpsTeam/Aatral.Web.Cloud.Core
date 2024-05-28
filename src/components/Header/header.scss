@@ -3,6 +3,7 @@
   background-color: $color__white_shade_1;
   position: fixed;
   height: 9rem;
+  filter: drop-shadow(2px 4px 6px hsla(0, 0%, 0%, 0.08));
   width: 100%;
   top: 0;
   z-index: 11;
@@ -53,4 +54,36 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 580px) and (min-width: 260px) {
+
+    .header {
+      height: 6rem;
+      width: 100%;
+    }
+
+    .header__inner-cont {
+      padding: 0.3rem;
+      width: 100%;
+  }
+
+  .header__details-cont {
+    gap: 10px;
+    
+        & > button {
+          border-radius: 2rem;
+          margin-inline: 0rem;
+          background-color: #fcb01a;
+          padding: 0.7rem 0.4rem;
+          font-size: 12px;
+          
+              & > p {
+                font-size: 10px;
+                font-weight: 600;
+                color: #ffffff;
+            }
+        }
+  }
+
 }
