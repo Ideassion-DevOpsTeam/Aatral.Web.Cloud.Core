@@ -5,8 +5,9 @@
   bottom: 0;
   top: 0;
   right: 0;
+  // background-color: red;
+  height: 100vh;
   width: min(90%, 41rem);
-  //   background-color: red;
   background-color: $color__white;
   display: flex;
   flex-direction: column;

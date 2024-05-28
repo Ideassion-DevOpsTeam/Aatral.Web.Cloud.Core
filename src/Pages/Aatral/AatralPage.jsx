@@ -27,7 +27,7 @@ function AatralPage() {
       </section>
       <section className="aatral__vision-sec">
         <div className="aatral__vision-sec__main-cont">
-          <div className="aatral__vision-sec__main-cont__icon-box">
+          <div className="aatral__vision-sec__main-cont__icon-box-mike">
             <Mike />
           </div>
           <div className="aatral__vision-sec__main-cont__desc-box">
@@ -43,7 +43,7 @@ function AatralPage() {
               worldwide.
             </p>
           </div>
-          <div className="aatral__vision-sec__main-cont__icon-box">
+          <div className="aatral__vision-sec__main-cont__icon-box-cup">
             <Cup />
           </div>
         </div>
@@ -173,7 +173,9 @@ function AatralPage() {
             </div>
           </Button>
         </div>
-        <Bottom />
+        <div className="aatral__btm-svg">
+          <Bottom />
+        </div>
       </section>
     </section>
   );

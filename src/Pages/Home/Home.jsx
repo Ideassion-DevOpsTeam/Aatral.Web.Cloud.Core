@@ -29,7 +29,7 @@ function Home() {
     <section className={`home fade-in-from-bottom ${isVisible ? "show" : ""}`}>
       <SocialIcons />
       <div className="home__map-box">
-        <section className="wid-90">
+        <section className="wid-80">
           <div className="home__map-box__map-cont">
             <Map />
           </div>

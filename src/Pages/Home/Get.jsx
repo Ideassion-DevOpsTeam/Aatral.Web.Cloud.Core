@@ -75,9 +75,9 @@ function HomeGetPage() {
           <GetPageBG />
         </div>
       </section>
-      <div className="home__get-page__arrow-right">
+      <Link to="/events" className="home__get-page__arrow-right">
         <RightArrow />
-      </div>
+      </Link>
     </section>
   );
 }
