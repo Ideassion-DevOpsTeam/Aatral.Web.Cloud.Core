@@ -29,24 +29,16 @@ const NetworkDesign = () => {
 
     const currentImages = images.slice(index, index + segmentSize);
 
-    console.log(" currentImages-length", currentImages.length);
-
     if (currentImages.length === 9) {
       for (let i = 0; i < currentImages.length; i++) {
-        // const currentNumber = i + 1;
         const nodeDetails = {
           id: i + 2,
           size: 60,
-          // label: `${currentNumber}`,
           borderWidth: 4,
           shape: "circularImage",
           image: currentImages[i]["image"],
           shapeProperties: { useBorderWithImage: true },
-          // outlineWidth: 4,
-          // outline: "#FBAF1A80",
           color: {
-            // border: "#222222",
-            // outline: "#FBAF1A80",
             border: "#FBAF1A80",
           },
           x: imagePostion[i]["x"],

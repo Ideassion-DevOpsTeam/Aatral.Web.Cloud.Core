@@ -19,8 +19,7 @@ function HomeGetPage() {
     icons_details: state.home_get_sec_icons_cont,
     card_details: state.home_get_sec_desc_cont.card_details,
   }));
-
-  console.log("icons_details", icons_details.desc);
+  
   let descDisplay;
 
   if (icons_details.desc) {
