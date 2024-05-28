@@ -10,6 +10,10 @@
   width: 90%;
 }
 
+.wid-95 {
+  width: 90%;
+}
+
 .wid-75 {
   width: 75%;
 }
@@ -39,6 +43,10 @@
   }
 }
 
+.m-y-block-large {
+  margin-block: $large;
+}
+
 .display-in-blck {
   display: inline-block;
 }
@@ -64,11 +72,22 @@
 
 .fade-in-from-bottom {
   opacity: 0; /* Initially hidden */
-  transform: translateY(100%); /* Initially moved below the viewport */
+  transform: translateY(60%); /* Initially moved below the viewport */
   transition: opacity 1s ease, transform 1s ease; /* Transition for smooth animation */ /* Transition for smooth animation */
 
   &.show {
     opacity: 1; /* Fade in */
     transform: translateY(0); /* Move to original position */
   }
+}
+
+.heading-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: $normal;
+}
+
+.text-center {
+  text-align: center;
 }

@@ -13,13 +13,6 @@
       display: flex;
       flex-direction: column;
       flex: 1 1 55%;
-      header {
-        h1 {
-          line-height: 1em;
-          font-size: $extra__large;
-          //   font-size: 10rem;
-        }
-      }
 
       main {
         margin-block: 1.4rem;

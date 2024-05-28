@@ -2,15 +2,16 @@
 $color__yellow: #fcb01a;
 $color__black: #1e1e1e;
 $color__white: #ffffff;
+$color__black_shade_2: #7c7b7b;
 $color__white_shade_1: #fbfbfb;
 $color__black_shade_1: #444444;
 
 // sizes
 $extra__large: clamp(4.1rem, 4.2vw, 6.9rem);
 $large: clamp(3rem, 3.2vw, 4.1rem);
-$medium: clamp(2.4rem, 2.5vw, 3.2rem);
-$normal: clamp(1.4em, 1.3vw, 1.9rem);
-$small: clamp(1.3rem, 1.3vw, 1.7rem);
+$medium: clamp(2.4rem, 2.5vw, 2.7rem);
+$normal: clamp(1.4em, 1.2vw, 1.7rem);
+$small: clamp(1.3rem, 1.3vw, 1.5rem);
 
-$paragraph__font: '';
-$heading__font: '';
+$paragraph__font: "";
+$heading__font: "";

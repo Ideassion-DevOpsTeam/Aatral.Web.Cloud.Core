@@ -1,0 +1,13 @@
+@use "../../styles/variables.scss" as *;
+
+.spit_heading {
+  h1 {
+    line-height: 1.3em;
+    font-size: $extra__large;
+    &.d-flex {
+      &:not(:first-of-type) {
+        margin-left: $normal;
+      }
+    }
+  }
+}

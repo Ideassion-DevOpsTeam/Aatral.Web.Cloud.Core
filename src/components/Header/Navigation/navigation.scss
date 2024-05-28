@@ -26,6 +26,7 @@
 
   main {
     margin-block: auto;
+    background-color: $color__white;
     ul {
       display: flex;
       flex-direction: column;
@@ -39,6 +40,11 @@
         border-bottom: 2px solid #4444444a;
         line-height: 1.3em;
         font-size: $medium;
+
+        a {
+          text-decoration: none;
+          color: $color__black;
+        }
       }
     }
   }

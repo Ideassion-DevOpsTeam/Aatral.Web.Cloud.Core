@@ -1,11 +1,11 @@
 export const nav_menu = [
   {
     title: "Home",
-    path: null,
+    path: "/",
   },
   {
     title: "Aatral",
-    path: null,
+    path: "/aatral-india",
   },
   {
     title: "Events",
@@ -13,11 +13,11 @@ export const nav_menu = [
   },
   {
     title: "Our Members",
-    path: null,
+    path: "/members",
   },
   {
     title: "Our Partners",
-    path: null,
+    path: "/partners",
   },
   {
     title: "Blog",

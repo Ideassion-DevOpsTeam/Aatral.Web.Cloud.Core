@@ -1,0 +1,50 @@
+@use "../../styles/variables.scss" as *;
+
+.card {
+  border: 1px solid $color__yellow;
+  border-radius: 0.6rem;
+
+  section {
+    margin-block: 2rem;
+  }
+  &__heading-box {
+    // display: grid;
+    display: flex;
+    margin-block: 2rem;
+    // grid-template-columns: 20% 80%;
+    align-items: center;
+    &__image-cont {
+      border-radius: 50%;
+      width: 7rem;
+      overflow: hidden;
+    }
+
+    &__desc-cont {
+      margin-left: 1.5rem;
+
+      label,
+      blockquote {
+        font-size: calc($normal - 0.1vw);
+        margin-block: 1.1rem;
+        color: $color__black_shade_2;
+      }
+
+      blockquote {
+        font-weight: 300;
+      }
+
+      label {
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__desc-box {
+    margin-block: 2rem;
+    p {
+      font-size: calc($small - 0.2vw);
+      line-height: 1.5em;
+      color: $color__black_shade_2;
+    }
+  }
+}

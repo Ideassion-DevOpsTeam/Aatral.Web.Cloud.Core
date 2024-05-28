@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 // components
 import Button from "../UI/Button";
@@ -16,10 +17,14 @@ function HeaderComponent() {
     <section className="header">
       <section className="wid-90 m-x-auto header__inner-cont">
         <div className="header__logo-cont">
-          <AatralIcon />
+          <Link to="/">
+            <AatralIcon />
+          </Link>
         </div>
         <div className="header__details-cont">
-          <label>Aatral - India</label>
+          <label>
+            <Link to="/aatral-india">Aatral - India</Link>
+          </label>
           <Button>
             <p>Become a Member</p>
           </Button>

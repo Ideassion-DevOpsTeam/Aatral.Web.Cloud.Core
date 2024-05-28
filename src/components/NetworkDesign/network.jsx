@@ -1,43 +1,84 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Network } from "vis-network";
+import { Network, DataSet } from "vis-network";
 
-import { nodes, edges } from "./network_setup";
+// temp
+import NetworkLogo from "../../assets/Icons/network/net_logo.svg";
+
+import { edges, images, options } from "./network_setup";
 
 import "./network.scss";
 
 const NetworkDesign = () => {
   const container = useRef(null);
+  const initializedRef = useRef(false);
+  // no of images to show in network design
+  const showImages = 7;
 
-  const options = {
-    edges: {
-      color: "#49494A",
-    },
-    interaction: {
-      dragNodes: false,
-      dragView: false,
-      zoomView: false,
-    },
-    height: "100%",
-    width: "100%",
-    nodes: {
-      borderWidth: 4,
-      size: 41,
-      color: {
-        border: "#222222",
-        outline: "#666666",
+  const segmentData = (data, index, segmentSize) => {
+    const segmentedData = [
+      {
+        id: 1,
+        shape: "circularImage",
+        image: NetworkLogo,
+        size: 70,
+        borderWidth: 0,
       },
-    },
+    ];
+
+    const currentImages = images.slice(index, index + segmentSize);
+
+    if (currentImages) {
+      for (let i = 0; i < currentImages.length; i++) {
+        segmentedData.push({
+          id: i + 2,
+          shape: "circularImage",
+          image: currentImages[i]["image"],
+        });
+      }
+
+      return segmentedData;
+    }
   };
 
-  const data = {
-    nodes: nodes,
-    edges: edges,
+  const initializeNetwork = () => {
+    let currentIndex = 0;
+
+    const networkInstance = new Network(container.current, {}, options);
+
+    const segmentedData = segmentData(images, currentIndex, showImages); // Only take the first segment
+
+    const initialData = {
+      nodes: segmentedData,
+      edges: edges, // Add edges if needed
+    };
+
+    networkInstance.setData(initialData);
+    currentIndex = currentIndex += showImages;
+    const interval = setInterval(() => {
+      currentIndex =
+        currentIndex < images.length ? currentIndex + showImages : 0;
+      updateNetworkData(currentIndex, networkInstance);
+    }, 2000);
+
+    return () => clearInterval(interval);
   };
 
-  useEffect(() => {
-    const network =
-      container.current && new Network(container.current, data, options);
-  }, []);
+  // Run initializeNetwork only once
+  if (!initializedRef.current && container.current) {
+    initializeNetwork();
+    initializedRef.current = true;
+  }
+
+  const updateNetworkData = (currentIndex, networkInstance) => {
+    if (networkInstance) {
+      const segmentedData = segmentData(images, currentIndex, showImages); // Only take the first segment
+      const updatedData = {
+        nodes: segmentedData,
+        edges: edges,
+      };
+      networkInstance.setData(updatedData);
+    }
+  };
 
   return <div ref={container} className="network-cont" />;
 };
