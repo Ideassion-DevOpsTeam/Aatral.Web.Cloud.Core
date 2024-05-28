@@ -1,6 +1,5 @@
 import NetworkPersonOne from "../../assets/Images/network/networkPersonOne.png";
 import NetworkPersonTwo from "../../assets/Images/network/networkPersonTwo.png";
-import NetworkLogo from "../../assets/Icons/network/net_logo.svg";
 import NetworkPersonThree from "../../assets/Images/network/networkPersonThree.png";
 import NetworkPersonFour from "../../assets/Images/network/networkPersonFour.png";
 import NetworkPersonFive from "../../assets/Images/network/networkPersonFive.png";
@@ -181,22 +180,24 @@ export const images = [
 
 export const edges = [
   { from: 1, to: 2 },
+  { from: 2, to: 4 },
   { from: 1, to: 3 },
-  { from: 3, to: 4 },
-  { from: 1, to: 4 },
-  { from: 1, to: 5 },
+  { from: 3, to: 2 },
+  { from: 3, to: 5 },
+  { from: 6, to: 2 },
   { from: 1, to: 6 },
+  { from: 1, to: 8 },
+  { from: 5, to: 8 },
   { from: 6, to: 7 },
-  { from: 2, to: 8 },
+  { from: 8, to: 9 },
+  { from: 2, to: 10 },
 ];
 
 export const options = {
   edges: {
-    color: "#49494A",
+    color: "#49494ACF",
+    width: 3.3,
   },
-  // layout: {
-  //   randomSeed: undefined,
-  // },
   physics: false,
   interaction: {
     dragNodes: false,
@@ -205,11 +206,52 @@ export const options = {
   },
   height: "100%",
   width: "100%",
-  nodes: {
-    borderWidth: 4,
-    size: 41,
-    color: {
-      border: "#222222",
-    },
-  },
 };
+
+export const imagePostion = [
+  {
+    id: 1,
+    x: -300,
+    y: -60,
+  },
+  {
+    id: 2,
+    x: -330,
+    y: 240,
+  },
+  {
+    id: 3,
+    x: -100,
+    y: 150,
+  },
+  {
+    id: 4,
+    x: -200,
+    y: 410,
+  },
+  {
+    id: 5,
+    x: -590,
+    y: -200,
+  },
+  {
+    id: 6,
+    x: -870,
+    y: -150,
+  },
+  {
+    id: 7,
+    x: -800,
+    y: 150,
+  },
+  {
+    id: 8,
+    x: -870,
+    y: 400,
+  },
+  {
+    id: 1,
+    x: -60,
+    y: -190,
+  },
+];

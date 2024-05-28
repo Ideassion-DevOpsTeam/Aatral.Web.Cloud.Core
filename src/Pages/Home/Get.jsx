@@ -19,8 +19,7 @@ function HomeGetPage() {
     icons_details: state.home_get_sec_icons_cont,
     card_details: state.home_get_sec_desc_cont.card_details,
   }));
-
-  console.log("icons_details", icons_details.desc);
+  
   let descDisplay;
 
   if (icons_details.desc) {
@@ -75,9 +74,9 @@ function HomeGetPage() {
           <GetPageBG />
         </div>
       </section>
-      <div className="home__get-page__arrow-right">
+      <Link to="/events" className="home__get-page__arrow-right">
         <RightArrow />
-      </div>
+      </Link>
     </section>
   );
 }

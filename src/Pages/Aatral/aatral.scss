@@ -4,6 +4,7 @@
   margin-block: 2.3rem;
   padding-top: 9rem;
   overflow-x: hidden;
+  position: relative;
   display: flex;
   flex-direction: column;
   &__top-sec {
@@ -67,6 +68,7 @@
     }
     &__img-box {
       flex: 0 1 45%;
+      margin-bottom: -10%;
       svg {
         width: 41vw;
         max-width: fit-content;
@@ -102,15 +104,16 @@
     display: flex;
     flex-direction: column;
     width: 100vw;
-    margin-block: 6rem 3.3rem;
+    position: relative;
+    margin-block: 3rem 3.3rem;
     &__main-cont {
       display: flex;
       align-items: center;
-      //   column-gap: 10%;
 
       &__desc-box {
-        flex: 1 0 30vw;
-        margin-inline: 6vw;
+        flex: 1 0 27vw;
+        margin-right: -10%;
+        margin-bottom: 11vw;
         h1 {
           display: flex;
           justify-content: center;
@@ -123,32 +126,48 @@
 
         P {
           font-size: $normal;
+          width: 80%;
+          margin-inline: auto;
           line-height: 1.5em;
           text-align: center;
+          font-weight: 300;
           color: $color__black_shade_1;
         }
       }
 
-      &__icon-box {
-        flex: 0 1 24vw;
+      &__icon-box-mike {
+        flex: 0 1 27vw;
         svg {
-          width: 25vw;
+          width: 100%;
+          height: fit-content;
+        }
+      }
+      &__icon-box-cup {
+        flex: 0 1 43vw;
+        svg {
+          width: 100%;
           height: fit-content;
         }
       }
     }
 
     footer {
+      position: absolute;
+      bottom: 0%;
+      height: 23.5rem;
+      width: 100%;
+      // background-color: red;
       svg {
-        width: 99vw;
-        height: 5vh;
+        width: 100vw;
+        // height: 15rem;
+        // height: 100%;
       }
     }
   }
 
   &__committe-sec {
-    margin-block: 5rem;
-
+    margin-block: 0 3rem;
+    // margin-top: -1%;
     &__list-box {
       display: flex;
       gap: 1.5rem 6rem;
@@ -157,11 +176,9 @@
       align-items: center;
     }
     &__item-box {
-      flex-basis: 15rem;
-
+      flex-basis: 13rem;
       &__img-cont {
         margin-block: 2rem;
-
         img {
           border-radius: 50%;
         }
@@ -177,16 +194,16 @@
 
         label {
           color: $color__black;
-          font-size: $normal;
+          font-size: calc($normal - 0.2vw);
           text-align: center;
           line-height: 1.3em;
-          margin-bottom: 2rem;
+          margin-bottom: 1rem;
           font-weight: 700;
         }
 
         blockquote {
           color: $color__black_shade_1;
-          font-size: $small;
+          font-size: calc($small - 0.2vw);
         }
       }
     }
@@ -220,7 +237,7 @@
           margin: 1rem 3.3rem;
           align-items: center;
           p {
-            font-size: $normal;
+            font-size: calc($normal - 0.3vw);
             color: $color__white;
             line-height: 1.5em;
           }
@@ -237,6 +254,11 @@
       width: 99vw;
       height: 100%;
     }
+  }
+
+  &__btm-sv {
+    position: absolute;
+    bottom: -10%;
   }
 }
 

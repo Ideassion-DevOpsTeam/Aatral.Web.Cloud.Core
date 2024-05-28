@@ -85,9 +85,16 @@
   }
 }
 
+.flex-start {
+  justify-content: start !important;
+}
+
 .heading-flex {
   display: flex;
   justify-content: center;
+  h1 {
+    font-size: $large !important;
+  }
   align-items: center;
   column-gap: $normal;
 }
