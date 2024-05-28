@@ -14,8 +14,6 @@ const Members = () => {
         founderData: state.founderData
     }));
 
-    console.log(founderData);
-
     useEffect(() => {
         setFounderData();
     }, []);
