@@ -25,13 +25,19 @@
 
     &__second__section {
         padding: 6rem 0;
-        width: 90%;
-        margin: 0 auto;
+        width: 100%;
+        background-image: url(../../assets/Images/members/members_bg.png);
+        background-position: -40% 60%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
 
         &__members {
             display: flex;
             flex-wrap: wrap;
             gap: 3.3rem;
+            width: 90%;
+            margin: 0 auto;
 
             &--user {
                 position: relative;
