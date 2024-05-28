@@ -1,5 +1,5 @@
 import React from "react";
-import  { mainFacebookIcon, mainInstagramIcon, mainLinkedInIcon, mainXIcon }  from "../../constants/icons";
+import  { mainFacebookIcon, mainLinkedInIcon, mainXIcon }  from "../../constants/icons";
 import Icon from '@ant-design/icons';
 
 import "./social.scss";
@@ -10,9 +10,6 @@ function SocialIconsComponent() {
       <div className="social-icon__item-box">
         <a href="https://www.facebook.com/profile.php?id=61560240031843" target="_blank" rel="noreferrer"><Icon component={mainFacebookIcon} /></a>
       </div>
-      {/* <div className="social-icon__item-box">
-        <a href="#" target="_blank" rel="noreferrer"><Icon component={mainInstagramIcon} /></a>
-      </div> */}
       <div className="social-icon__item-box">
         <a href="https://www.linkedin.com/company/aatral-india/about/" target="_blank" rel="noreferrer"><Icon component={mainLinkedInIcon} /></a>
       </div>
