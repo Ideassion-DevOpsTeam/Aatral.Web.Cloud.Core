@@ -5,8 +5,8 @@
   bottom: 0;
   top: 0;
   right: 0;
-  width: 25%;
-  height: 100vh;
+  width: 29%;
+  z-index: 2;
   background-color: $color__white;
   display: flex;
   flex-direction: column;
@@ -30,7 +30,6 @@
     ul {
       display: flex;
       flex-direction: column;
-
       li {
         color: $color__black;
         width: fit-content;
@@ -43,14 +42,14 @@
         position: relative;
 
         &:not(:last-child)::after {
-          content: '';
+          content: "";
           position: absolute;
           left: 0;
           top: 100%;
           width: 50px;
           height: 1px;
           background: lightgray;
-      }
+        }
 
         a {
           text-decoration: none;
@@ -63,20 +62,44 @@
   footer {
     background-color: $color__yellow;
     padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    padding-block: 1.1rem;
+    section {
+      ul {
+        display: flex;
+        margin-block: 1.1rem;
+        justify-content: space-between;
+        align-items: center;
+        li {
+          color: $color__white;
+          line-height: 1.3em;
+          margin-block: 1rem;
+          // background-color: red;
+          text-align: start;
+          height: fit-content;
+          padding: 0 1.3vw;
+          font-size: calc($small - 0.3vw);
+          &:not(:last-of-type) {
+            border-right: 1px solid $color__white;
+          }
+        }
+      }
 
-    ul {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      li {
+      label {
         color: $color__white;
-        line-height: 1.3em;
-        margin-block: 1rem;
-        height: fit-content;
-        padding: 0 1rem;
         font-size: calc($small - 0.3vw);
-        &:not(:last-of-type) {
-          border-right: 1px solid $color__white;
+        font-weight: 400;
+        line-height: 1.3em;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        a {
+          margin-inline: 0.1rem;
+          text-decoration: underline;
+          padding-block: 0.1rem;
+          color: inherit;
+          font-weight: 700;
         }
       }
     }

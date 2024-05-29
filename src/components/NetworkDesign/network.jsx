@@ -1,8 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Network, DataSet } from "vis-network";
+import { useQuery, useLazyQuery } from "@apollo/client";
 
 // temp
 import NetworkLogo from "../../assets/Icons/network/net_logo.svg";
+// api
+import { getMembersImages } from "../../api/index";
+import { apiurl } from "../../api/API_URL";
 
 import {
   edges,
@@ -17,9 +21,18 @@ import "./network.scss";
 const NetworkDesign = () => {
   const container = useRef(null);
   const initializedRef = useRef(false);
-  // no of images to show in network design
+  const [getImages, { loading, error, data: images }] =
+    useLazyQuery(getMembersImages);
 
-  const segmentData = (data, index, segmentSize) => {
+  const handleGetImages = (currentPage) => {
+    getImages({ variables: { currentPage: currentPage, pageSize: 9 } });
+  };
+
+  useEffect(() => {
+    handleGetImages(1);
+  }, []);
+
+  const segmentData = (data) => {
     const segmentedData = [
       {
         id: 1,
@@ -33,19 +46,25 @@ const NetworkDesign = () => {
       },
     ];
 
-    const currentImages = images.slice(index, index + segmentSize);
+    const currentImages = data;
     const displayArraySize = currentImages.length;
     let displayImages = [];
     if (displayArraySize === showImages) {
       displayImages = currentImages;
     } else {
       const remainingItemsNeeded = showImages - displayArraySize;
-      const additionalItems = images.slice(0, remainingItemsNeeded);
+      const additionalItems = data.slice(0, remainingItemsNeeded);
       const reslicedArray = currentImages.concat(additionalItems);
       displayImages = reslicedArray;
     }
-
+    let tempImage;
     for (let i = 0; i < showImages; i++) {
+      const { attributes } = displayImages[i];
+      const getImage = attributes?.Image?.data?.attributes?.url;
+      if (getImage) {
+        tempImage = getImage;
+      }
+      const displayImage = `${apiurl}${tempImage}`;
       const nodeDetails = {
         id: i + 2,
         size: 90,
@@ -53,7 +72,7 @@ const NetworkDesign = () => {
         fixed: true,
         label: `${i + 1}`,
         shape: "circularImage",
-        image: displayImages[i]["image"],
+        image: displayImage,
         shapeProperties: { useBorderWithImage: true },
         color: {
           border: "#FBAF1A80",
@@ -63,40 +82,43 @@ const NetworkDesign = () => {
       };
       segmentedData.push(nodeDetails);
     }
-
     return segmentedData;
   };
 
   const initializeNetwork = () => {
-    let currentIndex = 0;
-
+    let currentPage = 0;
     const networkInstance = new Network(container.current, {}, options);
-    const segmentedData = segmentData(images, currentIndex, showImages); // Only take the first segment
+    const membersImages = images?.members?.data;
+    const segmentedData = segmentData(membersImages); // Only take the first segment
     const initialData = {
       nodes: segmentedData,
       edges: edges, // Add edges if needed
     };
 
     networkInstance.setData(initialData);
-    currentIndex = currentIndex += showImages;
+    currentPage = currentPage += 1;
     const interval = setInterval(() => {
-      currentIndex =
-        currentIndex < images.length ? currentIndex + showImages : 0;
-      updateNetworkData(currentIndex, networkInstance);
-    }, 5000);
+      handleGetImages(currentPage);
+      currentPage = currentPage += 1;
+      updateNetworkData(networkInstance);
+    }, 50000);
 
     return () => clearInterval(interval);
   };
 
   // Run initializeNetwork only once
   if (!initializedRef.current && container.current) {
-    initializeNetwork();
-    initializedRef.current = true;
+    if (images) {
+      initializeNetwork();
+      initializedRef.current = true;
+    }
   }
 
-  const updateNetworkData = (currentIndex, networkInstance) => {
+  const updateNetworkData = (networkInstance) => {
     if (networkInstance) {
-      const segmentedData = segmentData(images, currentIndex, showImages); // Only take the first segment
+      const membersImages = images?.members?.data;
+      // return false;
+      const segmentedData = segmentData(membersImages); // Only take the first segment
       const updatedData = {
         nodes: segmentedData,
         edges: edges,

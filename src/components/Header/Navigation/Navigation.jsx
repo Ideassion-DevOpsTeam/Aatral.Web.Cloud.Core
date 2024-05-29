@@ -35,6 +35,15 @@ function Navigation({ setMenu }) {
             ))}
           </ul>
         </section>
+        <section className="wid-90 m-x-auto">
+          <label>
+            Powered by{" "}
+            <Link to="https://www.tamilrise.org/home" target="blank">
+              THE RISE
+            </Link>
+            ©
+          </label>
+        </section>
       </footer>
     </section>
   );
