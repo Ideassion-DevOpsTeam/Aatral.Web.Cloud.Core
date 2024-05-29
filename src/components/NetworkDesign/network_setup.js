@@ -196,7 +196,7 @@ export const edges = [
 export const options = {
   edges: {
     color: "#49494ACF",
-    width: 3.3,
+    width: 4,
   },
   physics: false,
   interaction: {

@@ -11,8 +11,6 @@ function TypingEffect() {
   const [isTyping, setIsTyping] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // console.log("rerendering-typing");
-
   const words = useMemo(() => {
     return ["Ideas", "People", "Opportunities"];
   }, []);

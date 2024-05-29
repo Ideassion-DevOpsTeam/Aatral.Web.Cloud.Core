@@ -21,8 +21,6 @@ function DetailsPage() {
     aatral_details: state.aatral_details,
   }));
 
-  console.log("aatral_details", aatral_details);
-
   useEffect(() => {
     setIsVisible(true);
     return () => {

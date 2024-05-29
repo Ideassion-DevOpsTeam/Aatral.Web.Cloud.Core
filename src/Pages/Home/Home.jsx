@@ -32,7 +32,6 @@ function Home() {
             <Map />
           </div>
           <div className="home__map-box__network-cont">
-            {/* <h1>Testing</h1> */}
             <NetworkDesign />
           </div>
         </section>

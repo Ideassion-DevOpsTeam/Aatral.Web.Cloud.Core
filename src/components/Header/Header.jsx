@@ -16,8 +16,6 @@ function HeaderComponent() {
   const [menu, setMenu] = useState(false);
   const location = useLocation();
   const { pathname } = location;
-  // console.log("location ", location);
-  // console.log("pathname", pathname);
   return (
     <section
       className={`header ${

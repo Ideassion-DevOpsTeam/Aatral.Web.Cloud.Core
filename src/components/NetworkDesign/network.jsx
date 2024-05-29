@@ -43,7 +43,6 @@ const NetworkDesign = () => {
       const additionalItems = images.slice(0, remainingItemsNeeded);
       const reslicedArray = currentImages.concat(additionalItems);
       displayImages = reslicedArray;
-      // console.log("reslicedArray", reslicedArray);
     }
 
     for (let i = 0; i < showImages; i++) {
