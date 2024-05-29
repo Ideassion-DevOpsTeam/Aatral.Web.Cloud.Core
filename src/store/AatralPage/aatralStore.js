@@ -15,6 +15,7 @@ const aatralStore = (set, get) => ({
       "By understanding challenges and opportunities inherent in the dynamic IT industry we have created a nurturing environment where like-minded individuals can come together to share insights, forge partnerships, and inspire one another to reach new heights of success.",
       "Whether you're a seasoned entrepreneur or just starting out, you'll find support, and gain access to resources, mentorship, and friendship in our community. ",
     ],
+    image_heading: "Rev.Dr.Jegath Gaspar Raj",
   },
   setNameSection: () =>
     set((state) => ({

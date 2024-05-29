@@ -43,3 +43,5 @@ export const nav_footer_menu = [
     path: null,
   },
 ];
+
+export const dropShowdowPaths = ["/aatral-india", "/partners"];
