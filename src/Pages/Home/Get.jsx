@@ -19,7 +19,7 @@ function HomeGetPage() {
     icons_details: state.home_get_sec_icons_cont,
     card_details: state.home_get_sec_desc_cont.card_details,
   }));
-  
+
   let descDisplay;
 
   if (icons_details.desc) {
@@ -35,7 +35,10 @@ function HomeGetPage() {
   // return false;
   return (
     <section className="home__get-page container__outer">
-      <Link to="/details" className="home__get-page__arrow-left">
+      <Link
+        to="/details"
+        className="home__get-page__arrow-left arrow__left_and_right_size"
+      >
         <LeftArrow />
       </Link>
       <SocialIconsComponent />
@@ -74,7 +77,10 @@ function HomeGetPage() {
           <GetPageBG />
         </div>
       </section>
-      <Link to="/events" className="home__get-page__arrow-right">
+      <Link
+        to="/events"
+        className="home__get-page__arrow-right arrow__left_and_right_size"
+      >
         <RightArrow />
       </Link>
     </section>

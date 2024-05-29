@@ -2,8 +2,10 @@
 .header {
   background-color: $color__white_shade_1;
   position: fixed;
-  height: 9rem;
-  filter: drop-shadow(2px 4px 6px hsla(0, 0%, 0%, 0.08));
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  // filter: drop-shadow(2px 4px 6px hsla(0, 0%, 0%, 0.08));
   width: 100%;
   top: 0;
   z-index: 11;
@@ -84,4 +86,8 @@
       }
     }
   }
+}
+
+.showdow {
+  filter: drop-shadow(2px 4px 6px hsla(0, 0%, 0%, 0.08));
 }

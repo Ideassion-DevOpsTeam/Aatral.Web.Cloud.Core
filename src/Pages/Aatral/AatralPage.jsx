@@ -51,7 +51,7 @@ function AatralPage() {
           <VisionBtm />
         </footer>
       </section>
-      <section className="aatral__committe-sec container__outer">
+      <section className="aatral__committe-sec streeing-ali-adjust  container__outer">
         <section className="wid-80 m-x-auto">
           <SplitHeading
             heading_first="Steering"

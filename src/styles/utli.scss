@@ -102,3 +102,10 @@
 .text-center {
   text-align: center;
 }
+
+.arrow__left_and_right_size {
+  cursor: pointer;
+  svg {
+    width: 3.3rem !important;
+  }
+}

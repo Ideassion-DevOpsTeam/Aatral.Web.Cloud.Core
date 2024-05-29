@@ -30,8 +30,8 @@ function DetailsPage() {
 
   return (
     <section className="details pos-rel">
-      <div className="pos-abs pos-abs-y-center details__arrow-left-box">
-        <Link to="/">
+      <div className="details__arrow-left-box">
+        <Link to="/" className="arrow__left_and_right_size">
           <LeftBlackArrow />
         </Link>
       </div>
@@ -58,12 +58,13 @@ function DetailsPage() {
           }`}
         >
           <div>
+            <label>{aatral_details.image_heading}</label>
             <Image src={detailsPagePersonImage} title="detailsPerson" />
           </div>
         </div>
       </section>
-      <div className="details__arrow-right-box pos-abs pos-abs-y-center">
-        <Link to="/home/get">
+      <div className="details__arrow-right-box">
+        <Link to="/home/get" className="arrow__left_and_right_size">
           <RightBlackArrow />
         </Link>
       </div>
