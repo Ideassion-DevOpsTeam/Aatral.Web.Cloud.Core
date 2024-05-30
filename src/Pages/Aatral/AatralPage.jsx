@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./aatral.scss";
+import { useLazyQuery } from "@apollo/client";
 // assets
 import { ReactComponent as VisionBtm } from "../../assets/Icons/Aatral/aatralVisionBtm.svg";
 import { ReactComponent as Cup } from "../../assets/Icons/Aatral/cup.svg";
@@ -16,8 +17,86 @@ import SocialIcons from "../../components/Social/SocialIcons";
 // ui
 import Image from "../../components/UI/Image";
 import Button from "../../components/UI/Button";
+// api
+import { getCommitteeMembers } from "../../api/index";
+import { apiurl } from "../../api/API_URL";
 
 function AatralPage() {
+  const [
+    getExecutiveCommittee,
+    { loading: execloading, error: execError, data: executiveCommitteeMembers },
+  ] = useLazyQuery(getCommitteeMembers);
+
+  const [
+    getSteeringCommittee,
+    { loading, error, data: SteeringCommitteeMembers },
+  ] = useLazyQuery(getCommitteeMembers);
+
+  let exec_members;
+
+  if (executiveCommitteeMembers) {
+    const members = executiveCommitteeMembers?.members?.data;
+
+    exec_members = members.map((member) => {
+      const image = member?.attributes?.Image?.data?.attributes.url;
+      return (
+        <div key={member?.id} className="aatral__committe-sec__item-box">
+          <div className="aatral__committe-sec__item-box__img-cont">
+            <Image
+              src={image ? `${apiurl}${image}` : DefaultImage}
+              alt="default"
+            />
+          </div>
+          <div className="aatral__committe-sec__item-box__desc-cont">
+            <label>{member.attributes.Name}</label>
+            <blockquote>
+              {member.attributes.companies.data[0].Name}
+              {member.attributes.companies.data[0].attributes.Name}
+            </blockquote>
+          </div>
+        </div>
+      );
+    });
+  }
+  let streering_members;
+  if (SteeringCommitteeMembers) {
+    const members = SteeringCommitteeMembers?.members?.data;
+
+    streering_members = members.map((member) => {
+      const image = member?.attributes?.Image?.data?.attributes.url;
+      return (
+        <div key={member?.id} className="aatral__committe-sec__item-box">
+          <div className="aatral__committe-sec__item-box__img-cont">
+            <Image
+              src={image ? `${apiurl}${image}` : DefaultImage}
+              alt="default"
+            />
+          </div>
+          <div className="aatral__committe-sec__item-box__desc-cont">
+            <label>{member.attributes.Name}</label>
+            <blockquote>
+              {member.attributes.companies.data[0].Name}
+              {member.attributes.companies.data[0].attributes.Name}
+            </blockquote>
+          </div>
+        </div>
+      );
+    });
+  }
+
+  // console.log("exec_members", exec_members);
+  // console.log("streering_members", streering_members);
+
+  useEffect(() => {
+    getExecutiveCommittee({
+      variables: { committee_type: "Executive_Committee" },
+    });
+    getSteeringCommittee({
+      variables: { committee_type: "Steering_Committee" },
+    });
+  }, []);
+
+  // return false;
   return (
     <section className="aatral">
       <SocialIcons />
@@ -59,51 +138,7 @@ function AatralPage() {
             optionalClasses={"heading-flex m-y-block-large"}
           />
           <section className="aatral__committe-sec__list-box">
-            <div className="aatral__committe-sec__item-box">
-              <div className="aatral__committe-sec__item-box__img-cont">
-                <Image src={DefaultImage} alt="default" />
-              </div>
-              <div className="aatral__committe-sec__item-box__desc-cont">
-                <label>Full Name</label>
-                <blockquote>Company</blockquote>
-              </div>
-            </div>
-            <div className="aatral__committe-sec__item-box">
-              <div className="aatral__committe-sec__item-box__img-cont">
-                <Image src={DefaultImage} alt="default" />
-              </div>
-              <div className="aatral__committe-sec__item-box__desc-cont">
-                <label>Full Name</label>
-                <blockquote>Company</blockquote>
-              </div>
-            </div>
-            <div className="aatral__committe-sec__item-box">
-              <div className="aatral__committe-sec__item-box__img-cont">
-                <Image src={DefaultImage} alt="default" />
-              </div>
-              <div className="aatral__committe-sec__item-box__desc-cont">
-                <label>Full Name</label>
-                <blockquote>Company</blockquote>
-              </div>
-            </div>
-            <div className="aatral__committe-sec__item-box">
-              <div className="aatral__committe-sec__item-box__img-cont">
-                <Image src={DefaultImage} alt="default" />
-              </div>
-              <div className="aatral__committe-sec__item-box__desc-cont">
-                <label>Full Name</label>
-                <blockquote>Company</blockquote>
-              </div>
-            </div>
-            <div className="aatral__committe-sec__item-box">
-              <div className="aatral__committe-sec__item-box__img-cont">
-                <Image src={DefaultImage} alt="default" />
-              </div>
-              <div className="aatral__committe-sec__item-box__desc-cont">
-                <label>Full Name</label>
-                <blockquote>Company</blockquote>
-              </div>
-            </div>
+            {streering_members}
           </section>
         </section>
       </section>
@@ -124,42 +159,7 @@ function AatralPage() {
                 <blockquote>Ideassion Group</blockquote>
               </div>
             </div>
-            <div className="aatral__committe-sec__item-box">
-              <div className="aatral__committe-sec__item-box__img-cont">
-                <Image src={DefaultImage} alt="default" />
-              </div>
-              <div className="aatral__committe-sec__item-box__desc-cont">
-                <label>Full Name</label>
-                <blockquote>Company</blockquote>
-              </div>
-            </div>
-            <div className="aatral__committe-sec__item-box">
-              <div className="aatral__committe-sec__item-box__img-cont">
-                <Image src={DefaultImage} alt="default" />
-              </div>
-              <div className="aatral__committe-sec__item-box__desc-cont">
-                <label>Full Name</label>
-                <blockquote>Company</blockquote>
-              </div>
-            </div>
-            <div className="aatral__committe-sec__item-box">
-              <div className="aatral__committe-sec__item-box__img-cont">
-                <Image src={DefaultImage} alt="default" />
-              </div>
-              <div className="aatral__committe-sec__item-box__desc-cont">
-                <label>Full Name</label>
-                <blockquote>Company</blockquote>
-              </div>
-            </div>
-            <div className="aatral__committe-sec__item-box">
-              <div className="aatral__committe-sec__item-box__img-cont">
-                <Image src={DefaultImage} alt="default" />
-              </div>
-              <div className="aatral__committe-sec__item-box__desc-cont">
-                <label>Full Name</label>
-                <blockquote>Company</blockquote>
-              </div>
-            </div>
+            {exec_members}
           </section>
         </section>
       </section>
