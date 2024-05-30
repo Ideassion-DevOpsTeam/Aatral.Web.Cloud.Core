@@ -14,13 +14,14 @@ import Image from "../UI/Image";
 
 function CardComponent({ card_details }) {
   console.log(" card_details", card_details);
+
   const desc = card_details?.attributes?.Content;
   const details = card_details?.attributes?.member?.data?.attributes;
   let image = details?.Image?.data?.attributes?.url;
   image = image ? `${apiurl}${image}` : null;
   const companyName = details?.companies?.data[0]?.attributes?.Name;
   console.log("image", image);
-  // console.log("desc", desc);
+  // console.log("desc", desc); dsfsdf
   // console.log("details", details);
   // return false;
   return (
