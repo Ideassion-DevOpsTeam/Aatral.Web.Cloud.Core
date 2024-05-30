@@ -27,10 +27,10 @@ export const nav_menu = [
     title: "Contact",
     path: "/contact",
   },
-  // {
-  //   title: "",
-  //   path: "/become-a-member"
-  // },
+  {
+    title: "",
+    path: "/become-a-member"
+  },
 ];
 
 export const nav_footer_menu = [
