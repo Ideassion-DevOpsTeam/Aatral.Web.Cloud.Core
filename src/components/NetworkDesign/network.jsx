@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Network, DataSet } from "vis-network";
-import { useQuery, useLazyQuery } from "@apollo/client";
+import { useLazyQuery } from "@apollo/client";
 
 // temp
 import NetworkLogo from "../../assets/Icons/network/net_logo.svg";
