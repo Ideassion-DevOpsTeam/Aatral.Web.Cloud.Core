@@ -66,8 +66,8 @@ const Members = () => {
 
 				<div className="members__section__second__section">
 					<div className="members__section__second__section__members">
-						{membersData?.map((item, index) => (
-							<Fragment key={index}>
+						{membersData?.map((item, index) => (item?.attributes?.Type === "Member" ?
+							(<Fragment key={index}>
 								<div
 									onClick={() => showModal(item.id, item)}
 									className="members__section__second__section__members--user"
@@ -92,7 +92,7 @@ const Members = () => {
 										</p>
 									</div>
 								</div>
-							</Fragment>
+							</Fragment>) : null
 						))}
 					</div>
 				</div>

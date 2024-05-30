@@ -194,44 +194,44 @@ const partnersStore = (set) => ({
     product_of_the_month: [
         {
             id: 1,
-            product_Logo: "https://seeklogo.com/images/D/demo-sport-logo-D8C6EB99C4-seeklogo.com.png",
-            product_Website: "www.google.com",
-            product_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo magni aliquam mollitia deleniti amet est nam beatae quasi nemo debitis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit voluptatibus labore, consequuntur aliquam in fugit eum, dolor recusandae, minima adipisci nihil ratione error rem nulla magnam eligendi magni ea itaque. Aliquam facilis est porro numquam cum libero beatae quis neque, nam, esse consectetur pariatur earum iure mollitia dolorem expedita quidem. Nulla excepturi iste provident quaerat reprehenderit accusantium, enim fuga officiis adipisci hic, tenetur architecto id velit? Doloremque amet iusto officia!",
-            company_name: "Company Name",
-            product_name: "Product Name"
+            // product_Logo: "https://seeklogo.com/images/D/demo-sport-logo-D8C6EB99C4-seeklogo.com.png",
+            product_Website: "",
+            product_description: "A Scrum/Agile product management tools streamline the development process by fostering collaboration, adaptability, and efficiency. These tools empower teams to break down complex projects into manageable tasks, prioritize work, and track progress in real-time. With features like sprint planning, backlog management, and performance analytics, they enable teams to iterate quickly, respond to change, and deliver high-quality products that meet customer needs.",
+            company_name: "Unreal tech",
+            product_name: "Agile PMT"
         },
-        {
-            id: 2,
-            product_Logo: "https://seeklogo.com/images/B/bmw-logo-248C3D90E6-seeklogo.com.png",
-            product_Website: "www.google.com",
-            product_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo magni aliquam mollitia deleniti amet est nam beatae quasi nemo debitis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit voluptatibus labore, consequuntur aliquam in fugit eum, dolor recusandae, minima adipisci nihil ratione error rem nulla magnam eligendi magni ea itaque. Aliquam facilis est porro numquam cum libero beatae quis neque, nam, esse consectetur pariatur earum iure mollitia dolorem expedita quidem. Nulla excepturi iste provident quaerat reprehenderit accusantium, enim fuga officiis adipisci hic, tenetur architecto id velit? Doloremque amet iusto officia!",
-            company_name: "Company Name",
-            product_name: "Product Name"
-        },
-        {
-            id: 3,
-            product_Logo: "https://seeklogo.com/images/I/Its__Demo-logo-B2084EB133-seeklogo.com.png",
-            product_Website: "www.google.com",
-            product_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo magni aliquam mollitia deleniti amet est nam beatae quasi nemo debitis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit voluptatibus labore, consequuntur aliquam in fugit eum, dolor recusandae, minima adipisci nihil ratione error rem nulla magnam eligendi magni ea itaque. Aliquam facilis est porro numquam cum libero beatae quis neque, nam, esse consectetur pariatur earum iure mollitia dolorem expedita quidem. Nulla excepturi iste provident quaerat reprehenderit accusantium, enim fuga officiis adipisci hic, tenetur architecto id velit? Doloremque amet iusto officia!",
-            company_name: "Company Name",
-            product_name: "Product Name"
-        },
-        {
-            id: 4,
-            product_Logo: "https://seeklogo.com/images/F/FC_Barcelona-logo-D941E13B46-seeklogo.com.png",
-            product_Website: "www.google.com",
-            product_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo magni aliquam mollitia deleniti amet est nam beatae quasi nemo debitis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit voluptatibus labore, consequuntur aliquam in fugit eum, dolor recusandae, minima adipisci nihil ratione error rem nulla magnam eligendi magni ea itaque. Aliquam facilis est porro numquam cum libero beatae quis neque, nam, esse consectetur pariatur earum iure mollitia dolorem expedita quidem. Nulla excepturi iste provident quaerat reprehenderit accusantium, enim fuga officiis adipisci hic, tenetur architecto id velit? Doloremque amet iusto officia!",
-            company_name: "Company Name",
-            product_name: "Product Name"
-        },
-        {
-            id: 5,
-            product_Logo: "https://seeklogo.com/images/C/coca-cola-logo-F8128FBA92-seeklogo.com.png",
-            product_Website: "www.google.com",
-            product_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo magni aliquam mollitia deleniti amet est nam beatae quasi nemo debitis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit voluptatibus labore, consequuntur aliquam in fugit eum, dolor recusandae, minima adipisci nihil ratione error rem nulla magnam eligendi magni ea itaque. Aliquam facilis est porro numquam cum libero beatae quis neque, nam, esse consectetur pariatur earum iure mollitia dolorem expedita quidem. Nulla excepturi iste provident quaerat reprehenderit accusantium, enim fuga officiis adipisci hic, tenetur architecto id velit? Doloremque amet iusto officia!",
-            company_name: "Company Name",
-            product_name: "Product Name"
-        },
+        // {
+        //     id: 2,
+        //     product_Logo: "https://seeklogo.com/images/B/bmw-logo-248C3D90E6-seeklogo.com.png",
+        //     product_Website: "www.google.com",
+        //     product_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo magni aliquam mollitia deleniti amet est nam beatae quasi nemo debitis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit voluptatibus labore, consequuntur aliquam in fugit eum, dolor recusandae, minima adipisci nihil ratione error rem nulla magnam eligendi magni ea itaque. Aliquam facilis est porro numquam cum libero beatae quis neque, nam, esse consectetur pariatur earum iure mollitia dolorem expedita quidem. Nulla excepturi iste provident quaerat reprehenderit accusantium, enim fuga officiis adipisci hic, tenetur architecto id velit? Doloremque amet iusto officia!",
+        //     company_name: "Company Name",
+        //     product_name: "Product Name"
+        // },
+        // {
+        //     id: 3,
+        //     product_Logo: "https://seeklogo.com/images/I/Its__Demo-logo-B2084EB133-seeklogo.com.png",
+        //     product_Website: "www.google.com",
+        //     product_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo magni aliquam mollitia deleniti amet est nam beatae quasi nemo debitis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit voluptatibus labore, consequuntur aliquam in fugit eum, dolor recusandae, minima adipisci nihil ratione error rem nulla magnam eligendi magni ea itaque. Aliquam facilis est porro numquam cum libero beatae quis neque, nam, esse consectetur pariatur earum iure mollitia dolorem expedita quidem. Nulla excepturi iste provident quaerat reprehenderit accusantium, enim fuga officiis adipisci hic, tenetur architecto id velit? Doloremque amet iusto officia!",
+        //     company_name: "Company Name",
+        //     product_name: "Product Name"
+        // },
+        // {
+        //     id: 4,
+        //     product_Logo: "https://seeklogo.com/images/F/FC_Barcelona-logo-D941E13B46-seeklogo.com.png",
+        //     product_Website: "www.google.com",
+        //     product_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo magni aliquam mollitia deleniti amet est nam beatae quasi nemo debitis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit voluptatibus labore, consequuntur aliquam in fugit eum, dolor recusandae, minima adipisci nihil ratione error rem nulla magnam eligendi magni ea itaque. Aliquam facilis est porro numquam cum libero beatae quis neque, nam, esse consectetur pariatur earum iure mollitia dolorem expedita quidem. Nulla excepturi iste provident quaerat reprehenderit accusantium, enim fuga officiis adipisci hic, tenetur architecto id velit? Doloremque amet iusto officia!",
+        //     company_name: "Company Name",
+        //     product_name: "Product Name"
+        // },
+        // {
+        //     id: 5,
+        //     product_Logo: "https://seeklogo.com/images/C/coca-cola-logo-F8128FBA92-seeklogo.com.png",
+        //     product_Website: "www.google.com",
+        //     product_description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo magni aliquam mollitia deleniti amet est nam beatae quasi nemo debitis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit voluptatibus labore, consequuntur aliquam in fugit eum, dolor recusandae, minima adipisci nihil ratione error rem nulla magnam eligendi magni ea itaque. Aliquam facilis est porro numquam cum libero beatae quis neque, nam, esse consectetur pariatur earum iure mollitia dolorem expedita quidem. Nulla excepturi iste provident quaerat reprehenderit accusantium, enim fuga officiis adipisci hic, tenetur architecto id velit? Doloremque amet iusto officia!",
+        //     company_name: "Company Name",
+        //     product_name: "Product Name"
+        // },
     ],
     setPartners: () => set((state) => ({ partners: state.partners = state.partnersData })),
     setTrainingPartners: () => set((state) => ({ trainingPartners: state.trainingPartners = state.our_training_partners })),
