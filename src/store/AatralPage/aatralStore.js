@@ -8,7 +8,7 @@ const aatralStore = (set, get) => ({
     desc: " Aatral, a dynamic arm of The RISE, is an emerging circuit of collective leadership among global Tamil IT entrepreneurs, professionals, executives, and decision-makers, dedicated to transforming the IT ecosystem for sustained future growth.",
   },
   aatral_details: {
-    heading_first: "why",
+    heading_first: "Why",
     heading_last: "aatral?",
     desc: [
       "Aatral, a pivotal part of Tamil RISE, is a vibrant community, specifically designed for Tamil IT entrepreneurs seeking to connect, thrive and expand their horizons.",

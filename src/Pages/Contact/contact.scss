@@ -1,262 +1,279 @@
 @use "../../styles/variables.scss" as *;
 
 .contact__section {
-    display: flex;
-    flex-wrap: wrap;
-    height: 100vh;
-    // margin: 9rem 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  // margin: 9rem 0 0 0;
 
-    &--left {
-        width: 30%;
-        background: hsla(40, 97%, 55%, 1);
-        padding-top: 10rem;
-        position: relative;
+  &--left {
+    width: 30%;
+    background: hsla(40, 97%, 55%, 1);
+    padding-top: 10rem;
+    position: relative;
 
-        &-side {
-            position: absolute;
-            right: -22rem;
-            top: 15rem;
+    &-side {
+      position: absolute;
+      right: -22rem;
+      top: 15rem;
 
-            & > h1 {
-                font-size: 8.5rem;
-                width: 150%;
-                line-height: 1.1;
-                color: #fff;
-    
-                & > span {
-                    color: hsla(40, 97%, 55%, 1);
-                }
-            }
+      & > h1 {
+        font-size: 8.5rem;
+        width: 150%;
+        line-height: 1.1;
+        color: #fff;
+
+        & > span {
+          color: hsla(40, 97%, 55%, 1);
         }
+      }
     }
+  }
 
-    &--right {
-        width: 70%;
-        padding-top: 10rem;
-        position: relative;
-        padding: 13rem 7rem 7rem 7rem;
+  &--right {
+    width: 70%;
+    padding-top: 10rem;
+    position: relative;
+    padding: 13rem 7rem 7rem 7rem;
 
-        &-form {
-            position: absolute;
-            width: 100%;
-            top: 0%;
-            left: 0;
+    &-form {
+      position: absolute;
+      width: 100%;
+      top: 0%;
+      left: 0;
 
-            &-inputs {
-                display: flex;
-                flex-wrap: wrap;
-                width: 100%;
-                margin-bottom: 4rem;
-            }
-        }
+      &-inputs {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-bottom: 4rem;
+      }
     }
+  }
 }
 
 .contact__section--right-side {
-    height: 100%;
-    margin-top: 7rem;
+  height: 100%;
+  margin-top: 7rem;
 }
 
 .ant-col.ant-form-item-label {
-    overflow: visible;
+  overflow: visible;
 }
 
 .contact-form-input {
-    width: 45%;
-    margin: 0 auto;
+  width: 45%;
+  margin: 0 auto;
 }
 
 .contact-input {
-    background: transparent;
-    border-width: 0;
+  background: transparent;
+  border-width: 0;
+  border-color: transparent;
+  border-bottom: 2px solid hsla(0, 0%, 0%, 0.25);
+  border-radius: 0;
+  // padding-left: 9rem;
+
+  &:hover {
     border-color: transparent;
+    background-color: transparent;
     border-bottom: 2px solid hsla(0, 0%, 0%, 0.25);
-    border-radius: 0;
-    // padding-left: 9rem;
-    
-    &:hover {
-        border-color: transparent;
-        background-color: transparent;
-        border-bottom: 2px solid hsla(0, 0%, 0%, 0.25);
-    }
-    
-    &:focus {
-        border-color: transparent;
-        box-shadow: none;
-        outline: 0;
-        border-bottom: 2px solid hsla(0, 0%, 0%, 0.25);
-        background-color: transparent;
-    }
+  }
+
+  &:focus {
+    border-color: transparent;
+    box-shadow: none;
+    outline: 0;
+    border-bottom: 2px solid hsla(0, 0%, 0%, 0.25);
+    background-color: transparent;
+  }
 }
 
 form#ContactForm {
-    padding: 30rem 1.5rem 1.5rem 1.5rem;
+  padding: 30rem 1.5rem 1.5rem 1.5rem;
 }
 
 .ant-form-item.contact-form-input.query {
-    width: 95%;
+  width: 95%;
 }
 
 input#ContactForm_firstname {
-    text-indent: 6.5rem;
+  text-indent: 6.5rem;
 }
 
 input#ContactForm_lastname {
-    text-indent: 6.5rem;
+  text-indent: 6.5rem;
 }
 
 input#ContactForm_email {
-    text-indent: 3.6rem;
+  text-indent: 3.6rem;
+}
+input#ContactForm_designation {
+  text-indent: 4.2rem;
 }
 
 textarea#ContactForm_query {
-    text-indent: 4.5rem;
+  text-indent: 4.5rem;
 }
 
 .contact-form-input > div > div > label {
-    position: absolute !important;
-    left: 80%;
-    color: hsla(0, 0%, 27%, 1);
-    font-weight: 500;
+  position: absolute !important;
+  left: 80%;
+  color: hsla(0, 0%, 27%, 1);
+  font-weight: 500;
 }
 
 a.ant-dropdown-trigger.contact-input {
-    width: 100%;
-    display: flex;
-    padding-left: 0;
-    color: hsla(0, 0%, 27%, 1);
+  width: 100%;
+  display: flex;
+  padding-left: 0;
+  color: hsla(0, 0%, 27%, 1);
 }
 
 .domain-click {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-weight: 500;
 }
 
 button.ant-btn.contact-form-submit-btn {
-    border: 1px solid hsla(40, 97%, 55%, 1);
-    border-radius: 25px;
-    color: hsla(40, 97%, 55%, 1);
-    font-weight: 700;
-    font-family: "Manrope";
-    display: flex;
-    align-items: center;
-    box-shadow: 0px 4px 8px 0px hsla(0, 0%, 0%, 0.16);
+  border: 1px solid hsla(40, 97%, 55%, 1);
+  border-radius: 25px;
+  color: hsla(40, 97%, 55%, 1);
+  font-weight: 700;
+  font-family: "Manrope";
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 4px 8px 0px hsla(0, 0%, 0%, 0.16);
 
-    &:hover {
-        color: hsla(40, 97%, 55%, 1) !important;
-        border: 1px solid hsla(40, 97%, 55%, 1) !important;
-        background: #ffffff !important;
-    }
+  &:hover {
+    color: hsla(40, 97%, 55%, 1) !important;
+    border: 1px solid hsla(40, 97%, 55%, 1) !important;
+    background: #ffffff !important;
+  }
 
-    &:focus-visible {
-        outline: 4px solid transparent;
-        outline-offset: 1px;
-        transition: outline-offset 0s, outline 0s;
-    }
+  &:focus-visible {
+    outline: 4px solid transparent;
+    outline-offset: 1px;
+    transition: outline-offset 0s, outline 0s;
+  }
 }
 
 .form-button-submit {
-    display: flex;
-    justify-content: flex-end;
-    width: 97%;
+  display: flex;
+  justify-content: flex-end;
+  width: 97%;
 }
 
-@media screen and (max-width: 768px)  and (min-width: 581px) {
-    .contact__section {
+@media screen and (max-width: 768px) and (min-width: 581px) {
+  .contact__section {
+    &--left {
+      &-side {
+        position: absolute;
+        right: -15rem;
+        top: 15rem;
 
-        &--left {
+        & > h1 {
+          font-size: 6rem;
+          width: 150%;
+          line-height: 1.1;
+          color: #fff;
 
-            &-side {
-                position: absolute;
-                right: -15rem;
-                top: 15rem;
-    
-                & > h1 {
-                    font-size: 6rem;
-                    width: 150%;
-                    line-height: 1.1;
-                    color: #fff;
-        
-                    & > span {
-                        color: hsla(40, 97%, 55%, 1);
-                    }
-                }
-            }
+          & > span {
+            color: hsla(40, 97%, 55%, 1);
+          }
         }
+      }
     }
+  }
 
-    form#ContactForm {
-        padding: 24rem 1.5rem 1.5rem 1.5rem;
-    }
+  form#ContactForm {
+    padding: 24rem 1.5rem 1.5rem 1.5rem;
+  }
 }
 
 @media screen and (max-width: 580px) and (min-width: 260px) {
+  .contact__section {
+    flex-direction: column;
 
-    .contact__section {
-        flex-direction: column;
+    &--left {
+      width: 100%;
+      padding-top: 12rem;
 
-        &--left {
-            width: 100%;
-            padding-top: 12rem;
+      &-side {
+        position: absolute;
+        right: 11rem;
+        top: 8rem;
 
-            &-side {
-                position: absolute;
-                right: 11rem;
-                top: 8rem;
+        & > h1 {
+          font-size: 2.5rem;
 
-                & > h1 {
-                    font-size: 2.5rem;
-
-                    & > span {
-                        color: #fff;
-                    }
-                }
-            }
+          & > span {
+            color: #fff;
+          }
         }
-
-        &--right {
-            width: 100%;
-            padding: 1rem;
-        }
+      }
     }
 
-    form#ContactForm {
-        padding: 3rem 1.5rem 1.5rem 1.5rem;
+    &--right {
+      width: 100%;
+      padding: 1rem;
     }
+  }
 
-    .contact__section--right-form-inputs {
-        flex-direction: column;
-        gap: 3rem;
-    }
+  form#ContactForm {
+    padding: 3rem 1.5rem 1.5rem 1.5rem;
+  }
 
-    .contact-form-input {
-        width: 100%;
-        margin: 0 auto;
-    }
+  .contact__section--right-form-inputs {
+    flex-direction: column;
+    gap: 3rem;
+  }
 
-    .contact-form-input > div > div > label {
-        left: 0;
-    }
+  .contact-form-input {
+    width: 100%;
+    margin: 0 auto;
+  }
 
-    .contact__section--right-form-inputs {
-        margin-bottom: 1rem;
-    }
+  .contact-form-input > div > div > label {
+    left: 0;
+  }
 
-    .form-button-submit {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-    }
+  .contact__section--right-form-inputs {
+    margin-bottom: 1rem;
+  }
 
-    button.ant-btn.contact-form-submit-btn {
-        justify-content: center;
-        width: 90vw;
-        margin-top: 2rem;
-    }
+  .form-button-submit {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
 
-    .ant-form-item.contact-form-input.query {
-        width: 100%;
-    }
+  button.ant-btn.contact-form-submit-btn {
+    justify-content: center;
+    width: 90vw;
+    margin-top: 2rem;
+  }
+
+  .ant-form-item.contact-form-input.query {
+    width: 100%;
+  }
+}
+
+.ant-select-selector {
+  border: none !important;
+  background: transparent !important;
+  border-width: 0;
+  border-color: transparent;
+  border-bottom: 2px solid hsla(0, 0%, 0%, 0.25) !important;
+  border-radius: 0 !important;
+}
+
+.ant-select-arrow {
+  color: hsla(40, 97%, 55%, 1) !important;
+}
+
+.ant-select-focused .ant-select-selector {
+  box-shadow: none !important;
 }
