@@ -99,11 +99,11 @@
   }
 
   &__get-page {
-    padding-top: 9rem;
+    padding-top: 6rem;
     align-items: center;
     display: flex;
     margin-block: 3.3rem;
-    min-height: 100vh;
+    height: 90vh;
     // background-color: red;
     &__arrow-left {
       margin-left: 2rem;
@@ -111,13 +111,17 @@
     }
 
     &__arrow-right {
+      position: absolute;
+      right: 25px;
       z-index: 1;
-      margin-right: 2rem;
+      top: 50%;
+      // margin-right: 2rem;
     }
 
     &__inner {
       margin-bottom: 2rem;
-      height: 90vh;
+      margin-right: 6rem;
+      // height: 90vh;
       display: grid;
       place-items: center;
       // background-color: aquamarine;
@@ -208,4 +212,10 @@
   font-size: calc($large + 1vw);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 100;
+}
+
+@media screen and (max-width: 580px) and (min-width: 260px) {
+  .home__get-page__arrow-right {
+      top: 50%;
+  }
 }

@@ -10,6 +10,7 @@ import usePartnersStore from '../../store/Partners/partnerPage';
 import { rightArrow } from '../../constants/icons';
 import { useLazyQuery } from '@apollo/client';
 import { getPartners } from '../../api';
+import product_Logo from '../../assets/Images/POM/POM.png'
 
 const PartnersPage = () => {
 
@@ -58,7 +59,7 @@ const PartnersPage = () => {
               <div className="partners__section__top">
                   <div className="partners__section__top--title">
                       <CommonTitle firstWord="Our" secondWord="Partners" />
-                      <p className="partners__section__top--description">Lorem ipsum dolor sit, amet consectetur</p>
+                      <p className="partners__section__top--description">We have been working with the best</p>
                   </div>
               </div>
               <div className="partners__section__partner__images">
@@ -79,7 +80,7 @@ const PartnersPage = () => {
               <div className="training__partners__top">
                   <div className="training__partners__top--title">
                       <CommonTitle firstWord="Our" secondWord="Training Partners" />
-                      <p className="training__partners__top--description">Lorem ipsum dolor sit, amet consectetur</p>
+                      <p className="training__partners__top--description">We have been working with the best</p>
                   </div>
               </div>
               <div className="training__partners__images">
@@ -148,7 +149,7 @@ const PartnersPage = () => {
                                 <div className="product__of__the__month__block--bottom-testimony">
                                     <div className="product__of__the__month__block--bottom-testimony-header">
                                         <div className="product__of__the__month__block--bottom-testimony-header-left">
-                                            <img src={item?.product_Logo} alt="Testimony_logo" />
+                                            <img src={product_Logo} alt="Testimony_logo" />
                                         </div>
                                         <div className="product__of__the__month__block--bottom-testimony-header-right">
                                         <p className="product__of__the__month__block--bottom-testimony-header-right-product-name">{ item?.product_name }</p>

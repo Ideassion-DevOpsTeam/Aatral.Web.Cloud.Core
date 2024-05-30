@@ -11,9 +11,15 @@
   &__arrow-right-box {
     z-index: 1;
     margin-right: 2rem;
+    position: absolute;
+    right: 20px;
+    top: 50%;
   }
   &__arrow-left-box {
     margin-left: 2rem;
+    position: absolute;
+    left: 10px;
+    top: 50%;
   }
   h1 {
     line-height: 1.2em;
@@ -85,3 +91,16 @@
     }
   }
 }
+
+.details__main-cont__img-box.fade-in-from-bottom.show::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #000000a3, transparent);
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+  border-radius: 100%;
+}
+
