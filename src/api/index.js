@@ -1,78 +1,78 @@
 import { gql } from "@apollo/client";
 
 export const getMembers = gql`
-	query Members($pageCount: Int, $pageSize: Int) {
-		members(pagination: { page: $pageCount, pageSize: $pageSize }) {
-			data {
-				id
-				attributes {
-					Name
-					Designation
-					About
-					Type
-                    Image {
-                        data {
-                            attributes {
-                                url
-                                mime
-                                name
-                            }
-                            id
-                        }
+  query Members($pageCount: Int, $pageSize: Int) {
+    members(pagination: { page: $pageCount, pageSize: $pageSize }) {
+      data {
+        id
+        attributes {
+          Name
+          Designation
+          About
+          Type
+          Image {
+            data {
+              attributes {
+                url
+                mime
+                name
+              }
+              id
+            }
+          }
+          companies {
+            data {
+              id
+              attributes {
+                Name
+                Type
+                Website
+                Logo {
+                  data {
+                    id
+                    attributes {
+                      mime
+                      url
+                      name
+                      alternativeText
+                      previewUrl
                     }
-                    companies {
-                        data {
-                            id
-                            attributes {
-                                Name
-                                Type
-                                Website
-                                Logo {
-                                    data {
-                                        id
-                                        attributes {
-                                            mime
-                                            url
-                                            name
-                                            alternativeText
-                                            previewUrl
-                                        }
-                                    }
-                                }
-                                Description
-                            }
-                        }
-                    }
-				}
-			}
-		}
-	}
+                  }
+                }
+                Description
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 `;
 
 export const getPartners = gql`
-query Companies {
+  query Companies {
     companies {
-        data {
-            id
-            attributes {
-                Name
-                Website
-                Type
-                Logo {
-                    data {
-                        id
-                        attributes {
-                            name
-                            alternativeText
-                            mime
-                            url
-                        }
-                    }
-                }
+      data {
+        id
+        attributes {
+          Name
+          Website
+          Type
+          Logo {
+            data {
+              id
+              attributes {
+                name
+                alternativeText
+                mime
+                url
+              }
             }
+          }
         }
+      }
     }
-}
+  }
 `;
 
 export const getMembersImages = gql`
@@ -157,6 +157,38 @@ export const createContact = gql`
           Email
           OtherDesignation
           Query
+        }
+      }
+    }
+  }
+`;
+
+export const getCommitteeMembers = gql`
+  query Members($committee_type: String) {
+    members(filters: { Type: { eqi: $committee_type } }) {
+      data {
+        id
+        attributes {
+          Name
+          Designation
+          Type
+          Image {
+            data {
+              id
+              attributes {
+                url
+              }
+            }
+          }
+          companies {
+            data {
+              id
+              attributes {
+                Name
+                Website
+              }
+            }
+          }
         }
       }
     }
