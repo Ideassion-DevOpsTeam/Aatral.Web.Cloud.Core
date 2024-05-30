@@ -14,6 +14,7 @@ const Contact = () => {
   const { TextArea } = Input;
 
   const onFinish = async (values) => {
+    console.log("Success:", values);
     const postContactRes = await addContact({ variables: values });
     console.log("postContactRes", postContactRes);
   };
