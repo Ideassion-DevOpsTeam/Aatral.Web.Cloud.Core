@@ -6,10 +6,10 @@ import MainRouter from "./routes/mainRouter";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <MainRouter />
-    </div>
+      <div className="App">
+        <Header />
+        <MainRouter />
+      </div>
   );
 }
 

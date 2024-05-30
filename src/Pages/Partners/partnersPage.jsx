@@ -8,6 +8,8 @@ import { Autoplay } from 'swiper/modules';
 import CommonTitle from '../../components/CommonTitle/commonTitle';
 import usePartnersStore from '../../store/Partners/partnerPage';
 import { rightArrow } from '../../constants/icons';
+import { useLazyQuery } from '@apollo/client';
+import { getPartners } from '../../api';
 
 const PartnersPage = () => {
 
@@ -31,12 +33,23 @@ const PartnersPage = () => {
         productOfTheMonth: state.productOfTheMonth,
     }));
 
+    const [refetchPartners, { loading, data, error }] = useLazyQuery(getPartners, {
+        fetchPolicy: "network-only"
+    })
+
+    const partnersInfo = data ? data?.companies?.data : [];
+    
     useEffect(() => {
         setPartners();
         setTrainingPartners();
         setPartnerLogos();
         setProductOfTheMonth();
+        refetchPartners({});
     }, []);
+
+    if (!loading) {
+        console.log(data);
+    }
 
   return (
       <Fragment>
@@ -49,14 +62,14 @@ const PartnersPage = () => {
                   </div>
               </div>
               <div className="partners__section__partner__images">
-                  {partners && partners.length && partners?.map(item => (
+                  {partnersInfo && partnersInfo.length && partnersInfo?.map(item => (item?.attributes?.Type === "Partner" ? (
                       <Fragment key={item?.id}>
                         <div className="partners__section__partner__images--each">
-                              <a href={ item?.partner_Website } className="partners__section__partner__images--each-link" target="_blank" rel="noreferrer">
-                                <img className="partners__section__partner__images--each-image" src={item?.partner_Logo} alt="" />
+                              <a href={ item?.attributes?.Website } className="partners__section__partner__images--each-link" target="_blank" rel="noreferrer">
+                                <img className="partners__section__partner__images--each-image" src={`https://toptamils-backend.ideassionlive.in${item?.attributes?.Logo?.data?.attributes?.url}`} alt="" />
                             </a>
                         </div>
-                      </Fragment>
+                      </Fragment>) : null
                   ))}
               </div>
           </section>
@@ -70,15 +83,15 @@ const PartnersPage = () => {
                   </div>
               </div>
               <div className="training__partners__images">
-                {trainingPartners && trainingPartners.length && trainingPartners?.map(item => (
+                {partnersInfo && partnersInfo.length && partnersInfo?.map(item => (item?.attributes?.Type === "Training_Partner" ? (
                         <Fragment key={item?.id}>
                             <div className="training__partners__images--each">
                                     <a href={ item?.training_partner_website } className="training__partners__images--each-link" target="_blank" rel="noreferrer">
-                                    <img className="training__partners__images--each-image" src={item?.training_partner_logo} alt="" />
+                                    <img className="training__partners__images--each-image" src={`https://toptamils-backend.ideassionlive.in${item?.attributes?.Logo?.data?.attributes?.url}`} alt="" />
                                 </a>
                             </div>
                         </Fragment>
-                    ))}
+                    ) : null))}
               </div>
           </section>
 
@@ -109,11 +122,11 @@ const PartnersPage = () => {
                                 spaceBetween: 30,
                             },
                     }}>
-                        {partnerLogos?.length && partnerLogos?.map((item, index) => (
+                        {partnersInfo?.length && partnersInfo?.map((item, index) => (
                             <SwiperSlide key={item?.id} >
                                 <div className="partners__logos--logo">
-                                    <a href={item?.partner_website} className="partners__logos--logo-link" target="_blank" rel="noreferrer">
-                                        <img src={item?.logo} alt='partner-logo' />
+                                    <a href={item?.attributes?.partner_website} className="partners__logos--logo-link" target="_blank" rel="noreferrer">
+                                        <img src={`https://toptamils-backend.ideassionlive.in${item?.attributes?.Logo?.data?.attributes?.url}`} alt='partner-logo' />
                                     </a>
                                 </div>
                             </SwiperSlide>
