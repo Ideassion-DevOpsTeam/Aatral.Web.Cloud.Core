@@ -1,0 +1,84 @@
+@use "../../styles/variables.scss" as *;
+
+.become__a__member__section {
+    // margin-top: 9rem;
+    height: 100vh;
+
+    &__block {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 80%;
+
+        &--top {
+            margin: 3rem 0;
+            text-align: center;
+
+            &-coming-soon {
+                font-size: clamp(1.5rem, 5vw, 7rem); 
+                color: hsla(40, 97%, 55%, 1);
+                font-weight: 700;
+                line-height: 1.6;
+                font-family: "Gilmer Bold";
+                text-transform: capitalize;
+            }
+
+            &-member-tier {
+                color: hsla(0, 0%, 27%, 1);
+                line-height: 1.4;
+                font-weight: 400;
+                font-family: "Manrope", sans-serif;
+                font-size: clamp(1.5rem, 2.5vw, 3rem);
+            }
+        }
+
+        &--bottom {
+            width: 100%;
+            position: relative;
+        }
+    }
+}
+
+.contact__section--right-form.become__a__member--form {
+    width: 80%;
+    margin: 0 auto;
+    transform: translate(10%, 0%);
+}
+
+input#become__a__member_fullname {
+    text-indent: 6.6rem;
+}
+
+input#become__a__member_email {
+    text-indent: 3.4rem;
+}
+
+input#become__a__member_designation {
+    text-indent: 7.4rem;
+}
+
+input#become__a__member_companyname {
+    text-indent: 10rem;
+}
+
+.contact__section--right-form-inputs.become__a__member > div > div label {
+    color: hsla(0, 0%, 27%, 0.7) !important;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 580px) and (min-width: 260px) {
+    .contact__section--right-form-inputs.become__a__member > div > div label {
+        height: 45px;
+    }
+
+    button.ant-btn.contact-form-submit-btn.become__a__member {
+        width: 70vw;
+    }
+
+    .contact__section--right-form-inputs.become__a__member {
+        gap: 1rem;
+    }
+}

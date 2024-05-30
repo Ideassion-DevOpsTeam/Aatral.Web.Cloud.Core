@@ -11,8 +11,6 @@ owner_brief_description: [
     company_name: "Company Name",
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit, Quam necessitatibus velit similique cum quidem itaque, doloribusprovident assumenda in eum numquam voluptate sed eos dolores. Doloremquealias vero fugiat autem. Lorem ipsum dolor sit amet consectetur, adipisicing elit.In, dolores consequatur iusto quaerat ex dolore voluptatibus alias commodi autem,quam dignissimos adipisci inventore provident? Fuga, hic. Sint voluptates earum deleniti.Mollitia, natus velit iusto illum omnis nobis a odit itaque!",
     website_link: "www.google.com",
-    instagram: "www.instagram.com",
-    facebook: "www.facebook.com",
     linkedIn: "www.linkedIn.com"
   },
   {
@@ -23,8 +21,6 @@ owner_brief_description: [
     company_name: "Company Name",
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit, Quam necessitatibus velit similique cum quidem itaque, doloribusprovident assumenda in eum numquam voluptate sed eos dolores. Doloremquealias vero fugiat autem. Lorem ipsum dolor sit amet consectetur, adipisicing elit.In, dolores consequatur iusto quaerat ex dolore voluptatibus alias commodi autem,quam dignissimos adipisci inventore provident? Fuga, hic. Sint voluptates earum deleniti.Mollitia, natus velit iusto illum omnis nobis a odit itaque!",
     website_link: "www.google.com",
-    instagram: "www.instagram.com",
-    facebook: "www.facebook.com",
     linkedIn: "www.linkedIn.com"
   },
   {
@@ -35,8 +31,6 @@ owner_brief_description: [
     company_name: "Company Name",
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit, Quam necessitatibus velit similique cum quidem itaque, doloribusprovident assumenda in eum numquam voluptate sed eos dolores. Doloremquealias vero fugiat autem. Lorem ipsum dolor sit amet consectetur, adipisicing elit.In, dolores consequatur iusto quaerat ex dolore voluptatibus alias commodi autem,quam dignissimos adipisci inventore provident? Fuga, hic. Sint voluptates earum deleniti.Mollitia, natus velit iusto illum omnis nobis a odit itaque!",
     website_link: "www.google.com",
-    instagram: "www.instagram.com",
-    facebook: "www.facebook.com",
     linkedIn: "www.linkedIn.com"
   },
   {
@@ -47,8 +41,6 @@ owner_brief_description: [
     company_name: "Company Name",
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit, Quam necessitatibus velit similique cum quidem itaque, doloribusprovident assumenda in eum numquam voluptate sed eos dolores. Doloremquealias vero fugiat autem. Lorem ipsum dolor sit amet consectetur, adipisicing elit.In, dolores consequatur iusto quaerat ex dolore voluptatibus alias commodi autem,quam dignissimos adipisci inventore provident? Fuga, hic. Sint voluptates earum deleniti.Mollitia, natus velit iusto illum omnis nobis a odit itaque!",
     website_link: "www.google.com",
-    instagram: "www.instagram.com",
-    facebook: "www.facebook.com",
     linkedIn: "www.linkedIn.com"
   },
   {
@@ -59,8 +51,6 @@ owner_brief_description: [
     company_name: "Company Name",
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit, Quam necessitatibus velit similique cum quidem itaque, doloribusprovident assumenda in eum numquam voluptate sed eos dolores. Doloremquealias vero fugiat autem. Lorem ipsum dolor sit amet consectetur, adipisicing elit.In, dolores consequatur iusto quaerat ex dolore voluptatibus alias commodi autem,quam dignissimos adipisci inventore provident? Fuga, hic. Sint voluptates earum deleniti.Mollitia, natus velit iusto illum omnis nobis a odit itaque!",
     website_link: "www.google.com",
-    instagram: "www.instagram.com",
-    facebook: "www.facebook.com",
     linkedIn: "www.linkedIn.com"
   },
   {
@@ -71,8 +61,6 @@ owner_brief_description: [
     company_name: "Company Name",
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit, Quam necessitatibus velit similique cum quidem itaque, doloribusprovident assumenda in eum numquam voluptate sed eos dolores. Doloremquealias vero fugiat autem. Lorem ipsum dolor sit amet consectetur, adipisicing elit.In, dolores consequatur iusto quaerat ex dolore voluptatibus alias commodi autem,quam dignissimos adipisci inventore provident? Fuga, hic. Sint voluptates earum deleniti.Mollitia, natus velit iusto illum omnis nobis a odit itaque!",
     website_link: "www.google.com",
-    instagram: "www.instagram.com",
-    facebook: "www.facebook.com",
     linkedIn: "www.linkedIn.com"
   },
   {
@@ -83,8 +71,6 @@ owner_brief_description: [
     company_name: "Company Name",
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit, Quam necessitatibus velit similique cum quidem itaque, doloribusprovident assumenda in eum numquam voluptate sed eos dolores. Doloremquealias vero fugiat autem. Lorem ipsum dolor sit amet consectetur, adipisicing elit.In, dolores consequatur iusto quaerat ex dolore voluptatibus alias commodi autem,quam dignissimos adipisci inventore provident? Fuga, hic. Sint voluptates earum deleniti.Mollitia, natus velit iusto illum omnis nobis a odit itaque!",
     website_link: "www.google.com",
-    instagram: "www.instagram.com",
-    facebook: "www.facebook.com",
     linkedIn: "www.linkedIn.com"
   },
   {
@@ -95,8 +81,6 @@ owner_brief_description: [
     company_name: "Company Name",
     desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit, Quam necessitatibus velit similique cum quidem itaque, doloribusprovident assumenda in eum numquam voluptate sed eos dolores. Doloremquealias vero fugiat autem. Lorem ipsum dolor sit amet consectetur, adipisicing elit.In, dolores consequatur iusto quaerat ex dolore voluptatibus alias commodi autem,quam dignissimos adipisci inventore provident? Fuga, hic. Sint voluptates earum deleniti.Mollitia, natus velit iusto illum omnis nobis a odit itaque!",
     website_link: "www.google.com",
-    instagram: "www.instagram.com",
-    facebook: "www.facebook.com",
     linkedIn: "www.linkedIn.com"
   },
     ],

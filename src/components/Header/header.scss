@@ -48,11 +48,13 @@
       border-radius: 2rem;
       margin-inline: 2rem;
       background-color: $color__yellow;
-      padding: 1rem 2.4rem;
-      p {
+      padding: 0.7rem 1.3rem;
+
+      & > a {
         font-size: calc($normal - 0.6em);
         font-weight: 700;
         color: $color__white;
+        text-decoration: none;
       }
     }
   }
@@ -66,7 +68,7 @@
 
   .header__inner-cont {
     padding: 0.3rem;
-    width: 100%;
+    width: 90%;
   }
 
   .header__details-cont {
