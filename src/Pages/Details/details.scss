@@ -9,10 +9,11 @@
   justify-content: center;
 
   &__arrow-right-box {
-    right: 2%;
+    z-index: 1;
+    margin-right: 2rem;
   }
   &__arrow-left-box {
-    left: 2%;
+    margin-left: 2rem;
   }
   h1 {
     line-height: 1.2em;
@@ -42,17 +43,18 @@
     }
 
     &__content-box {
-      width: 55vw;
+      width: 50vw;
       margin-right: auto;
     }
 
     &__img-box {
       position: absolute;
       width: 100%;
+      min-height: fit-content;
       height: 100vh;
       border-radius: 50%;
-      top: 50%;
-      left: 55%;
+      top: 45%;
+      left: 53%;
       background-image: linear-gradient(
         to right,
         rgba(252, 176, 26, 1),
@@ -60,8 +62,21 @@
       );
 
       div {
+        position: relative;
+        height: 100%;
+        label {
+          font-size: calc($normal - 0.2vw);
+          position: absolute;
+          padding: 1.1rem;
+          top: 35%;
+          z-index: 2;
+          display: inline-block;
+          left: 33%;
+          font-weight: 900;
+          color: $color__white;
+        }
         img {
-          top: -36%;
+          top: -39%;
           width: 60vw;
           left: -9.5%;
           position: absolute;

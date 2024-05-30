@@ -2,11 +2,13 @@
 .header {
   background-color: $color__white_shade_1;
   position: fixed;
-  height: 9rem;
-  filter: drop-shadow(2px 4px 6px hsla(0, 0%, 0%, 0.08));
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  // filter: drop-shadow(2px 4px 6px hsla(0, 0%, 0%, 0.08));
   width: 100%;
   top: 0;
-  z-index: 11;
+  z-index: 2;
   &__inner-cont {
     display: flex;
     justify-content: space-between;
@@ -71,7 +73,6 @@
 
   .header__details-cont {
     gap: 10px;
-
     & > button {
       border-radius: 2rem;
       margin-inline: 0rem;
@@ -86,4 +87,8 @@
       }
     }
   }
+}
+
+.showdow {
+  filter: drop-shadow(2px 4px 6px hsla(0, 0%, 0%, 0.08));
 }

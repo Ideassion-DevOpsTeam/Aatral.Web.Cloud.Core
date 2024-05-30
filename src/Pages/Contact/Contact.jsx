@@ -1,162 +1,200 @@
 import "./contact.scss";
-import React, { Fragment } from "react";
-import { Button, Dropdown, Form, Input, Space } from 'antd';
-import Icon from '@ant-design/icons';
+import React, { Fragment, useState } from "react";
+import { Button, Dropdown, Form, Input, Space, Select } from "antd";
+import Icon from "@ant-design/icons";
+import { useMutation } from "@apollo/client";
 import { dropdownIcon, rightArrow } from "../../constants/icons";
 
+// api
+import { createContact } from "../../api";
+
 const Contact = () => {
-    const { TextArea } = Input;
+  const [selectedValue, setSelectedValue] = useState(null);
+  const [addContact, { data }] = useMutation(createContact);
+  const { TextArea } = Input;
 
-    const onFinish = (values) => {
-        console.log('Success:', values);
-      };
-      const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo);
-    };
+  const onFinish = async (values) => {
+    const postContactRes = await addContact({ variables: values });
+    console.log("postContactRes", postContactRes);
+  };
+  const onFinishFailed = (errorInfo) => {
+    console.log("Failed:", errorInfo);
+  };
 
-    const items = [
-        {
-          label: <a href="https://www.antgroup.com">1st menu item</a>,
-          key: '0',
-        },
-        {
-          label: <a href="https://www.aliyun.com">2nd menu item</a>,
-          key: '1',
-        },
-        {
-          label: <a href="https://www.antgroup.com">3rd menu item</a>,
-          key: '3',
-        },
-        {
-          label: <a href="https://www.aliyun.com">4th menu item</a>,
-          key: '4',
-        },
-      ];
-    
-	return (
-		<Fragment>
-			<section className="contact__section">
-                <div className="contact__section--left">
-                    <div className="contact__section--left-side">
-                        <h1>
-                            Know <span>More</span>
-                        </h1>
-                    </div>
-				</div>
-                <div className="contact__section--right">
-                    <div className="contact__section--right-side">
-                        <div className="contact__section--right-form">
-                            <Form
-                                className="contact-form"
-                                name="ContactForm"
-                                initialValues={{
-                                    remember: true,
-                                }}
-                                onFinish={onFinish}
-                                onFinishFailed={onFinishFailed}
-                                autoComplete="off"
-                            >
-                                <div className="contact__section--right-form-inputs">
-                                    <Form.Item
-                                        label="First Name"
-                                        name="firstname"
-                                        className="contact-form-input"
-                                        rules={[
-                                            {
-                                                required: false,
-                                                message: "Please enter your first name!",
-                                            },
-                                        ]}
-                                    >
-                                        <Input className="contact-input" />
-                                    </Form.Item>
+  const handleSelect = (value) => {
+    console.log(`Selected: ${value}`);
+    setSelectedValue(value);
+  };
 
-                                    <Form.Item
-                                        label="Last name"
-                                        name="lastname"
-                                        className="contact-form-input"
-                                        rules={[
-                                            {
-                                                required: false,
-                                                message: "Please enter your last name!",
-                                            },
-                                        ]}
-                                    >
-                                        <Input className="contact-input" />
-                                    </Form.Item>
-                                </div>
+  const items = [
+    {
+      label: "Chief Executive Officer (CEO)",
+      value: "Chief Executive Officer (CEO)",
+    },
+    {
+      label: "Chief Technology Officer (CTO) (CEO)",
+      value: "Chief Technology Officer (CTO) (CEO)",
+    },
+    {
+      label: "Chief Operating Officer (COO) (CEO)",
+      value: "Chief Operating Officer (COO) (CEO)",
+    },
+    {
+      label: "Chief Information Officer (CIO)",
+      value: "Chief Information Officer (CIO)",
+    },
+    {
+      label: "Chief Financial Officer (CFO)",
+      value: "Chief Financial Officer (CFO)",
+    },
+    {
+      label:
+        "Chief Security Officer (CSO) or Chief Information Security Officer (CISO)",
+      value:
+        "Chief Security Officer (CSO) or Chief Information Security Officer (CISO)",
+    },
+    { label: "Chief Data Officer (CDO)", value: "Chief Data Officer (CDO)" },
+    {
+      label: "Chief Human Resources Officer (CHRO)",
+      value: "Chief Human Resources Officer (CHRO)",
+    },
+    {
+      label: "Chief Product Officer (CPO)",
+      value: "Chief Product Officer (CPO)",
+    },
+    {
+      label: "Chief Development Officer (CDO)",
+      value: "Chief Development Officer (CDO)",
+    },
+    {
+      label: "Chief Strategy Officer (CSO)",
+      value: "Chief Strategy Officer (CSO)",
+    },
+    { label: "Others (Specify)", value: "Others (Specify)" },
+  ];
 
-                                <div className="contact__section--right-form-inputs">
-                                    <Form.Item
-                                        label="Email"
-                                        name="email"
-                                        className="contact-form-input"
-                                        rules={[
-                                            {
-                                                required: false,
-                                                message: "Please enter your email!",
-                                            },
-                                        ]}
-                                    >
-                                        <Input className="contact-input" />
-                                    </Form.Item>
+  return (
+    <Fragment>
+      <section className="contact__section">
+        <div className="contact__section--left">
+          <div className="contact__section--left-side">
+            <h1>
+              Know <span>More</span>
+            </h1>
+          </div>
+        </div>
+        <div className="contact__section--right">
+          <div className="contact__section--right-side">
+            <div className="contact__section--right-form">
+              <Form
+                className="contact-form"
+                name="ContactForm"
+                initialValues={{
+                  remember: true,
+                }}
+                onFinish={onFinish}
+                onFinishFailed={onFinishFailed}
+                autoComplete="off"
+              >
+                <div className="contact__section--right-form-inputs">
+                  <Form.Item
+                    label="First Name"
+                    name="firstname"
+                    className="contact-form-input"
+                    rules={[
+                      {
+                        required: false,
+                        message: "Please enter your first name!",
+                      },
+                    ]}
+                  >
+                    <Input className="contact-input" />
+                  </Form.Item>
 
-                                    <Form.Item
-                                        className="contact-form-input"
-                                        rules={[
-                                            {
-                                                required: false,
-                                                message: "Please enter your email!",
-                                            },
-                                        ]}
-                                    >
-                                        <Dropdown
-                                            menu={{
-                                            items,
-                                            }}
-                                            className="contact-input"
-                                            placement="bottom"
-                                            trigger={['click']}
-                                        >
-                                            <a onClick={(e) => e.preventDefault()}>
-                                            <Space className="domain-click">
-                                                Click me
-                                                <Icon component={dropdownIcon} />
-                                            </Space>
-                                            </a>
-                                        </Dropdown>
-                                    </Form.Item>
-                                </div>
+                  <Form.Item
+                    label="Last name"
+                    name="lastname"
+                    className="contact-form-input"
+                    rules={[
+                      {
+                        required: false,
+                        message: "Please enter your last name!",
+                      },
+                    ]}
+                  >
+                    <Input className="contact-input" />
+                  </Form.Item>
+                </div>
 
-                                <div className="contact__section--right-form-inputs">
-                                    <Form.Item
-                                        label="Query"
-                                        name="query"
-                                        className="contact-form-input query"
-                                        rules={[
-                                            {
-                                                required: false,
-                                                message: "Please enter your query!",
-                                            },
-                                        ]}
-                                    >
-                                        <TextArea rows={4} className="contact-input" />
-                                    </Form.Item>
-                                </div>
+                <div className="contact__section--right-form-inputs">
+                  <Form.Item
+                    label="Email"
+                    name="email"
+                    className="contact-form-input"
+                    rules={[
+                      {
+                        required: false,
+                        message: "Please enter your email!",
+                      },
+                    ]}
+                  >
+                    <Input className="contact-input" />
+                  </Form.Item>
 
-                                <Form.Item className="form-button-submit">
-                                    <Button className="contact-form-submit-btn" htmlType="submit">
-                                        Send Message <Icon component={rightArrow} />
-                                    </Button>
-                                </Form.Item>
-                            </Form>
-                        </div>
-                    </div>
-				</div>
-				{/* <h1>Contact</h1> */}
-			</section>
-		</Fragment>
-	);
+                  <Form.Item
+                    label={
+                      selectedValue === null
+                        ? "Designation:"
+                        : selectedValue === "Others (Specify)"
+                        ? "Specify:"
+                        : null
+                    }
+                    className="contact-form-input"
+                    name="designation"
+                    rules={[
+                      {
+                        required: false,
+                        message: "Please enter your designation!",
+                      },
+                    ]}
+                  >
+                    {selectedValue === "Others (Specify)" ? (
+                      <Input className="contact-input" value="test" />
+                    ) : (
+                      <Select onChange={handleSelect} options={items} />
+                    )}
+                  </Form.Item>
+                </div>
+
+                <div className="contact__section--right-form-inputs">
+                  <Form.Item
+                    label="Query"
+                    name="query"
+                    className="contact-form-input query"
+                    rules={[
+                      {
+                        required: false,
+                        message: "Please enter your query!",
+                      },
+                    ]}
+                  >
+                    <TextArea rows={4} className="contact-input" />
+                  </Form.Item>
+                </div>
+
+                <Form.Item className="form-button-submit">
+                  <Button className="contact-form-submit-btn" htmlType="submit">
+                    Send Message <Icon component={rightArrow} />
+                  </Button>
+                </Form.Item>
+              </Form>
+            </div>
+          </div>
+        </div>
+        {/* <h1>Contact</h1> */}
+      </section>
+    </Fragment>
+  );
 };
 
 export default Contact;

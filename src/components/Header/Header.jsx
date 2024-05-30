@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 // components
 import Button from "../UI/Button";
@@ -7,14 +7,21 @@ import Navigation from "./Navigation/Navigation";
 // assets
 import { ReactComponent as AatralIcon } from "../../assets/Icons/aatral.svg";
 import { ReactComponent as Hambuger } from "../../assets/Icons/hambuger.svg";
+import { dropShowdowPaths } from "./Navigation/static_data";
 // styles
 import "./header.scss";
 //
 
 function HeaderComponent() {
   const [menu, setMenu] = useState(false);
+  const location = useLocation();
+  const { pathname } = location;
   return (
-    <section className="header">
+    <section
+      className={`header ${
+        dropShowdowPaths.includes(pathname) ? "showdow" : ""
+      }`}
+    >
       <section className="wid-90 m-x-auto header__inner-cont">
         <div className="header__logo-cont">
           <Link to="/">

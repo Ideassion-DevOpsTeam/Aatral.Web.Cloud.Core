@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+
 //styles
 import "./home.scss";
 // components
@@ -45,7 +46,7 @@ function Home() {
               <span className="color-black">Unleash</span>
               <span className="color-yellow">Hidden Potential</span>
             </h1>
-            <Link to="/details">
+            <Link to="/details" className="arrow__left_and_right_size">
               <RightBlackArrow />
             </Link>
           </header>

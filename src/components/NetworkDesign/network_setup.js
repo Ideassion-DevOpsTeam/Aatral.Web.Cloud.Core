@@ -180,23 +180,23 @@ export const images = [
 
 export const edges = [
   { from: 1, to: 2 },
-  { from: 2, to: 4 },
-  { from: 1, to: 3 },
-  { from: 3, to: 2 },
-  { from: 3, to: 5 },
-  { from: 6, to: 2 },
+  { from: 2, to: 3 },
   { from: 1, to: 6 },
-  { from: 1, to: 8 },
-  { from: 5, to: 8 },
-  { from: 6, to: 7 },
+  { from: 1, to: 9 },
+  { from: 2, to: 5 },
+  { from: 2, to: 7 },
+  { from: 2, to: 6 },
+  { from: 1, to: 3 },
+  { from: 3, to: 4 },
+  { from: 6, to: 8 },
   { from: 8, to: 9 },
-  { from: 2, to: 10 },
+  { from: 9, to: 10 },
 ];
 
 export const options = {
   edges: {
     color: "#49494ACF",
-    width: 3.3,
+    width: 4,
   },
   physics: false,
   interaction: {
@@ -211,47 +211,49 @@ export const options = {
 export const imagePostion = [
   {
     id: 1,
-    x: -300,
-    y: -60,
+    x: 20,
+    y: -190,
   },
   {
     id: 2,
-    x: -330,
-    y: 240,
+    x: -410,
+    y: -550,
   },
   {
     id: 3,
-    x: -100,
-    y: 150,
+    x: -700,
+    y: -300,
   },
   {
     id: 4,
-    x: -200,
-    y: 410,
+    x: 330,
+    y: -250,
   },
   {
     id: 5,
-    x: -590,
-    y: -200,
+    x: 10,
+    y: 100,
   },
   {
     id: 6,
-    x: -870,
-    y: -150,
+    x: 250,
+    y: 60,
   },
   {
     id: 7,
-    x: -800,
-    y: 150,
+    x: 150,
+    y: 330,
   },
   {
     id: 8,
-    x: -870,
-    y: 400,
+    x: -670,
+    y: 40,
   },
   {
-    id: 1,
-    x: -60,
-    y: -190,
+    id: 9,
+    x: -770,
+    y: 550,
   },
 ];
+
+export const showImages = 9;

@@ -1,88 +1,124 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Network, DataSet } from "vis-network";
+import { useLazyQuery } from "@apollo/client";
 
 // temp
 import NetworkLogo from "../../assets/Icons/network/net_logo.svg";
+// api
+import { getMembersImages } from "../../api/index";
+import { apiurl } from "../../api/API_URL";
 
-import { edges, images, options, imagePostion } from "./network_setup";
+import {
+  edges,
+  images,
+  options,
+  imagePostion,
+  showImages,
+} from "./network_setup";
 
 import "./network.scss";
 
 const NetworkDesign = () => {
   const container = useRef(null);
   const initializedRef = useRef(false);
-  // no of images to show in network design
-  const showImages = 9;
+  const [getImages, { loading, error, data: images }] =
+    useLazyQuery(getMembersImages);
 
-  const segmentData = (data, index, segmentSize) => {
+  const handleGetImages = (currentPage) => {
+    getImages({ variables: { currentPage: currentPage, pageSize: 9 } });
+  };
+
+  useEffect(() => {
+    handleGetImages(1);
+  }, []);
+
+  const segmentData = (data) => {
     const segmentedData = [
       {
         id: 1,
         shape: "circularImage",
+        fixed: true,
         image: NetworkLogo,
-        size: 120,
-        x: -550,
-        y: 60,
+        size: 150,
+        x: -310,
+        y: -100,
         borderWidth: 0,
       },
     ];
 
-    const currentImages = images.slice(index, index + segmentSize);
-
-    if (currentImages.length === 9) {
-      for (let i = 0; i < currentImages.length; i++) {
-        const nodeDetails = {
-          id: i + 2,
-          size: 60,
-          borderWidth: 4,
-          shape: "circularImage",
-          image: currentImages[i]["image"],
-          shapeProperties: { useBorderWithImage: true },
-          color: {
-            border: "#FBAF1A80",
-          },
-          x: imagePostion[i]["x"],
-          y: imagePostion[i]["y"],
-        };
-        segmentedData.push(nodeDetails);
-      }
-
-      return segmentedData;
+    const currentImages = data;
+    const displayArraySize = currentImages.length;
+    let displayImages = [];
+    if (displayArraySize === showImages) {
+      displayImages = currentImages;
+    } else {
+      const remainingItemsNeeded = showImages - displayArraySize;
+      const additionalItems = data.slice(0, remainingItemsNeeded);
+      const reslicedArray = currentImages.concat(additionalItems);
+      displayImages = reslicedArray;
     }
+    let tempImage;
+    for (let i = 0; i < showImages; i++) {
+      const { attributes } = displayImages[i];
+      const getImage = attributes?.Image?.data?.attributes?.url;
+      if (getImage) {
+        tempImage = getImage;
+      }
+      const displayImage = `${apiurl}${tempImage}`;
+      const nodeDetails = {
+        id: i + 2,
+        size: 90,
+        borderWidth: 4,
+        fixed: true,
+        label: `${i + 1}`,
+        shape: "circularImage",
+        image: displayImage,
+        shapeProperties: { useBorderWithImage: true },
+        color: {
+          border: "#FBAF1A80",
+        },
+        x: imagePostion[i]["x"],
+        y: imagePostion[i]["y"],
+      };
+      segmentedData.push(nodeDetails);
+    }
+    return segmentedData;
   };
 
   const initializeNetwork = () => {
-    let currentIndex = 0;
-
+    let currentPage = 0;
     const networkInstance = new Network(container.current, {}, options);
-
-    const segmentedData = segmentData(images, currentIndex, showImages); // Only take the first segment
-
+    const membersImages = images?.members?.data;
+    const segmentedData = segmentData(membersImages); // Only take the first segment
     const initialData = {
       nodes: segmentedData,
       edges: edges, // Add edges if needed
     };
 
     networkInstance.setData(initialData);
-    currentIndex = currentIndex += showImages;
+    currentPage = currentPage += 1;
     const interval = setInterval(() => {
-      currentIndex =
-        currentIndex < images.length ? currentIndex + showImages : 0;
-      updateNetworkData(currentIndex, networkInstance);
-    }, 5000);
+      handleGetImages(currentPage);
+      currentPage = currentPage += 1;
+      updateNetworkData(networkInstance);
+    }, 50000);
 
     return () => clearInterval(interval);
   };
 
   // Run initializeNetwork only once
   if (!initializedRef.current && container.current) {
-    initializeNetwork();
-    initializedRef.current = true;
+    if (images) {
+      initializeNetwork();
+      initializedRef.current = true;
+    }
   }
 
-  const updateNetworkData = (currentIndex, networkInstance) => {
+  const updateNetworkData = (networkInstance) => {
     if (networkInstance) {
-      const segmentedData = segmentData(images, currentIndex, showImages); // Only take the first segment
+      const membersImages = images?.members?.data;
+      // return false;
+      const segmentedData = segmentData(membersImages); // Only take the first segment
       const updatedData = {
         nodes: segmentedData,
         edges: edges,

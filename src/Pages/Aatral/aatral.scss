@@ -3,7 +3,9 @@
 .aatral {
   margin-block: 2.3rem;
   padding-top: 9rem;
-  overflow-x: hidden;
+  min-height: 100vh;
+  // overflow-x: hidden;
+  overflow-y: scroll;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -270,4 +272,9 @@
   text-align: center;
   font-size: $extra__large;
   line-height: 1.3em;
+}
+
+.streeing-ali-adjust {
+  margin-top: -9rem;
+  z-index: 1;
 }
