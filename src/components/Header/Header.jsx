@@ -26,7 +26,7 @@ function HeaderComponent() {
             <Link to="/aatral-india">Aatral - India</Link>
           </label>
           <Button>
-            <p>Become a Member</p>
+            <Link to="/become-a-member">Become a Member</Link>
           </Button>
           <Hambuger onClick={() => setMenu(!menu)} />
           {menu ? <Navigation setMenu={setMenu} /> : null}
