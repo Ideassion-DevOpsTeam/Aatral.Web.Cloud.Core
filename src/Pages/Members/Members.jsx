@@ -13,6 +13,7 @@ import useMemberStore from "../../store/MembersPage/membersStore";
 import { useLazyQuery } from "@apollo/client";
 import { getMembers } from "../../api/index";
 import fallbackImage from "../../assets/Images/fallback.png";
+import SocialIconsComponent from "../../components/Social/SocialIcons";
 
 const Members = () => {
 	const [isModalOpen, setIsModalOpen] = useState({ id: "", state: false });
@@ -36,11 +37,10 @@ const Members = () => {
 	useEffect(() => {
 		setFounderData();
 		refetchMember({
-			variables: { pageCount: 1, pageSize: 12 },
+			variables: { pageCount: 1, pageSize: 30 },
 		});
 	}, []);
     
-
 	const showModal = (value, data) => {
         setIsModalOpen({ id: value.id, state: true });
         setViewMemberModal(data)
@@ -58,6 +58,7 @@ const Members = () => {
 	return (
 		<Fragment>
 			<section className="members__section">
+			<SocialIconsComponent />
 				<div className="members__section__block">
 					<p className="members__section__block__title">
 						Our <span className="members__section__block__title--span">Members</span>
@@ -76,7 +77,7 @@ const Members = () => {
 										<img src={fallbackImage} alt="fallback" />
 									) : (
 										<img
-											src={`https://Backend.aatralindia.org${item?.attributes?.Image?.data?.attributes?.url}`}
+											src={`https://toptamils-backend.ideassionlive.in${item?.attributes?.Image?.data?.attributes?.url}`}
 											alt="Founder_Photo"
 										/>
 									)}
@@ -109,7 +110,7 @@ const Members = () => {
                                 {viewMemberModal?.attributes?.Image?.data === null ? (
                                         <img src={fallbackImage} alt="fallback" />
                                     ) : (<img
-                                    src={`https://Backend.aatralindia.org${viewMemberModal?.attributes?.Image?.data?.attributes?.url}`}
+                                    src={`https://toptamils-backend.ideassionlive.in${viewMemberModal?.attributes?.Image?.data?.attributes?.url}`}
                                     alt="Founder_Photo"
                                 />)}
                             </div>
@@ -140,7 +141,7 @@ const Members = () => {
                                 <a href={viewMemberModal?.website_link} target="_blank" rel="noreferrer">
                                     {viewMemberModal?.attributes?.Image?.data === null ? (
                                         <img src={fallbackImage} alt="fallback" />
-                                    ) : (<img src={`https://Backend.aatralindia.org${ viewMemberModal?.attributes?.companies?.data[0]?.attributes?.Logo?.data?.attributes?.url }`} alt="company-logo" />)}
+                                    ) : (<img src={`https://toptamils-backend.ideassionlive.in${ viewMemberModal?.attributes?.companies?.data[0]?.attributes?.Logo?.data?.attributes?.url }`} alt="company-logo" />)}
                                 </a>
                             </div>
                         </div>

@@ -97,10 +97,11 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, #000000a3, transparent);
+  background: linear-gradient(139deg, transparent, transparent, black);
   z-index: 1;
   right: 0;
-  bottom: 0;
+  bottom: 50%;
   border-radius: 100%;
+  
 }
 

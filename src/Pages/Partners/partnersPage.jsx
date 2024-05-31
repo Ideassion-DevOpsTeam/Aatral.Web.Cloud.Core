@@ -11,6 +11,7 @@ import { rightArrow } from '../../constants/icons';
 import { useLazyQuery } from '@apollo/client';
 import { getPartners } from '../../api';
 import product_Logo from '../../assets/Images/POM/POM.png'
+import SocialIconsComponent from '../../components/Social/SocialIcons';
 
 const PartnersPage = () => {
 
@@ -56,6 +57,7 @@ const PartnersPage = () => {
       <Fragment>
           {/* Partners Highlighted */}
           <section className="partners__section">
+          <SocialIconsComponent />
               <div className="partners__section__top">
                   <div className="partners__section__top--title">
                       <CommonTitle firstWord="Our" secondWord="Partners" />
@@ -67,7 +69,7 @@ const PartnersPage = () => {
                       <Fragment key={item?.id}>
                         <div className="partners__section__partner__images--each">
                               <a href={ item?.attributes?.Website } className="partners__section__partner__images--each-link" target="_blank" rel="noreferrer">
-                                <img className="partners__section__partner__images--each-image" src={`https://Backend.aatralindia.org${item?.attributes?.Logo?.data?.attributes?.url}`} alt="" />
+                                <img className="partners__section__partner__images--each-image" src={`https://toptamils-backend.ideassionlive.in${item?.attributes?.Logo?.data?.attributes?.url}`} alt="" />
                             </a>
                         </div>
                       </Fragment>) : null
@@ -88,7 +90,7 @@ const PartnersPage = () => {
                         <Fragment key={item?.id}>
                             <div className="training__partners__images--each">
                                     <a href={ item?.training_partner_website } className="training__partners__images--each-link" target="_blank" rel="noreferrer">
-                                    <img className="training__partners__images--each-image" src={`https://Backend.aatralindia.org${item?.attributes?.Logo?.data?.attributes?.url}`} alt="" />
+                                    <img className="training__partners__images--each-image" src={`https://toptamils-backend.ideassionlive.in${item?.attributes?.Logo?.data?.attributes?.url}`} alt="" />
                                 </a>
                             </div>
                         </Fragment>
@@ -127,7 +129,7 @@ const PartnersPage = () => {
                             <SwiperSlide key={item?.id} >
                                 <div className="partners__logos--logo">
                                     <a href={item?.attributes?.partner_website} className="partners__logos--logo-link" target="_blank" rel="noreferrer">
-                                        <img src={`https://Backend.aatralindia.org${item?.attributes?.Logo?.data?.attributes?.url}`} alt='partner-logo' />
+                                        <img src={`https://toptamils-backend.ideassionlive.in${item?.attributes?.Logo?.data?.attributes?.url}`} alt='partner-logo' />
                                     </a>
                                 </div>
                             </SwiperSlide>

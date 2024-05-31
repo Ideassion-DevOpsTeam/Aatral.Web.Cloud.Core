@@ -36,7 +36,7 @@ function AatralPage() {
 
   if (executiveCommitteeMembers) {
     const members = executiveCommitteeMembers?.members?.data;
-
+    
     exec_members = members.map((member) => {
       const image = member?.attributes?.Image?.data?.attributes.url;
       return (
@@ -75,7 +75,7 @@ function AatralPage() {
           <div className="aatral__committe-sec__item-box__desc-cont">
             <label>{member.attributes.Name}</label>
             <blockquote>
-              {member.attributes.companies.data[0].Name}
+            {member.attributes.Designation}, {member.attributes.companies.data[0].Name}
               {member.attributes.companies.data[0].attributes.Name}
             </blockquote>
           </div>
@@ -83,9 +83,6 @@ function AatralPage() {
       );
     });
   }
-
-  // console.log("exec_members", exec_members);
-  // console.log("streering_members", streering_members);
 
   useEffect(() => {
     getExecutiveCommittee({
@@ -150,15 +147,6 @@ function AatralPage() {
             optionalClasses={"heading-flex m-y-block-large "}
           />
           <section className="aatral__committe-sec__list-box">
-            <div className="aatral__committe-sec__item-box">
-              <div className="aatral__committe-sec__item-box__img-cont">
-                <Image src={PersonOne} title="director" />
-              </div>
-              <div className="aatral__committe-sec__item-box__desc-cont">
-                <label>Imthyaz Sheriff</label>
-                <blockquote>Ideassion Group</blockquote>
-              </div>
-            </div>
             {exec_members}
           </section>
         </section>
