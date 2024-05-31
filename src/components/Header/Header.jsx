@@ -29,9 +29,7 @@ function HeaderComponent() {
           </Link>
         </div>
         <div className="header__details-cont">
-          <label>
-            <Link to="/aatral-india">Aatral - India</Link>
-          </label>
+          <label>Aatral - India</label>
           <Button>
             <Link to="/become-a-member">Become a Member</Link>
           </Button>

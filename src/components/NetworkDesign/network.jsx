@@ -35,7 +35,7 @@ const NetworkDesign = () => {
         fixed: true,
         image: NetworkLogo,
         size: 150,
-        x: -310,
+        x: -350,
         y: -100,
         borderWidth: 0,
       },
@@ -69,7 +69,7 @@ const NetworkDesign = () => {
         id: i + 2,
         size: 90,
         borderWidth: 4,
-        fixed: true,
+        // fixed: true,
         // label: `${i + 1}`,
         shape: "circularImage",
         image: displayImage,
@@ -89,7 +89,6 @@ const NetworkDesign = () => {
     let currentPage = 0;
     const networkInstance = new Network(container.current, {}, options);
     const membersImages = images?.members?.data;
-    console.log("membersImages", membersImages);
     const segmentedData = segmentData(membersImages); // Only take the first segment
     const initialData = {
       nodes: segmentedData,

@@ -30,8 +30,8 @@ function DetailsPage() {
 
   return (
     <section className="details pos-rel">
-      <div className="details__arrow-left-box">
-        <Link to="/" className="arrow__left_and_right_size">
+      <div className="arrow__common-left pos-abs-y-center">
+        <Link to="/" className="arrow__left_and_right_size arrow__common-right">
           <LeftBlackArrow />
         </Link>
       </div>
@@ -47,7 +47,10 @@ function DetailsPage() {
             <p>{aatral_details?.desc}</p>
           </main>
           <footer>
-            <CustomButton displayText="Join The Community" />
+            <CustomButton
+              displayText="Join The Community"
+              goTo="/become-a-member"
+            />
           </footer>
         </div>
         <div
@@ -61,8 +64,11 @@ function DetailsPage() {
           </div>
         </div>
       </section>
-      <div className="details__arrow-right-box">
-        <Link to="/home/get" className="arrow__left_and_right_size">
+      <div className="pos-abs-y-center arrow__common-right">
+        <Link
+          to="/home/get"
+          className="arrow__left_and_right_size arrow__common-right"
+        >
           <RightBlackArrow />
         </Link>
       </div>

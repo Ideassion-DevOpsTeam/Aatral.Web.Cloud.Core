@@ -32,11 +32,11 @@ export const imagePostion = [
   {
     id: 1,
     x: 100,
-    y: -190,
+    y: -150,
   },
   {
     id: 2,
-    x: -410,
+    x: -400,
     y: -550,
   },
   {

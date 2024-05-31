@@ -30,11 +30,11 @@ const Contact = () => {
     await addContact({ variables: values });
   };
   const onFinishFailed = (errorInfo) => {
-    console.log("Failed:", errorInfo);
+    // console.log("Failed:", errorInfo);
   };
 
   const handleSelect = (value) => {
-    console.log(`Selected: ${value}`);
+    // console.log(`Selected: ${value}`);
     setIsValueSelected(true);
   };
 
@@ -58,7 +58,7 @@ const Contact = () => {
               className="contact-form-input"
               rules={[
                 {
-                  required: false,
+                  required: true,
                   message: "Please enter your first name!",
                 },
               ]}
@@ -72,7 +72,7 @@ const Contact = () => {
               className="contact-form-input"
               rules={[
                 {
-                  required: false,
+                  required: true,
                   message: "Please enter your last name!",
                 },
               ]}
@@ -88,7 +88,7 @@ const Contact = () => {
               className="contact-form-input"
               rules={[
                 {
-                  required: false,
+                  required: true,
                   message: "Please enter your email!",
                 },
               ]}
@@ -102,7 +102,7 @@ const Contact = () => {
               label={!isValueSelected ? "Designation" : null}
               rules={[
                 {
-                  required: false,
+                  required: true,
                   message: "Please enter your designation!",
                 },
               ]}

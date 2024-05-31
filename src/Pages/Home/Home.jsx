@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { Link } from "react-router-dom";
 
 //styles
@@ -25,47 +25,57 @@ function Home() {
   }, []);
 
   return (
-    <section className={`home fade-in-from-bottom ${isVisible ? "show" : ""}`}>
-      <SocialIcons />
-      <div className="home__map-box">
-        <section className="wid-80">
-          <div className="home__map-box__map-cont">
-            <Map />
-          </div>
-          <div className="home__map-box__network-cont">
-            <NetworkDesign />
-          </div>
-        </section>
-      </div>
-      <div className="home__desc-box">
-        <div className="home__desc-box__desc-cont">
-          <header>
-            <h1>
-              <span className="color-black">Enhance</span>
-              <span className="color-yellow">Business Opportunities,</span>
-              <span className="color-black">Unleash</span>
-              <span className="color-yellow">Hidden Potential</span>
-            </h1>
-            <Link to="/details" className="arrow__left_and_right_size">
-              <RightBlackArrow />
-            </Link>
-          </header>
-          <main>
-            <h1>Connecting People</h1>
-            <h1>
-              with
-              <TypingEffect />
-            </h1>
-          </main>
-          <footer>
-            <CustomButton displayText="Know more about us" />
-          </footer>
+    <Fragment>
+      <section
+        className={`home fade-in-from-bottom ${isVisible ? "show" : ""}`}
+      >
+        <SocialIcons />
+        <div className="home__map-box">
+          <section className="wid-80">
+            <div className="home__map-box__map-cont">
+              <Map />
+            </div>
+            <div className="home__map-box__network-cont">
+              <NetworkDesign />
+            </div>
+          </section>
         </div>
-        <div className="home__desc-box__icon-cont">
-          <HomeBuilding />
+        <div className="home__desc-box">
+          <div className="home__desc-box__desc-cont">
+            <header>
+              <h1>
+                <span className="color-black">Enhance</span>
+                <span className="color-yellow">Business Opportunities,</span>
+                <span className="color-black">Unleash</span>
+                <span className="color-yellow">Hidden Potential</span>
+              </h1>
+            </header>
+            <main>
+              <h1>Connecting People</h1>
+              <h1>
+                with
+                <TypingEffect />
+              </h1>
+            </main>
+            <footer>
+              <CustomButton
+                goTo="/aatral-india"
+                displayText="Know more about us"
+              />
+            </footer>
+          </div>
+          <div className="home__desc-box__icon-cont">
+            <HomeBuilding />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <Link
+        to="/details"
+        className="arrow__left_and_right_size pos-abs-y-center arrow__common-right"
+      >
+        <RightBlackArrow />
+      </Link>
+    </Fragment>
   );
 }
 
