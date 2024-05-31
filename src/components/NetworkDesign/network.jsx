@@ -53,7 +53,6 @@ const NetworkDesign = () => {
       const additionalItems = new Array(remainingItemsNeeded)
         .fill(0)
         .map((item) => DefaultImage);
-      console.log("additionalItems", additionalItems);
       const reslicedArray = currentImages.concat(additionalItems);
       displayImages = reslicedArray;
     }

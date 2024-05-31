@@ -39,8 +39,6 @@ function AatralPage() {
       : streeingCommitteeMembers.push(member)
   );
 
-  // console.log("executiveCommitteeMembers", executiveCommitteeMembers);
-  // console.log("streeingCommitteeMembers", streeingCommitteeMembers);
   let exec_members;
 
   if (executiveCommitteeMembers.length > 0) {

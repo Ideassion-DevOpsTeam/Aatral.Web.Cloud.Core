@@ -111,7 +111,6 @@ const Members = () => {
           <div className="member__modal">
             <div className="member__modal__profile">
               <div className="member__modal__profile--picture">
-                {/* <img src={viewMemberModal?.founder_photo} alt="Founder_Photo" /> */}
                 {viewMemberModal?.attributes?.Image?.data === null ? (
                   <img src={fallbackImage} alt="fallback" />
                 ) : (
