@@ -1,14 +1,17 @@
 import "./contact.scss";
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
-import { Button, Dropdown, Form, Input, Space, Select } from "antd";
+import { Button, Form, Input, Select } from "antd";
 import Icon from "@ant-design/icons";
 import { useMutation } from "@apollo/client";
-import { dropdownIcon, rightArrow } from "../../constants/icons";
+import { rightArrow } from "../../constants/icons";
 
 // assets
 import { ReactComponent as PaperFlight } from "../../assets/Icons/Contact/papaer_flight.svg";
 import { ReactComponent as RightArrow } from "../../assets/Icons/Contact/right_yellow.svg";
+
+// static_data
+import { items } from "./static_data";
 
 // components
 import ButtonComponent from "../../components/UI/Button";
@@ -20,11 +23,9 @@ const Contact = () => {
   const [selectedValue, setSelectedValue] = useState(null);
   const [addContact, { data }] = useMutation(createContact);
 
-  // console.log("data ", data);
   const { TextArea } = Input;
 
   const onFinish = async (values) => {
-    // console.log("Success:", values);
     await addContact({ variables: values });
   };
   const onFinishFailed = (errorInfo) => {
@@ -35,53 +36,6 @@ const Contact = () => {
     console.log(`Selected: ${value}`);
     setSelectedValue(value);
   };
-
-  const items = [
-    {
-      label: "Chief Executive Officer (CEO)",
-      value: "Chief Executive Officer (CEO)",
-    },
-    {
-      label: "Chief Technology Officer (CTO) (CEO)",
-      value: "Chief Technology Officer (CTO) (CEO)",
-    },
-    {
-      label: "Chief Operating Officer (COO) (CEO)",
-      value: "Chief Operating Officer (COO) (CEO)",
-    },
-    {
-      label: "Chief Information Officer (CIO)",
-      value: "Chief Information Officer (CIO)",
-    },
-    {
-      label: "Chief Financial Officer (CFO)",
-      value: "Chief Financial Officer (CFO)",
-    },
-    {
-      label:
-        "Chief Security Officer (CSO) or Chief Information Security Officer (CISO)",
-      value:
-        "Chief Security Officer (CSO) or Chief Information Security Officer (CISO)",
-    },
-    { label: "Chief Data Officer (CDO)", value: "Chief Data Officer (CDO)" },
-    {
-      label: "Chief Human Resources Officer (CHRO)",
-      value: "Chief Human Resources Officer (CHRO)",
-    },
-    {
-      label: "Chief Product Officer (CPO)",
-      value: "Chief Product Officer (CPO)",
-    },
-    {
-      label: "Chief Development Officer (CDO)",
-      value: "Chief Development Officer (CDO)",
-    },
-    {
-      label: "Chief Strategy Officer (CSO)",
-      value: "Chief Strategy Officer (CSO)",
-    },
-    { label: "Others (Specify)", value: "Others (Specify)" },
-  ];
 
   let disPlayContent = (
     <div className="contact__section--right-side">

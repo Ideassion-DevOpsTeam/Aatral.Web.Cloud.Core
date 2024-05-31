@@ -204,6 +204,8 @@
         }
 
         blockquote {
+          text-align: center;
+          line-height: 1.5em;
           color: $color__black_shade_1;
           font-size: calc($small - 0.2vw);
         }

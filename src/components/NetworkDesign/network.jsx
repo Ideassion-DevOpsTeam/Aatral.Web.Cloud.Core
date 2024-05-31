@@ -4,17 +4,12 @@ import { useLazyQuery } from "@apollo/client";
 
 // temp
 import NetworkLogo from "../../assets/Icons/network/net_logo.svg";
+import DefaultImage from "../../assets/Icons/defaultPerson.svg";
 // api
 import { getMembersImages } from "../../api/index";
 import { apiurl } from "../../api/API_URL";
 
-import {
-  edges,
-  images,
-  options,
-  imagePostion,
-  showImages,
-} from "./network_setup";
+import { edges, options, imagePostion, showImages } from "./network_setup";
 
 import "./network.scss";
 
@@ -48,12 +43,17 @@ const NetworkDesign = () => {
 
     const currentImages = data;
     const displayArraySize = currentImages.length;
+    console.log("displayArraySize ", displayArraySize);
     let displayImages = [];
     if (displayArraySize === showImages) {
       displayImages = currentImages;
     } else {
       const remainingItemsNeeded = showImages - displayArraySize;
-      const additionalItems = data.slice(0, remainingItemsNeeded);
+      // const additionalItems = data.slice(0, remainingItemsNeeded);
+      const additionalItems = new Array(remainingItemsNeeded)
+        .fill(0)
+        .map((item) => DefaultImage);
+      console.log("additionalItems", additionalItems);
       const reslicedArray = currentImages.concat(additionalItems);
       displayImages = reslicedArray;
     }
@@ -64,13 +64,15 @@ const NetworkDesign = () => {
       if (getImage) {
         tempImage = getImage;
       }
-      const displayImage = `${apiurl}${tempImage}`;
+
+      tempImage = getImage ? getImage : DefaultImage;
+      const displayImage = getImage ? `${apiurl}${tempImage}` : tempImage;
       const nodeDetails = {
         id: i + 2,
         size: 90,
         borderWidth: 4,
         fixed: true,
-        label: `${i + 1}`,
+        // label: `${i + 1}`,
         shape: "circularImage",
         image: displayImage,
         shapeProperties: { useBorderWithImage: true },
@@ -89,6 +91,7 @@ const NetworkDesign = () => {
     let currentPage = 0;
     const networkInstance = new Network(container.current, {}, options);
     const membersImages = images?.members?.data;
+    console.log("membersImages", membersImages);
     const segmentedData = segmentData(membersImages); // Only take the first segment
     const initialData = {
       nodes: segmentedData,
