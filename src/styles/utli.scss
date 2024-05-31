@@ -70,6 +70,7 @@
 }
 
 .pos-abs-y-center {
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -108,4 +109,12 @@
   svg {
     width: 3.3rem !important;
   }
+}
+
+.arrow__common-left {
+  left: 3% !important;
+}
+
+.arrow__common-right {
+  right: 3% !important;
 }

@@ -26,7 +26,6 @@ function HomeGetPage() {
   useEffect(() => {
     fetchTestimonials();
   }, []);
-  // console.log(", testimonials", testimonials?.testimonials?.data);
   let descDisplay;
 
   const cardDetails = testimonials ? testimonials?.testimonials?.data : [];
@@ -46,7 +45,7 @@ function HomeGetPage() {
     <section className="home__get-page container__outer">
       <Link
         to="/details"
-        className="home__get-page__arrow-left arrow__left_and_right_size"
+        className="arrow__left_and_right_size arrow__common-left pos-abs-y-center"
       >
         <LeftArrow />
       </Link>
@@ -88,7 +87,7 @@ function HomeGetPage() {
       </section>
       <Link
         to="/events"
-        className="home__get-page__arrow-right arrow__left_and_right_size"
+        className="pos-abs-y-center arrow__common-right arrow__left_and_right_size"
       >
         <RightArrow />
       </Link>
