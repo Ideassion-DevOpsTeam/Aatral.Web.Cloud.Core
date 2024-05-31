@@ -14,6 +14,7 @@ import { useLazyQuery } from "@apollo/client";
 import { getMembers } from "../../api/index";
 import fallbackImage from "../../assets/Images/fallback.png";
 import SocialIconsComponent from "../../components/Social/SocialIcons";
+import { imageBaseURL } from "../../api/API_URL";
 
 const Members = () => {
   const [isModalOpen, setIsModalOpen] = useState({ id: "", state: false });
@@ -82,7 +83,7 @@ const Members = () => {
                     <img src={fallbackImage} alt="fallback" />
                   ) : (
                     <img
-                      src={`https://toptamils-backend.ideassionlive.in${item?.attributes?.Image?.data?.attributes?.url}`}
+                      src={`${imageBaseURL}${item?.attributes?.Image?.data?.attributes?.url}`}
                       alt="Founder_Photo"
                     />
                   )}
@@ -115,7 +116,7 @@ const Members = () => {
                   <img src={fallbackImage} alt="fallback" />
                 ) : (
                   <img
-                    src={`https://toptamils-backend.ideassionlive.in${viewMemberModal?.attributes?.Image?.data?.attributes?.url}`}
+                    src={`${imageBaseURL}${viewMemberModal?.attributes?.Image?.data?.attributes?.url}`}
                     alt="Founder_Photo"
                   />
                 )}
@@ -169,7 +170,7 @@ const Members = () => {
                     <img src={fallbackImage} alt="fallback" />
                   ) : (
                     <img
-                      src={`https://toptamils-backend.ideassionlive.in${viewMemberModal?.attributes?.companies?.data[0]?.attributes?.Logo?.data?.attributes?.url}`}
+                      src={`${imageBaseURL}${viewMemberModal?.attributes?.companies?.data[0]?.attributes?.Logo?.data?.attributes?.url}`}
                       onClick={() =>
                         navigateToWebsite(
                           viewMemberModal?.attributes?.companies?.data[0]
