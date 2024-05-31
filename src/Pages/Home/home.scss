@@ -41,7 +41,7 @@
       position: absolute;
       z-index: 1;
       h1 {
-        font-size: $large;
+        font-size: clamp(1.5rem, 3.2vw, 4.1rem);
       }
       header {
         display: flex;
@@ -217,5 +217,9 @@
 @media screen and (max-width: 580px) and (min-width: 260px) {
   .home__get-page__arrow-right {
       top: 50%;
+  }
+  
+  .home {
+    grid-template-columns: repeat(1, 1fr);
   }
 }

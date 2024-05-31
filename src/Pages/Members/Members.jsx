@@ -138,7 +138,7 @@ const Members = () => {
                         viewMemberModal?.attributes?.companies?.data[0]
                           ?.attributes?.Website
                       }
-                      target="blank"
+                      target="_blank"
                       rel="noreferrer"
                     >
                       <Icon component={webIcon} />
@@ -147,7 +147,7 @@ const Members = () => {
                   <span className="member__modal__profile--details-social-link">
                     <a
                       href={viewMemberModal?.attributes?.Social[0]?.Link}
-                      target="blank"
+                      target="_blank"
                       rel="noreferrer"
                     >
                       <Icon component={linkedInIcon} />
@@ -163,7 +163,7 @@ const Members = () => {
               <div className="member__modal__description--logo">
                 <a
                   href={viewMemberModal?.website_link}
-                  target="blank"
+                  target="_blank"
                   rel="noreferrer"
                 >
                   {viewMemberModal?.attributes?.Image?.data === null ? (
