@@ -2,7 +2,10 @@ import { gql } from "@apollo/client";
 
 export const getMembers = gql`
   query Members($pageCount: Int, $pageSize: Int) {
-    members(pagination: { page: $pageCount, pageSize: $pageSize }) {
+    members(
+      pagination: { page: $pageCount, pageSize: $pageSize }
+      filters: { Type: { eqi: "Member" } }
+    ) {
       data {
         id
         attributes {
@@ -43,6 +46,11 @@ export const getMembers = gql`
               }
             }
           }
+          Social {
+            id
+            Name
+            Link
+          }
         }
       }
     }
@@ -77,10 +85,14 @@ export const getPartners = gql`
 
 export const getMembersImages = gql`
   query Members($currentPage: Int, $pageSize: Int) {
-    members(pagination: { page: $currentPage, pageSize: $pageSize }) {
+    members(
+      pagination: { page: $currentPage, pageSize: $pageSize }
+      filters: { Type: { eqi: "Member" } }
+    ) {
       data {
         id
         attributes {
+          Type
           Image {
             data {
               attributes {
@@ -164,17 +176,18 @@ export const createContact = gql`
 `;
 
 export const getCommitteeMembers = gql`
-  query Members($committee_type: String) {
-    members(filters: { Type: { eqi: $committee_type } }) {
+  query Members {
+    members(
+      filters: { Type: { in: ["Executive Committee", "Steering Committee"] } }
+    ) {
       data {
         id
         attributes {
           Name
-          Designation
           Type
+          Designation
           Image {
             data {
-              id
               attributes {
                 url
               }
@@ -182,10 +195,8 @@ export const getCommitteeMembers = gql`
           }
           companies {
             data {
-              id
               attributes {
                 Name
-                Website
               }
             }
           }
