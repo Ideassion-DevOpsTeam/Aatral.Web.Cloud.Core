@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Fragment, useEffect, useState } from "react";
 import "./members.scss";
-import { Modal, Spin } from "antd";
+import { Modal, Pagination } from "antd";
 import Icon from "@ant-design/icons";
 import {
   faceboonIcon,
@@ -19,6 +19,7 @@ import { imageBaseURL } from "../../api/API_URL";
 const Members = () => {
   const [isModalOpen, setIsModalOpen] = useState({ id: "", state: false });
   const [members, setMembers] = useState();
+  const [currentPage, setCurrentPage] = useState(1);
   const [isMemberModal, setisMemberModal] = useState(false);
   const [viewMemberModal, setViewMemberModal] = useState({});
 
@@ -29,19 +30,26 @@ const Members = () => {
     founderData: state.founderData,
   }));
 
+  const handleFetchMembers = (currentPage) => {
+    refetchMember({
+      variables: { pageCount: currentPage, pageSize: 12 },
+    });
+  };
+
+  const handlePageChange = (selectedPage) => {
+    handleFetchMembers(selectedPage);
+  };
+
   const [refetchMember, { loading, data, error }] = useLazyQuery(getMembers, {
     fetchPolicy: "network-only",
   });
 
-  console.log(loading);
-
   const membersData = data ? data.members.data : [];
+  const totalMembers = data ? data?.members?.meta?.pagination?.total : null;
 
   useEffect(() => {
     setFounderData();
-    refetchMember({
-      variables: { pageCount: 1, pageSize: 12 },
-    });
+    handleFetchMembers(1);
   }, []);
 
   const showModal = (value, data) => {
@@ -60,8 +68,8 @@ const Members = () => {
 
   return (
     <Fragment>
-		<section className="members__section">
-		  <SocialIconsComponent />
+      <section className="members__section">
+        <SocialIconsComponent />
         <div className="members__section__block">
           <p className="members__section__block__title">
             Our{" "}
@@ -102,6 +110,17 @@ const Members = () => {
               </Fragment>
             ))}
           </div>
+          {totalMembers && (
+            <section className="m-x-auto member-pagination">
+              <Pagination
+                defaultCurrent={1}
+                total={totalMembers}
+                pageSize={12}
+                showSizeChanger={false}
+                onChange={handlePageChange}
+              />
+            </section>
+          )}
         </div>
         <Modal
           width={700}

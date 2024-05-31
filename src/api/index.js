@@ -53,6 +53,14 @@ export const getMembers = gql`
           }
         }
       }
+      meta {
+        pagination {
+          total
+          pageCount
+          pageSize
+          page
+        }
+      }
     }
   }
 `;
