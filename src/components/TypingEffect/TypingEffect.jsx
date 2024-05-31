@@ -16,14 +16,16 @@ function TypingEffect() {
   }, []);
 
   const typingSpeed = 200;
-  const deletingSpeed = 500;
+  const deletingSpeed = 310;
 
   const handleTyping = useCallback(() => {
     const newText = words[currentIndex].substring(0, displayText.length + 1);
     setDisplayText(newText);
 
     if (newText === words[currentIndex]) {
-      setIsTyping(false);
+      setTimeout(() => {
+        setIsTyping(false);
+      }, 1500);
     }
   }, [currentIndex, displayText.length, words]);
 

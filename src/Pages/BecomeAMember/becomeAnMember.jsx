@@ -11,11 +11,12 @@ const BecomeAnMember = () => {
       <SocialIcons />
       <div className="become__a__member__section__block">
         <div className="become__a__member__section__block--top">
-          <p className="become__a__member__section__block--top-coming-soon">
+          {/* <p className="become__a__member__section__block--top-coming-soon">
             Coming soon!
-          </p>
+          </p> */}
           <p className="become__a__member__section__block--top-member-tier">
-            Membership tiers coming soon. Join now for free!
+            <span className="color-black">Join now to spark</span>
+            <span className="color-yellow">connections!</span>
           </p>
         </div>
         <div className="become__a__member__section__block--bottom">
@@ -38,7 +39,7 @@ const BecomeAnMember = () => {
                   className="contact-form-input"
                   rules={[
                     {
-                      required: false,
+                      required: true,
                       message: "Please enter your Full name!",
                     },
                   ]}

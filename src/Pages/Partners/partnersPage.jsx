@@ -1,18 +1,18 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { Fragment, useEffect } from 'react';
-import 'swiper/css';
-import './partners.scss';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import Icon from '@ant-design/icons';
-import { Autoplay } from 'swiper/modules';
-import CommonTitle from '../../components/CommonTitle/commonTitle';
-import usePartnersStore from '../../store/Partners/partnerPage';
-import { rightArrow } from '../../constants/icons';
-import { useLazyQuery } from '@apollo/client';
-import { getPartners } from '../../api';
-import product_Logo from '../../assets/Images/POM/POM.png'
-import SocialIconsComponent from '../../components/Social/SocialIcons';
-import { imageBaseURL } from '../../api/API_URL';
+import React, { Fragment, useEffect } from "react";
+import "swiper/css";
+import "./partners.scss";
+import { Swiper, SwiperSlide } from "swiper/react";
+import Icon from "@ant-design/icons";
+import { Autoplay } from "swiper/modules";
+import CommonTitle from "../../components/CommonTitle/commonTitle";
+import usePartnersStore from "../../store/Partners/partnerPage";
+import { rightArrow } from "../../constants/icons";
+import { useLazyQuery } from "@apollo/client";
+import { getPartners } from "../../api";
+import product_Logo from "../../assets/Images/POM/POM.png";
+import SocialIconsComponent from "../../components/Social/SocialIcons";
+import { imageBaseURL } from "../../api/API_URL";
 
 const PartnersPage = () => {
   const { partners, setPartners } = usePartnersStore((state) => ({
@@ -63,8 +63,8 @@ const PartnersPage = () => {
   return (
     <Fragment>
       {/* Partners Highlighted */}
-        <section className="partners__section">
-          <SocialIconsComponent />
+      <section className="partners__section">
+        <SocialIconsComponent />
         <div className="partners__section__top">
           <div className="partners__section__top--title">
             <CommonTitle firstWord="Our" secondWord="Partners" />
@@ -138,34 +138,34 @@ const PartnersPage = () => {
       {/* Partners carousel */}
       <section className="partners__logos">
         <div className="partners__logos--logos">
-          <Swiper
-            className="mySwiper partners__logos--logos-swiper"
-            loop={true}
-            pagination={false}
-            autoplay={{ delay: 2500, disableOnInteraction: false }}
-            centeredSlides={false}
-            modules={[Autoplay]}
-            breakpoints={{
-              400: {
-                slidesPerView: 1,
-                spaceBetween: 10,
-              },
-              640: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-              },
-              768: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-              },
-              1024: {
-                slidesPerView: 5,
-                spaceBetween: 30,
-              },
-            }}
-          >
-            {partnersInfo?.length &&
-              partnersInfo?.map((item, index) => (
+          {partnersInfo?.length > 1 && (
+            <Swiper
+              className="mySwiper partners__logos--logos-swiper"
+              loop={true}
+              pagination={false}
+              autoplay={{ delay: 2500, disableOnInteraction: false }}
+              centeredSlides={false}
+              modules={[Autoplay]}
+              breakpoints={{
+                400: {
+                  slidesPerView: 1,
+                  spaceBetween: 10,
+                },
+                640: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
+                768: {
+                  slidesPerView: 3,
+                  spaceBetween: 30,
+                },
+                1024: {
+                  slidesPerView: 5,
+                  spaceBetween: 30,
+                },
+              }}
+            >
+              {partnersInfo?.map((item, index) => (
                 <SwiperSlide key={item?.id}>
                   <div className="partners__logos--logo">
                     <a
@@ -182,7 +182,8 @@ const PartnersPage = () => {
                   </div>
                 </SwiperSlide>
               ))}
-          </Swiper>
+            </Swiper>
+          )}
         </div>
       </section>
 
