@@ -104,9 +104,10 @@ const Members = () => {
           </div>
         </div>
         <Modal
-          width={700}
+          width={1000}
           open={isMemberModal}
           footer={null}
+          className="member_modal_whole"
           onCancel={handleCancel}
         >
           <div className="member__modal">
@@ -132,7 +133,7 @@ const Members = () => {
                   </p>
                 </div>
                 <div className="member__modal__profile--details-social">
-                  <span className="member__modal__profile--details-social-link">
+                  {/* <span className="member__modal__profile--details-social-link">
                     <a
                       href={
                         viewMemberModal?.attributes?.companies?.data[0]
@@ -143,7 +144,7 @@ const Members = () => {
                     >
                       <Icon component={webIcon} />
                     </a>
-                  </span>
+                  </span> */}
                   <span className="member__modal__profile--details-social-link">
                     <a
                       href={viewMemberModal?.attributes?.Social[0]?.Link}
@@ -166,9 +167,7 @@ const Members = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {viewMemberModal?.attributes?.Image?.data === null ? (
-                    <img src={fallbackImage} alt="fallback" />
-                  ) : (
+                  {viewMemberModal?.attributes?.Image?.data === null ? null : (
                     <img
                       src={`${imageBaseURL}${viewMemberModal?.attributes?.companies?.data[0]?.attributes?.Logo?.data?.attributes?.url}`}
                       onClick={() =>
