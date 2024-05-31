@@ -44,7 +44,10 @@ function DetailsPage() {
             />
           </header>
           <main>
-            <p>{aatral_details?.desc}</p>
+            <p>Aatral, a pivotal part of Tamil RISE, is a vibrant community, specifically designed for Tamil IT entrepreneurs seeking to connect, thrive and expand their horizons.</p>
+              <p>By understanding challenges and opportunities inherent in the dynamic IT industry we have created a nurturing environment where like-minded individuals can come together to share insights, forge partnerships, and inspire one another to reach new heights of success.</p>
+              <p>Whether you're a seasoned entrepreneur or just starting out, you'll find support, and gain access to resources, mentorship, and friendship in our community.</p>
+            {/* <p>{aatral_details?.desc}</p> */}
           </main>
           <footer>
             <CustomButton
