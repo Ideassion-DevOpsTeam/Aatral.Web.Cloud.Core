@@ -110,7 +110,7 @@ function AatralPage() {
               To become the foremost collective leadership of national Tamil IT
               entrepreneurs, catalysing transformative changes for the sustained
               future growth of the IT ecosystem, and benefiting Tamils
-              worldwide.
+              nationwide.
             </p>
           </div>
           <div className="aatral__vision-sec__main-cont__icon-box-cup">
