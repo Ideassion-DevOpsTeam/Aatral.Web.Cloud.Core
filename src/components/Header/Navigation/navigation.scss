@@ -5,11 +5,13 @@
   bottom: 0;
   top: 0;
   right: 0;
-  width: 29%;
+  width: 23vw;
+  height: 100vh;
   z-index: 2;
   background-color: $color__white;
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
 
   li {
     list-style: none;
@@ -35,7 +37,7 @@
         width: fit-content;
         cursor: pointer;
         font-weight: 700;
-        padding-block: 2rem;
+        padding: 2rem 0;
         // border-bottom: 2px solid #4444444a;
         line-height: 1.3em;
         font-size: $medium;
@@ -61,10 +63,10 @@
 
   footer {
     background-color: $color__yellow;
-    padding: 1.2rem;
+    // padding: 1.2rem;
     display: flex;
     flex-direction: column;
-    padding-block: 1.1rem;
+    // padding-block: 1.1rem;
     section {
       ul {
         display: flex;
@@ -79,7 +81,7 @@
           text-align: start;
           height: fit-content;
           padding: 0 1.3vw;
-          font-size: calc($small - 0.3vw);
+          font-size: 8px;
           &:not(:last-of-type) {
             border-right: 1px solid $color__white;
           }
@@ -94,20 +96,43 @@
         display: inline-block;
         width: 100%;
         text-align: center;
+        margin-bottom: 7px;
+
         a {
           margin-inline: 0.1rem;
           text-decoration: underline;
           padding-block: 0.1rem;
           color: inherit;
           font-weight: 700;
+          font-size: 15px;
         }
       }
     }
   }
 }
 
+@media screen and (max-width: 1100px) and (min-width: 779px) {
+  .navigation {
+    width: 28vw;
+  }
+}
+
+@media screen and (max-width: 780px) and (min-width: 579px) {
+  .navigation {
+    width: 45vw;
+  }
+}
+
 @media screen and (max-width: 580px) and (min-width: 260px) {
   .navigation {
     width: 100vw;
+  }
+
+  .navigation footer section ul {
+      justify-content: center;
+  }
+
+  .navigation footer section label a {
+    font-size: 12px;
   }
 }
