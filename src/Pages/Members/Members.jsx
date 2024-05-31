@@ -35,8 +35,6 @@ const Members = () => {
 
   const membersData = data ? data.members.data : [];
 
-  console.log("membersData", membersData);
-
   useEffect(() => {
     setFounderData();
     refetchMember({

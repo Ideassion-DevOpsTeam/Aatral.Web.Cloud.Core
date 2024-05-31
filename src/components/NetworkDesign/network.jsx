@@ -43,7 +43,6 @@ const NetworkDesign = () => {
 
     const currentImages = data;
     const displayArraySize = currentImages.length;
-    console.log("displayArraySize ", displayArraySize);
     let displayImages = [];
     if (displayArraySize === showImages) {
       displayImages = currentImages;

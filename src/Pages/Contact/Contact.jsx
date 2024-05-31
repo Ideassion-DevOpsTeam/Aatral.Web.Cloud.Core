@@ -21,6 +21,7 @@ import { createContact } from "../../api";
 
 const Contact = () => {
   const [addContact, { data }] = useMutation(createContact);
+  const [isValueSelected, setIsValueSelected] = useState(false);
 
   const { TextArea } = Input;
 
@@ -33,6 +34,7 @@ const Contact = () => {
 
   const handleSelect = (value) => {
     console.log(`Selected: ${value}`);
+    setIsValueSelected(true);
   };
 
   let disPlayContent = (
@@ -96,6 +98,7 @@ const Contact = () => {
             <Form.Item
               className="contact-form-input"
               name="designation"
+              label={!isValueSelected ? "Designation" : null}
               rules={[
                 {
                   required: false,
