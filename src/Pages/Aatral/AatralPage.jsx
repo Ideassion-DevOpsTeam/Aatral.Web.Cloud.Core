@@ -78,7 +78,7 @@ function AatralPage() {
           <div className="aatral__committe-sec__item-box__desc-cont">
             <label>{member.attributes.Name}</label>
             <blockquote>
-              {member.attributes.companies.data[0].Name}
+            {member.attributes.Designation}, {member.attributes.companies.data[0].Name}
               {member.attributes.companies.data[0].attributes.Name}
             </blockquote>
           </div>

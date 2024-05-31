@@ -3,11 +3,13 @@ import './becomeAnMember.scss';
 import { Button, Form, Input } from 'antd';
 import Icon from '@ant-design/icons';
 import { rightArrow } from '../../constants/icons';
+import SocialIcons from '../../components/Social/SocialIcons';
 
 
 const BecomeAnMember = () => {
   return (
-    <section className="become__a__member__section">
+      <section className="become__a__member__section">
+          <SocialIcons />
           <div className="become__a__member__section__block">
                 <div className="become__a__member__section__block--top">
                     <p className="become__a__member__section__block--top-coming-soon">Coming soon!</p>

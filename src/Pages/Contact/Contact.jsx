@@ -18,6 +18,7 @@ import ButtonComponent from "../../components/UI/Button";
 
 // api
 import { createContact } from "../../api";
+import SocialIconsComponent from "../../components/Social/SocialIcons";
 
 const Contact = () => {
   const [addContact, { data }] = useMutation(createContact);
@@ -160,6 +161,7 @@ const Contact = () => {
   return (
     <Fragment>
       <section className="contact__section">
+      <SocialIconsComponent />
         <div className="contact__section--left">
           <div className="contact__section--left-side">
             <h1>

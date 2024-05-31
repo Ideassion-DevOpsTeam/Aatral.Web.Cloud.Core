@@ -44,9 +44,7 @@ function DetailsPage() {
             />
           </header>
           <main>
-            {aatral_details.desc.map((para, ind) => (
-              <p key={ind}>{para}</p>
-            ))}
+            <p>{aatral_details?.desc}</p>
           </main>
           <footer>
             <CustomButton displayText="Join The Community" />

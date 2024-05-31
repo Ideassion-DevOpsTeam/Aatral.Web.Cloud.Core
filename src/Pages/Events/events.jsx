@@ -6,10 +6,12 @@ import Icon from '@ant-design/icons';
 import { rightArrow } from '../../constants/icons';
 import { Link } from 'react-router-dom';
 import { ReactComponent as LeftBlackArrow } from "../../assets/Icons/leftBlackArrow.svg";
+import SocialIconsComponent from '../../components/Social/SocialIcons';
 
 const Events = () => {
   return (
     <div className="events__section">
+      <SocialIconsComponent />
       <div className="details__arrow-left-box">
         <Link to="/home/get" className="arrow__left_and_right_size">
           <LeftBlackArrow />

@@ -175,7 +175,7 @@
       gap: 1.5rem 6rem;
       flex-wrap: wrap;
       justify-content: center;
-      align-items: center;
+      align-items: baseline;
     }
     &__item-box {
       flex-basis: 13rem;
@@ -196,7 +196,7 @@
 
         label {
           color: $color__black;
-          font-size: calc($normal - 0.2vw);
+          font-size: 14px;
           text-align: center;
           line-height: 1.3em;
           margin-bottom: 1rem;
@@ -207,7 +207,9 @@
           text-align: center;
           line-height: 1.5em;
           color: $color__black_shade_1;
-          font-size: calc($small - 0.2vw);
+          font-size: 11.5px;
+          line-height: 1.6;
+          text-align: center;
         }
       }
     }

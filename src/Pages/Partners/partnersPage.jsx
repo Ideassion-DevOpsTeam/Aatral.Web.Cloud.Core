@@ -1,16 +1,18 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { Fragment, useEffect } from "react";
-import "swiper/css";
-import "./partners.scss";
-import { Swiper, SwiperSlide } from "swiper/react";
-import Icon from "@ant-design/icons";
-import { Autoplay } from "swiper/modules";
-import CommonTitle from "../../components/CommonTitle/commonTitle";
-import usePartnersStore from "../../store/Partners/partnerPage";
-import { rightArrow } from "../../constants/icons";
-import { useLazyQuery } from "@apollo/client";
-import { getPartners } from "../../api";
-import product_Logo from "../../assets/Images/POM/POM.png";
+import React, { Fragment, useEffect } from 'react';
+import 'swiper/css';
+import './partners.scss';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import Icon from '@ant-design/icons';
+import { Autoplay } from 'swiper/modules';
+import CommonTitle from '../../components/CommonTitle/commonTitle';
+import usePartnersStore from '../../store/Partners/partnerPage';
+import { rightArrow } from '../../constants/icons';
+import { useLazyQuery } from '@apollo/client';
+import { getPartners } from '../../api';
+import product_Logo from '../../assets/Images/POM/POM.png'
+import SocialIconsComponent from '../../components/Social/SocialIcons';
+import { imageBaseURL } from '../../api/API_URL';
 
 const PartnersPage = () => {
   const { partners, setPartners } = usePartnersStore((state) => ({
@@ -61,7 +63,8 @@ const PartnersPage = () => {
   return (
     <Fragment>
       {/* Partners Highlighted */}
-      <section className="partners__section">
+        <section className="partners__section">
+          <SocialIconsComponent />
         <div className="partners__section__top">
           <div className="partners__section__top--title">
             <CommonTitle firstWord="Our" secondWord="Partners" />
@@ -85,7 +88,7 @@ const PartnersPage = () => {
                     >
                       <img
                         className="partners__section__partner__images--each-image"
-                        src={`https://toptamils-backend.ideassionlive.in${item?.attributes?.Logo?.data?.attributes?.url}`}
+                        src={`${imageBaseURL}${item?.attributes?.Logo?.data?.attributes?.url}`}
                         alt=""
                       />
                     </a>
@@ -121,7 +124,7 @@ const PartnersPage = () => {
                     >
                       <img
                         className="training__partners__images--each-image"
-                        src={`https://toptamils-backend.ideassionlive.in${item?.attributes?.Logo?.data?.attributes?.url}`}
+                        src={`${imageBaseURL}${item?.attributes?.Logo?.data?.attributes?.url}`}
                         alt=""
                       />
                     </a>
@@ -172,7 +175,7 @@ const PartnersPage = () => {
                       rel="noreferrer"
                     >
                       <img
-                        src={`https://toptamils-backend.ideassionlive.in${item?.attributes?.Logo?.data?.attributes?.url}`}
+                        src={`${imageBaseURL}${item?.attributes?.Logo?.data?.attributes?.url}`}
                         alt="partner-logo"
                       />
                     </a>
