@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./aatral.scss";
 import { useLazyQuery } from "@apollo/client";
 // assets
@@ -22,22 +23,26 @@ import { getCommitteeMembers } from "../../api/index";
 import { apiurl } from "../../api/API_URL";
 
 function AatralPage() {
-  const [
-    getExecutiveCommittee,
-    { loading: execloading, error: execError, data: executiveCommitteeMembers },
-  ] = useLazyQuery(getCommitteeMembers);
+  const [getCommittee, { loading, error, data: committeeMembers }] =
+    useLazyQuery(getCommitteeMembers);
 
-  const [
-    getSteeringCommittee,
-    { loading, error, data: SteeringCommitteeMembers },
-  ] = useLazyQuery(getCommitteeMembers);
+  useEffect(() => {
+    getCommittee();
+  }, []);
+
+  let executiveCommitteeMembers = [];
+  let streeingCommitteeMembers = [];
+
+  committeeMembers?.members?.data.map((member) =>
+    member.attributes.Type === "Executive_Committee"
+      ? executiveCommitteeMembers.push(member)
+      : streeingCommitteeMembers.push(member)
+  );
 
   let exec_members;
 
-  if (executiveCommitteeMembers) {
-    const members = executiveCommitteeMembers?.members?.data;
-    
-    exec_members = members.map((member) => {
+  if (executiveCommitteeMembers.length > 0) {
+    exec_members = executiveCommitteeMembers.map((member) => {
       const image = member?.attributes?.Image?.data?.attributes.url;
       return (
         <div key={member?.id} className="aatral__committe-sec__item-box">
@@ -59,10 +64,8 @@ function AatralPage() {
     });
   }
   let streering_members;
-  if (SteeringCommitteeMembers) {
-    const members = SteeringCommitteeMembers?.members?.data;
-
-    streering_members = members.map((member) => {
+  if (streeingCommitteeMembers.length > 0) {
+    streering_members = streeingCommitteeMembers.map((member) => {
       const image = member?.attributes?.Image?.data?.attributes.url;
       return (
         <div key={member?.id} className="aatral__committe-sec__item-box">
@@ -83,15 +86,6 @@ function AatralPage() {
       );
     });
   }
-
-  useEffect(() => {
-    getExecutiveCommittee({
-      variables: { committee_type: "Executive_Committee" },
-    });
-    getSteeringCommittee({
-      variables: { committee_type: "Steering_Committee" },
-    });
-  }, []);
 
   // return false;
   return (
@@ -156,7 +150,9 @@ function AatralPage() {
           <label>Explore plans suitable for your business</label>
           <Button>
             <div>
-              <p>Join The Community</p>
+              <Link to="/become-a-member">
+                <p>Join The Community</p>
+              </Link>
               <ArrowRight />
             </div>
           </Button>
