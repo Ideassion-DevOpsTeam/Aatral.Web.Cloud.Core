@@ -2,7 +2,10 @@ import { gql } from "@apollo/client";
 
 export const getMembers = gql`
   query Members($pageCount: Int, $pageSize: Int) {
-    members(pagination: { page: $pageCount, pageSize: $pageSize }) {
+    members(
+      pagination: { page: $pageCount, pageSize: $pageSize }
+      filters: { Type: { eqi: "Member" } }
+    ) {
       data {
         id
         attributes {

@@ -35,6 +35,8 @@ const Members = () => {
 
   const membersData = data ? data.members.data : [];
 
+  console.log("membersData", membersData);
+
   useEffect(() => {
     setFounderData();
     refetchMember({
@@ -70,36 +72,34 @@ const Members = () => {
 
         <div className="members__section__second__section">
           <div className="members__section__second__section__members">
-            {membersData?.map((item, index) =>
-              item?.attributes?.Type === "Member" ? (
-                <Fragment key={index}>
-                  <div
-                    onClick={() => showModal(item.id, item)}
-                    className="members__section__second__section__members--user"
-                  >
-                    {item?.attributes?.Image?.data === null ? (
-                      <img src={fallbackImage} alt="fallback" />
-                    ) : (
-                      <img
-                        src={`https://toptamils-backend.ideassionlive.in${item?.attributes?.Image?.data?.attributes?.url}`}
-                        alt="Founder_Photo"
-                      />
-                    )}
-                    <div className="members__section__second__section__members--user-details">
-                      <p className="members__section__second__section__members--user-details-name">
-                        {item?.attributes?.Name}
-                      </p>
-                      <p
-                        key={index}
-                        className="members__section__second__section__members--user-details-company"
-                      >
-                        {item?.attributes?.companies?.data[0]?.attributes?.Name}
-                      </p>
-                    </div>
+            {membersData?.map((item, index) => (
+              <Fragment key={index}>
+                <div
+                  onClick={() => showModal(item.id, item)}
+                  className="members__section__second__section__members--user"
+                >
+                  {item?.attributes?.Image?.data === null ? (
+                    <img src={fallbackImage} alt="fallback" />
+                  ) : (
+                    <img
+                      src={`https://toptamils-backend.ideassionlive.in${item?.attributes?.Image?.data?.attributes?.url}`}
+                      alt="Founder_Photo"
+                    />
+                  )}
+                  <div className="members__section__second__section__members--user-details">
+                    <p className="members__section__second__section__members--user-details-name">
+                      {item?.attributes?.Name}
+                    </p>
+                    <p
+                      key={index}
+                      className="members__section__second__section__members--user-details-company"
+                    >
+                      {item?.attributes?.companies?.data[0]?.attributes?.Name}
+                    </p>
                   </div>
-                </Fragment>
-              ) : null
-            )}
+                </div>
+              </Fragment>
+            ))}
           </div>
         </div>
         <Modal

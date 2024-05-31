@@ -20,7 +20,6 @@ import ButtonComponent from "../../components/UI/Button";
 import { createContact } from "../../api";
 
 const Contact = () => {
-  const [selectedValue, setSelectedValue] = useState(null);
   const [addContact, { data }] = useMutation(createContact);
 
   const { TextArea } = Input;
@@ -34,7 +33,6 @@ const Contact = () => {
 
   const handleSelect = (value) => {
     console.log(`Selected: ${value}`);
-    setSelectedValue(value);
   };
 
   let disPlayContent = (
@@ -96,13 +94,6 @@ const Contact = () => {
             </Form.Item>
 
             <Form.Item
-              label={
-                selectedValue === null
-                  ? "Designation:"
-                  : selectedValue === "Others (Specify)"
-                  ? "Specify:"
-                  : null
-              }
               className="contact-form-input"
               name="designation"
               rules={[
@@ -112,11 +103,7 @@ const Contact = () => {
                 },
               ]}
             >
-              {selectedValue === "Others (Specify)" ? (
-                <Input className="contact-input" value="test" />
-              ) : (
-                <Select onChange={handleSelect} options={items} />
-              )}
+              <Select onChange={handleSelect} options={items} />
             </Form.Item>
           </div>
 
