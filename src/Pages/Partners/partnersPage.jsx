@@ -190,7 +190,7 @@ const PartnersPage = () => {
       <section className="product__of__the__month">
         <div className="product__of__the__month__block">
           <div className="product__of__the__month__block--top">
-            <h1>Product of the month</h1>
+            <h1>Products of the month</h1>
             <p>Top products from our members community for this month</p>
           </div>
           <div className="product__of__the__month__block--bottom">
