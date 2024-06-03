@@ -61,6 +61,17 @@
       div {
         width: 100%;
         height: 100%;
+        label {
+          font-size: calc($normal - 0.2vw);
+          position: absolute;
+          padding: 1.1rem;
+          top: 35%;
+          z-index: 99;
+          display: inline-block;
+          left: 33%;
+          font-weight: 900;
+          color: $color__white;
+        }
 
         img {
           object-fit: fill;

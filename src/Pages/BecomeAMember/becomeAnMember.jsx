@@ -11,9 +11,6 @@ const BecomeAnMember = () => {
       <SocialIcons />
       <div className="become__a__member__section__block">
         <div className="become__a__member__section__block--top">
-          <p className="become__a__member__section__block--top-coming-soon">
-            Coming soon!
-          </p>
           <p className="become__a__member__section__block--top-member-tier">
             <span className="color-black"> Join now to </span>
             <span className="color-yellow">spark connections!</span>

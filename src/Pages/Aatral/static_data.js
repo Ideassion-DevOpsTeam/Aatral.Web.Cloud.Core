@@ -22,12 +22,12 @@ export const aatral_top_sec_icons_cont = [
   {
     title: "SERVE",
     icon: <Serve />,
-    quote: "Empower the future destiny of Tamil",
+    quote: "Guide and empower young tamils",
   },
 ];
 
 export const aatral_name_section = {
   heading_first: "The",
   heading_last: "Name",
-  desc: " The term Aatral originates from the Tamil language, translating to power, efficiency, competence, and energy. This name perfectly aligns with our vision to empower Tamil youth in the IT sector.Aatral embodies the essence of what we strive to achieve: to harness the power of collective leadership, foster efficiency in innovation, build competence through skill development, and channel energy into transformative growth.",
+  desc: " The term Aatral originates from the Tamil language, translating to power, efficiency, competence, and energy. This name perfectly aligns with our vision to empower Tamils in the IT sector.Aatral embodies the essence of what we strive to achieve: to harness the power of collective leadership, foster efficiency in innovation, build competence through skill development, and channel energy into transformative growth.",
 };
