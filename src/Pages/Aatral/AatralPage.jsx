@@ -18,10 +18,12 @@ import SocialIcons from "../../components/Social/SocialIcons";
 // ui
 import Image from "../../components/UI/Image";
 import Button from "../../components/UI/Button";
+import Icon from '@ant-design/icons';
 // api
 import { getCommitteeMembers } from "../../api/index";
 import { apiurl } from "../../api/API_URL";
 import RiseLogo from '../../assets/Images/rise_logo.svg';
+import { rightArrow } from "../../constants/icons";
 
 function AatralPage() {
   const [getCommittee, { loading, error, data: committeeMembers }] =
@@ -134,6 +136,7 @@ function AatralPage() {
               artists and public intellectuals who believe in the ideals of shared
               prosperity, impactful collaborations, empathy, environmental stewardship
               and peace.</p>
+            <a href="https://tamilrise.org/" target="_blank" rel="noreferrer">Know more <Icon component={rightArrow} /></a>
           </div>
         </div>
       </div>

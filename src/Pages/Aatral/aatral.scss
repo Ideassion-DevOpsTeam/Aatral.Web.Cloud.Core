@@ -327,4 +327,17 @@ section.aatral__committe-sec.container__outer {
     font-size: 15px;
     line-height: 1.6;
   }
+
+  & > a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    color: hsl(40, 97%, 55%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: absolute;
+    right: 40px;
+    bottom: 10px;
+  }
 }
