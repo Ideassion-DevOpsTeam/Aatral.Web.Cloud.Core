@@ -63,6 +63,10 @@ const Contact = () => {
                   required: true,
                   message: "Please enter your first name!",
                 },
+                {
+                  pattern: new RegExp(/^[a-zA-Z]+$/),
+                  message: "No Numbers or Special Characters Allowed"
+                },
               ]}
             >
               <Input className="contact-input" />
@@ -76,6 +80,10 @@ const Contact = () => {
                 {
                   required: true,
                   message: "Please enter your last name!",
+                },
+                {
+                  pattern: new RegExp(/^[a-zA-Z]+$/),
+                  message: "No Numbers or Special Characters Allowed"
                 },
               ]}
             >

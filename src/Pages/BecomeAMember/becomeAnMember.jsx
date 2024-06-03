@@ -63,6 +63,10 @@ const BecomeAnMember = () => {
                     required: true,
                     message: "Please enter your Full name!",
                   },
+                  {
+                    pattern: new RegExp(/^[a-zA-Z]+$/),
+                    message: "No Numbers or Special Characters Allowed"
+                  },
                 ]}
               >
                 <Input className="contact-input" />
