@@ -249,3 +249,10 @@
         margin: 20px auto !important;
     }
 }
+
+section.m-x-auto.member-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem auto auto auto;
+}

@@ -43,7 +43,7 @@
         font-size: $medium;
         position: relative;
 
-        &:not(:last-child)::after {
+        &:not(:nth-child(7)):not(:nth-child(8))::after {
           content: "";
           position: absolute;
           left: 0;

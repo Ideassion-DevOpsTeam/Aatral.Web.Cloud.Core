@@ -5,7 +5,7 @@
   padding-top: 9rem;
   min-height: 100vh;
   // overflow-x: hidden;
-  overflow-y: scroll;
+  // overflow-y: hidden;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -195,7 +195,7 @@
 
         label {
           color: $color__black;
-          font-size: 14px;
+          font-size: 13px;
           text-align: center;
           line-height: 1.3em;
           margin-bottom: 1rem;
@@ -217,6 +217,7 @@
   &__join-sec {
     position: relative;
     margin-block: 5rem 0;
+    height: 30rem;
 
     &__content-box {
       position: absolute;
@@ -307,6 +308,7 @@ section.aatral__committe-sec.container__outer {
   height: 17rem;
   flex-wrap: wrap;
   margin-top: -7rem;
+  z-index: 0;
 }
 
 .about__rise {

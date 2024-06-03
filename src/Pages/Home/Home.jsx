@@ -45,7 +45,7 @@ function Home() {
           <div className="home__desc-box__desc-cont">
             <div>
               <p className="home__desc-box__desc-cont-Powered__by">Powered by
-                <img className="home__desc-box__desc-cont-Powered__by-img" src={RiseLogo} alt="" />
+                <img className="home__desc-box__desc-cont-Powered__by-img" src={`${RiseLogo}`} alt="" />
               </p>
             </div>
             <header>

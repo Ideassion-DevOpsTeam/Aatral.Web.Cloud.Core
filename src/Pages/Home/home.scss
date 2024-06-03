@@ -2,7 +2,7 @@
 
 .home {
   display: flex;
-  padding-top: 11rem;
+  padding-top: 8rem;
   // background-color: greenyellow;
   position: relative;
   min-height: 100vh;
@@ -44,6 +44,7 @@
       flex-direction: column;
       height: 70%;
       justify-content: space-between;
+      gap: 1rem;
 
       &-Powered__by {
         color: hsla(0, 0%, 54%, 1);
@@ -72,11 +73,12 @@
           span {
             display: block;
             position: relative;
-            padding: 0.6rem 2rem;
+            padding: 0.6rem 0.9rem;
             letter-spacing: .6px;
             width: fit-content;
-            line-height: .7;
-            font-size: 30px;
+            line-height: 0.8;
+            font-size: 33px;
+            font-weight: 600;
             border-radius: 0 0 0.6rem 0.6rem;
             &:first-of-type {
               border-radius: 0.6rem 0.6rem 0 0;
@@ -99,7 +101,7 @@
       main {
         margin-block: 2rem 5rem;
         & > p {
-            font-size: 30px;
+            font-size: 26px;
             line-height: .8;
             font-weight: 300;
           span {
@@ -131,6 +133,7 @@
     display: flex;
     margin-block: 3.3rem;
     min-height: 90vh;
+    height: 90vh;
     // background-color: red;
     &__arrow-left {
       margin-left: 2rem;
