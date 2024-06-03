@@ -16,7 +16,7 @@ function TypingEffect() {
   }, []);
 
   const typingSpeed = 200;
-  const deletingSpeed = 500;
+  const deletingSpeed = 230;
 
   const handleTyping = useCallback(() => {
     const newText = words[currentIndex].substring(0, displayText.length + 1);
@@ -41,7 +41,11 @@ function TypingEffect() {
       () => {
         isTyping ? handleTyping() : handleDeleting();
       },
-      isTyping ? typingSpeed : deletingSpeed
+      isTyping
+        ? typingSpeed
+        : displayText === words[currentIndex]
+        ? 1000
+        : deletingSpeed
     );
 
     return () => clearInterval(interval);
