@@ -15,7 +15,8 @@ const BecomeAnMember = () => {
             Coming soon!
           </p>
           <p className="become__a__member__section__block--top-member-tier">
-            Membership tiers coming soon. Join now for free!
+            <span className="color-black"> Join now to </span>
+            <span className="color-yellow">spark connections!</span>
           </p>
         </div>
         <div className="become__a__member__section__block--bottom">
@@ -38,7 +39,7 @@ const BecomeAnMember = () => {
                   className="contact-form-input"
                   rules={[
                     {
-                      required: false,
+                      required: true,
                       message: "Please enter your Full name!",
                     },
                   ]}
