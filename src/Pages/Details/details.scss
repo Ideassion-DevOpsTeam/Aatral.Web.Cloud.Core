@@ -27,7 +27,6 @@
 
   &__main-cont {
     height: 100%;
-    position: relative;
     header {
       //   margin-block: 2.4rem;
       h1 {
@@ -49,58 +48,26 @@
     }
 
     &__content-box {
-      width: 50vw;
+      width: 45vw;
       margin-right: auto;
     }
 
     &__img-box {
       position: absolute;
-      width: 100%;
-      min-height: fit-content;
+      width: 55vw;
       height: 100vh;
-      border-radius: 50%;
-      top: 45%;
-      left: 53%;
-      background-image: linear-gradient(
-        to right,
-        rgba(252, 176, 26, 1),
-        rgba(252, 176, 26, 0)
-      );
-
+      bottom: 0%;
+      left: 45vw;
       div {
-        position: relative;
+        width: 100%;
         height: 100%;
-        label {
-          font-size: calc($normal - 0.2vw);
-          position: absolute;
-          padding: 1.1rem;
-          top: 35%;
-          z-index: 2;
-          display: inline-block;
-          left: 33%;
-          font-weight: 900;
-          color: $color__white;
-        }
+
         img {
-          top: -39%;
-          width: 60vw;
-          z-index: 11;
-          left: -9.5%;
-          position: absolute;
+          object-fit: fill;
+          height: 100%;
+          bottom: 0%;
         }
       }
     }
   }
-}
-
-.details__main-cont__img-box.fade-in-from-bottom.show::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(139deg, transparent, transparent, black);
-  z-index: 1;
-  right: 0;
-  bottom: 50%;
-  border-radius: 100%;
 }
