@@ -72,7 +72,7 @@ const Members = () => {
         <SocialIconsComponent />
         <div className="members__section__block">
           <p className="members__section__block__title">
-            Our{" "}
+            Our
             <span className="members__section__block__title--span">
               Members
             </span>
@@ -152,18 +152,6 @@ const Members = () => {
                   </p>
                 </div>
                 <div className="member__modal__profile--details-social">
-                  {/* <span className="member__modal__profile--details-social-link">
-                    <a
-                      href={
-                        viewMemberModal?.attributes?.companies?.data[0]
-                          ?.attributes?.Website
-                      }
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Icon component={webIcon} />
-                    </a>
-                  </span> */}
                   <span className="member__modal__profile--details-social-link">
                     <a
                       href={viewMemberModal?.attributes?.Social[0]?.Link}
