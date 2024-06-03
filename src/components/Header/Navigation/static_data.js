@@ -26,6 +26,7 @@ export const nav_menu = [
   {
     title: "Contact",
     path: "/contact",
+    state: "true",
   },
   {
     title: "",

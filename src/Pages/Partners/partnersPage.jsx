@@ -13,6 +13,7 @@ import { getPartners } from "../../api";
 import product_Logo from "../../assets/Images/POM/POM.png";
 import SocialIconsComponent from "../../components/Social/SocialIcons";
 import { imageBaseURL } from "../../api/API_URL";
+import { Spin } from "antd";
 
 const PartnersPage = () => {
   const { partners, setPartners } = usePartnersStore((state) => ({
@@ -56,10 +57,6 @@ const PartnersPage = () => {
     refetchPartners({});
   }, []);
 
-  if (!loading) {
-    console.log(data);
-  }
-
   return (
     <Fragment>
       {/* Partners Highlighted */}
@@ -74,7 +71,7 @@ const PartnersPage = () => {
           </div>
         </div>
         <div className="partners__section__partner__images">
-          {partnersInfo &&
+          {partnersInfo.length  <= 0 ? <Spin /> : (partnersInfo &&
             partnersInfo.length &&
             partnersInfo?.map((item) =>
               item?.attributes?.Type === "Partner" ? (
@@ -95,7 +92,7 @@ const PartnersPage = () => {
                   </div>
                 </Fragment>
               ) : null
-            )}
+            ))}
         </div>
       </section>
 
@@ -110,7 +107,7 @@ const PartnersPage = () => {
           </div>
         </div>
         <div className="training__partners__images">
-          {partnersInfo &&
+          {partnersInfo.length  <= 0 ? <Spin /> : (partnersInfo &&
             partnersInfo.length &&
             partnersInfo?.map((item) =>
               item?.attributes?.Type === "Training_Partner" ? (
@@ -131,7 +128,7 @@ const PartnersPage = () => {
                   </div>
                 </Fragment>
               ) : null
-            )}
+            ))}
         </div>
       </section>
 
@@ -143,8 +140,7 @@ const PartnersPage = () => {
               className="mySwiper partners__logos--logos-swiper"
               loop={true}
               pagination={false}
-              autoplay={{ delay: 2500, disableOnInteraction: false }}
-              centeredSlides={false}
+              autoplay={{ delay: 1500, disableOnInteraction: false }}
               modules={[Autoplay]}
               breakpoints={{
                 400: {
@@ -161,6 +157,10 @@ const PartnersPage = () => {
                 },
                 1024: {
                   slidesPerView: 5,
+                  spaceBetween: 30,
+                },
+                1200: {
+                  slidesPerView: 6,
                   spaceBetween: 30,
                 },
               }}

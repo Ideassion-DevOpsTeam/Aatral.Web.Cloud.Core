@@ -1,22 +1,18 @@
 import "./contact.scss";
 import React, { Fragment, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button, Form, Input, Select } from "antd";
 import Icon from "@ant-design/icons";
 import { useMutation } from "@apollo/client";
 import { rightArrow } from "../../constants/icons";
-
 // assets
 import { ReactComponent as PaperFlight } from "../../assets/Icons/Contact/papaer_flight.svg";
 import { ReactComponent as RightArrow } from "../../assets/Icons/Contact/right_yellow.svg";
-
 // static_data
 import { items } from "./static_data";
-
 // components
 import ButtonComponent from "../../components/UI/Button";
 import MailSucessComponent from "../../components/Sucess/mailSucess";
-
 // api
 import { createContact } from "../../api";
 import SocialIconsComponent from "../../components/Social/SocialIcons";
