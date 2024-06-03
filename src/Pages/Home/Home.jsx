@@ -13,7 +13,7 @@ import TypingEffect from "../../components/TypingEffect/TypingEffect";
 import { ReactComponent as HomeBuilding } from "../../assets/Icons/Home/homeRightBuilding.svg";
 import { ReactComponent as Map } from "../../assets/Icons/Home/indiaMap.svg";
 import { ReactComponent as RightBlackArrow } from "../../assets/Icons/rightBlackArrow.svg";
-import RiseLogo from '../../assets/Images/rise_logo.svg';
+import RiseLogo from '../../assets/Images/rise_logo.png';
 
 function Home() {
   const [isVisible, setIsVisible] = useState(false);
