@@ -5,20 +5,23 @@ import { Button, Form, Input, Select } from "antd";
 import Icon from "@ant-design/icons";
 import { useMutation } from "@apollo/client";
 import { rightArrow } from "../../constants/icons";
+
 // assets
 import { ReactComponent as PaperFlight } from "../../assets/Icons/Contact/papaer_flight.svg";
 import { ReactComponent as RightArrow } from "../../assets/Icons/Contact/right_yellow.svg";
 // static_data
 import { items } from "./static_data";
 // components
-import ButtonComponent from "../../components/UI/Button";
 import MailSucessComponent from "../../components/Sucess/mailSucess";
+//loader
+import Loader from "../../components/Loader/loader";
 // api
 import { createContact } from "../../api";
 import SocialIconsComponent from "../../components/Social/SocialIcons";
 
 const Contact = () => {
-  const [addContact, { data }] = useMutation(createContact);
+  const [addContact, { data, loading }] = useMutation(createContact);
+  console.log("loading ", loading);
   const [isValueSelected, setIsValueSelected] = useState(false);
 
   const { TextArea } = Input;
@@ -148,6 +151,9 @@ const Contact = () => {
     disPlayContent = <MailSucessComponent />;
   }
 
+  if (loading) {
+    disPlayContent = <Loader />;
+  }
   return (
     <Fragment>
       <section className="contact__section">

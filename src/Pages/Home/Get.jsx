@@ -87,6 +87,7 @@ function HomeGetPage() {
       </section>
       <Link
         to="/events"
+        state={{ arrow: true }}
         className="pos-abs-y-center arrow__common-right arrow__left_and_right_size"
       >
         <RightArrow />

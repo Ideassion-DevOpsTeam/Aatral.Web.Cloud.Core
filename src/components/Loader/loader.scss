@@ -1,0 +1,19 @@
+@use "../../styles/variables.scss" as *;
+
+.loader {
+  height: 100vh;
+  display: flex;
+  width: 100%;
+
+  .ant-spin {
+    color: $color__yellow;
+
+    .ant-spin-dot-item {
+      background-color: $color__yellow;
+    }
+  }
+
+  &__item-box {
+    margin: auto;
+  }
+}

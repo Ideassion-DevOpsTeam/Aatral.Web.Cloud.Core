@@ -1,5 +1,6 @@
 import React, { useState, useEffect, Fragment } from "react";
 import { Link } from "react-router-dom";
+import { useLazyQuery } from "@apollo/client";
 
 //styles
 import "./home.scss";
@@ -8,18 +9,29 @@ import SocialIcons from "../../components/Social/SocialIcons";
 import CustomButton from "../../components/CustomButtom/CustomBtm";
 import NetworkDesign from "../../components/NetworkDesign/network";
 import TypingEffect from "../../components/TypingEffect/TypingEffect";
+import LoaderComponent from "../../components/Loader/loader";
 
 // assets
 import { ReactComponent as HomeBuilding } from "../../assets/Icons/Home/homeRightBuilding.svg";
 import { ReactComponent as Map } from "../../assets/Icons/Home/indiaMap.svg";
 import { ReactComponent as RightBlackArrow } from "../../assets/Icons/rightBlackArrow.svg";
-import RiseLogo from '../../assets/Images/rise_logo.png';
+import RiseLogo from "../../assets/Images/rise_logo.png";
+
+//api
+import { getMembersImages } from "../../api/index";
 
 function Home() {
   const [isVisible, setIsVisible] = useState(false);
+  const [getImages, { loading, error, data: images }] =
+    useLazyQuery(getMembersImages);
+
+  const handleGetImages = (currentPage) => {
+    getImages({ variables: { currentPage: currentPage, pageSize: 9 } });
+  };
 
   useEffect(() => {
     setIsVisible(true);
+    handleGetImages(1);
     return () => {
       setIsVisible(false);
     };
@@ -32,20 +44,32 @@ function Home() {
       >
         <SocialIcons />
         <div className="home__map-box">
-          <section className="wid-80">
-            <div className="home__map-box__map-cont">
-              <Map />
-            </div>
-            <div className="home__map-box__network-cont">
-              <NetworkDesign />
-            </div>
-          </section>
+          {images ? (
+            <section className="wid-80">
+              <div className="home__map-box__map-cont">
+                <Map />
+              </div>
+              <div className="home__map-box__network-cont">
+                <NetworkDesign
+                  images={images}
+                  handleGetImages={handleGetImages}
+                />
+              </div>
+            </section>
+          ) : (
+            <LoaderComponent />
+          )}
         </div>
         <div className="home__desc-box">
           <div className="home__desc-box__desc-cont">
             <div>
-              <p className="home__desc-box__desc-cont-Powered__by">Powered by
-                <img className="home__desc-box__desc-cont-Powered__by-img" src={`${RiseLogo}`} alt="" />
+              <p className="home__desc-box__desc-cont-Powered__by">
+                Powered by
+                <img
+                  className="home__desc-box__desc-cont-Powered__by-img"
+                  src={`${RiseLogo}`}
+                  alt=""
+                />
               </p>
             </div>
             <header>

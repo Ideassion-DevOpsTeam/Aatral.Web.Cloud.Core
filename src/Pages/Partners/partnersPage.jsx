@@ -49,6 +49,8 @@ const PartnersPage = () => {
 
   const partnersInfo = data ? data?.companies?.data : [];
 
+  console.log("partnersInfo", partnersInfo);
+
   useEffect(() => {
     setPartners();
     setTrainingPartners();
@@ -56,6 +58,63 @@ const PartnersPage = () => {
     setProductOfTheMonth();
     refetchPartners({});
   }, []);
+
+  let displayScroll;
+
+  if (partnersInfo?.length > 0) {
+    displayScroll = (
+      <Swiper
+        className="mySwiper partners__logos--logos-swiper"
+        loop={true}
+        pagination={false}
+        autoplay={{ delay: 1500, disableOnInteraction: false }}
+        modules={[Autoplay]}
+        breakpoints={{
+          400: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 5,
+            spaceBetween: 30,
+          },
+          1200: {
+            slidesPerView: 6,
+            spaceBetween: 30,
+          },
+        }}
+      >
+        {partnersInfo?.map(
+          (item, index) =>
+            item?.attributes?.Logo?.data && (
+              <SwiperSlide key={item?.id}>
+                <div className="partners__logos--logo">
+                  <a
+                    href={item?.attributes?.partner_website}
+                    className="partners__logos--logo-link"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img
+                      src={`${imageBaseURL}${item?.attributes?.Logo?.data?.attributes?.url}`}
+                      alt="partner-logo"
+                    />
+                  </a>
+                </div>
+              </SwiperSlide>
+            )
+        )}
+      </Swiper>
+    );
+  }
 
   return (
     <Fragment>
@@ -71,7 +130,10 @@ const PartnersPage = () => {
           </div>
         </div>
         <div className="partners__section__partner__images">
-          {partnersInfo.length  <= 0 ? <Spin /> : (partnersInfo &&
+          {partnersInfo.length <= 0 ? (
+            <Spin />
+          ) : (
+            partnersInfo &&
             partnersInfo.length &&
             partnersInfo?.map((item) =>
               item?.attributes?.Type === "Partner" ? (
@@ -92,7 +154,8 @@ const PartnersPage = () => {
                   </div>
                 </Fragment>
               ) : null
-            ))}
+            )
+          )}
         </div>
       </section>
 
@@ -107,10 +170,13 @@ const PartnersPage = () => {
           </div>
         </div>
         <div className="training__partners__images">
-          {partnersInfo.length  <= 0 ? <Spin /> : (partnersInfo &&
-            partnersInfo.length &&
+          {partnersInfo.length <= 0 ? (
+            <Spin />
+          ) : (
+            partnersInfo &&
             partnersInfo?.map((item) =>
-              item?.attributes?.Type === "Training_Partner" ? (
+              item?.attributes?.Type === "Training_Partner" &&
+              item?.attributes?.Logo?.data !== null ? (
                 <Fragment key={item?.id}>
                   <div className="training__partners__images--each">
                     <a
@@ -128,64 +194,14 @@ const PartnersPage = () => {
                   </div>
                 </Fragment>
               ) : null
-            ))}
+            )
+          )}
         </div>
       </section>
 
       {/* Partners carousel */}
       <section className="partners__logos">
-        <div className="partners__logos--logos">
-          {partnersInfo?.length > 0 && (
-            <Swiper
-              className="mySwiper partners__logos--logos-swiper"
-              loop={true}
-              pagination={false}
-              slidesPerView= {1}
-              autoplay={{ delay: 1500, disableOnInteraction: false }}
-              modules={[Autoplay]}
-              breakpoints={{
-                400: {
-                  slidesPerView: 1,
-                  spaceBetween: 10,
-                },
-                640: {
-                  slidesPerView: 2,
-                  spaceBetween: 20,
-                },
-                768: {
-                  slidesPerView: 3,
-                  spaceBetween: 30,
-                },
-                1024: {
-                  slidesPerView: 5,
-                  spaceBetween: 30,
-                },
-                1200: {
-                  slidesPerView: 6,
-                  spaceBetween: 30,
-                },
-              }}
-            >
-              {partnersInfo?.map((item, index) => (
-                <SwiperSlide key={item?.id}>
-                  <div className="partners__logos--logo">
-                    <a
-                      href={item?.attributes?.partner_website}
-                      className="partners__logos--logo-link"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <img
-                        src={`${imageBaseURL}${item?.attributes?.Logo?.data?.attributes?.url}`}
-                        alt="partner-logo"
-                      />
-                    </a>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          )}
-        </div>
+        <div className="partners__logos--logos">{displayScroll}</div>
       </section>
 
       {/* Product of the month */}

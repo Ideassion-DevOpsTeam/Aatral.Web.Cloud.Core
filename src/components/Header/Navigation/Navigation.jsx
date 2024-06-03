@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 import "./navigation.scss";
@@ -6,11 +6,26 @@ import { ReactComponent as RightArrowYellow } from "../../../assets/Icons/arrowY
 import { nav_menu, nav_footer_menu } from "./static_data";
 
 function Navigation({ setMenu }) {
+  const menuRef = useRef(null);
   const handleClose = () => {
     setMenu(false);
   };
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        handleClose();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <section className="navigation">
+    <section ref={menuRef} className="navigation">
       <header>
         <section className="wid-80 m-x-auto">
           <RightArrowYellow onClick={handleClose} />

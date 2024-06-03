@@ -1,27 +1,20 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Network, DataSet } from "vis-network";
-import { useLazyQuery } from "@apollo/client";
 
 // temp
 import NetworkLogo from "../../assets/Icons/network/net_logo.svg";
 import DefaultImage from "../../assets/Icons/defaultPerson.svg";
 // api
-import { getMembersImages } from "../../api/index";
+
 import { apiurl } from "../../api/API_URL";
 
 import { edges, options, imagePostion, showImages } from "./network_setup";
 
 import "./network.scss";
 
-const NetworkDesign = () => {
+const NetworkDesign = ({ handleGetImages, images }) => {
   const container = useRef(null);
   const initializedRef = useRef(false);
-  const [getImages, { loading, error, data: images }] =
-    useLazyQuery(getMembersImages);
-
-  const handleGetImages = (currentPage) => {
-    getImages({ variables: { currentPage: currentPage, pageSize: 9 } });
-  };
 
   useEffect(() => {
     handleGetImages(1);
