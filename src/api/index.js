@@ -165,7 +165,7 @@ export const createContact = gql`
         FirstName: $firstname
         LastName: $lastname
         Email: $email
-        OtherDesignation: $designation
+        Designation: $designation
         Query: $query
       }
     ) {

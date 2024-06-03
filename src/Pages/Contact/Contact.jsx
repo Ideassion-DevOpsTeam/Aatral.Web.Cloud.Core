@@ -27,6 +27,7 @@ const Contact = () => {
   const { TextArea } = Input;
 
   const onFinish = async (values) => {
+    // console.log("values", values);
     await addContact({ variables: values });
   };
   const onFinishFailed = (errorInfo) => {
@@ -161,7 +162,7 @@ const Contact = () => {
   return (
     <Fragment>
       <section className="contact__section">
-      <SocialIconsComponent />
+        <SocialIconsComponent />
         <div className="contact__section--left">
           <div className="contact__section--left-side">
             <h1>
