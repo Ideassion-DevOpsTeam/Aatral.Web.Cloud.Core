@@ -72,7 +72,7 @@ const Members = () => {
         <SocialIconsComponent />
         <div className="members__section__block">
           <p className="members__section__block__title">
-            Our{" "}
+            Our
             <span className="members__section__block__title--span">
               Members
             </span>

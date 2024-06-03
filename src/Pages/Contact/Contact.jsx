@@ -12,6 +12,7 @@ import { ReactComponent as RightArrow } from "../../assets/Icons/Contact/right_y
 import { items } from "./static_data";
 // components
 import ButtonComponent from "../../components/UI/Button";
+import MailSucessComponent from "../../components/Sucess/mailSucess";
 // api
 import { createContact } from "../../api";
 import SocialIconsComponent from "../../components/Social/SocialIcons";
@@ -23,6 +24,9 @@ const Contact = () => {
   const { TextArea } = Input;
 
   const onFinish = async (values) => {
+    if (values.designation === "Others_Specify") {
+      values.otherDesignation = values.query;
+    }
     await addContact({ variables: values });
   };
   const onFinishFailed = (errorInfo) => {
@@ -30,7 +34,6 @@ const Contact = () => {
   };
 
   const handleSelect = (value) => {
-    // console.log(`Selected: ${value}`);
     setIsValueSelected(true);
   };
 
@@ -134,30 +137,13 @@ const Contact = () => {
   );
 
   if (data) {
-    disPlayContent = (
-      <div className="contact__sucess-cont">
-        <section className="contact__sucess-cont__desc-cont">
-          <label>
-            Your message has been sent! We’ll get back to you as soon as
-            possible.
-          </label>
-          <ButtonComponent>
-            <Link to="/">
-              Go to home <RightArrow />
-            </Link>
-          </ButtonComponent>
-        </section>
-        <section className="contact__sucess-cont__icon-cont">
-          <PaperFlight />;
-        </section>
-      </div>
-    );
+    disPlayContent = <MailSucessComponent />;
   }
 
   return (
     <Fragment>
       <section className="contact__section">
-      <SocialIconsComponent />
+        <SocialIconsComponent />
         <div className="contact__section--left">
           <div className="contact__section--left-side">
             <h1>
