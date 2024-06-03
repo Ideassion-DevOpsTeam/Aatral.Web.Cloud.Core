@@ -11,11 +11,11 @@ const BecomeAnMember = () => {
       <SocialIcons />
       <div className="become__a__member__section__block">
         <div className="become__a__member__section__block--top">
-          <p className="become__a__member__section__block--top-coming-soon">
+          {/* <p className="become__a__member__section__block--top-coming-soon">
             Coming soon!
-          </p>
+          </p> */}
           <p className="become__a__member__section__block--top-member-tier">
-            Membership tiers coming soon. Join now for free!
+          Join now to spark connections!
           </p>
         </div>
         <div className="become__a__member__section__block--bottom">

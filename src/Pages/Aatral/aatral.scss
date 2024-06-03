@@ -292,3 +292,39 @@ section.aatral__committe-sec.container__outer {
   margin: 0 auto;
   width: 100%;
 }
+
+.about___rise {
+  display: flex;
+  justify-content: center;
+  max-width: 80%;
+  border: 1px solid hsla(40, 97%, 55%, 1);
+  position: relative;
+  z-index: 999;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0px 4px 8px 0px hsla(0, 0%, 0%, 0.08);
+  border-radius: 5px;
+  height: 17rem;
+  flex-wrap: wrap;
+  margin-top: -7rem;
+}
+
+.about__rise {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  &--left {
+    padding: 2rem;
+  }
+}
+
+.about__rise--right {
+
+  & > p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}

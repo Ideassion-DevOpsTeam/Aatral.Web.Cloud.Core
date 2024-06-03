@@ -21,6 +21,7 @@ import Button from "../../components/UI/Button";
 // api
 import { getCommitteeMembers } from "../../api/index";
 import { apiurl } from "../../api/API_URL";
+import RiseLogo from '../../assets/Images/rise_logo.svg';
 
 function AatralPage() {
   const [getCommittee, { loading, error, data: committeeMembers }] =
@@ -108,7 +109,7 @@ function AatralPage() {
             />
             <p>
               To become the foremost collective leadership of national Tamil IT
-              entrepreneurs, catalysing transformative changes for the sustained
+              entrepreneurs and professionals, catalysing transformative changes for the sustained
               future growth of the IT ecosystem, and benefiting Tamils
               nationwide.
             </p>
@@ -121,6 +122,22 @@ function AatralPage() {
           <VisionBtm />
         </footer>
       </section>
+
+      <div className="about___rise">
+        <div className="about__rise">
+          <div className="about__rise--left">
+            <img src={RiseLogo} alt="" />
+          </div>
+          <div className="about__rise--right">
+            <p>The RISE is the most expansive and embedded global network of Tamil
+              speaking entrepreneurs, investors, professionals, academia, researchers
+              artists and public intellectuals who believe in the ideals of shared
+              prosperity, impactful collaborations, empathy, environmental stewardship
+              and peace.</p>
+          </div>
+        </div>
+      </div>
+
       <section className="aatral__committe-sec streeing-ali-adjust  container__outer">
         <section className="wid-80 m-x-auto">
           <SplitHeading

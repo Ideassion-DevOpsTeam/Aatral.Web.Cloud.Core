@@ -22,7 +22,7 @@ export const aatral_top_sec_icons_cont = [
   {
     title: "SERVE",
     icon: <Serve />,
-    quote: "Empower the future destiny of Tamil",
+    quote: "Guide and empower young tamils",
   },
 ];
 

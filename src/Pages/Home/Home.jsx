@@ -13,6 +13,7 @@ import TypingEffect from "../../components/TypingEffect/TypingEffect";
 import { ReactComponent as HomeBuilding } from "../../assets/Icons/Home/homeRightBuilding.svg";
 import { ReactComponent as Map } from "../../assets/Icons/Home/indiaMap.svg";
 import { ReactComponent as RightBlackArrow } from "../../assets/Icons/rightBlackArrow.svg";
+import RiseLogo from '../../assets/Images/rise_logo.svg';
 
 function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -42,6 +43,11 @@ function Home() {
         </div>
         <div className="home__desc-box">
           <div className="home__desc-box__desc-cont">
+            <div>
+              <p className="home__desc-box__desc-cont-Powered__by">Powered by
+                <img className="home__desc-box__desc-cont-Powered__by-img" src={RiseLogo} alt="" />
+              </p>
+            </div>
             <header>
               <h1>
                 <span className="color-black">Enhance</span>
@@ -51,11 +57,11 @@ function Home() {
               </h1>
             </header>
             <main>
-              <h1>Connecting People</h1>
-              <h1>
+              <p>Connecting People</p>
+              <p>
                 with
                 <TypingEffect />
-              </h1>
+              </p>
             </main>
             <footer>
               <CustomButton

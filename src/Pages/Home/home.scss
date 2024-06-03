@@ -40,6 +40,28 @@
     &__desc-cont {
       position: absolute;
       z-index: 1;
+      display: flex;
+      flex-direction: column;
+      height: 70%;
+      justify-content: space-between;
+
+      &-Powered__by {
+        color: hsla(0, 0%, 54%, 1);
+        font-weight: 900;
+        line-height: 1.2;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+
+        &-img {
+          width: 110px;
+          margin-left: 2rem;
+        }
+
+      }
       h1 {
         font-size: clamp(1.5rem, 3.2vw, 4.1rem);
       }
@@ -51,8 +73,10 @@
             display: block;
             position: relative;
             padding: 0.6rem 2rem;
+            letter-spacing: .6px;
             width: fit-content;
-            line-height: 1em;
+            line-height: .7;
+            font-size: 30px;
             border-radius: 0 0 0.6rem 0.6rem;
             &:first-of-type {
               border-radius: 0.6rem 0.6rem 0 0;
@@ -74,12 +98,15 @@
 
       main {
         margin-block: 2rem 5rem;
-        h1 {
-          line-height: 1.3em;
+        & > p {
+            font-size: 30px;
+            line-height: .8;
+            font-weight: 300;
           span {
             color: $color__yellow;
             &:first-of-type {
               margin-left: 1.4rem;
+              font-weight: 600;
             }
           }
         }
