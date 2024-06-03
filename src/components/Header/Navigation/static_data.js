@@ -21,7 +21,7 @@ export const nav_menu = [
   },
   {
     title: "Blog",
-    path: null,
+    path: "./blogs",
   },
   {
     title: "Contact",
@@ -30,7 +30,7 @@ export const nav_menu = [
   },
   {
     title: "",
-    path: "/become-a-member"
+    path: "/become-a-member",
   },
 ];
 

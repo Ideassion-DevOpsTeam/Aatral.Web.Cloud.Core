@@ -12,9 +12,11 @@ import { items } from "../Contact/static_data";
 import { joinMember } from "../../api";
 // components
 import MailSucessComponent from "../../components/Sucess/mailSucess";
+//loader
+import Loader from "../../components/Loader/loader";
 
 const BecomeAnMember = () => {
-  const [addMember, { data }] = useMutation(joinMember);
+  const [addMember, { data, loading }] = useMutation(joinMember);
   const [isValueSelected, setIsValueSelected] = useState(false);
   const onFinish = async (values) => {
     // console.log("values-become", values);
@@ -124,6 +126,10 @@ const BecomeAnMember = () => {
       </div>
     </div>
   );
+
+  if (loading) {
+    displayCont = <Loader />;
+  }
   return (
     <section className="become__a__member__section">
       <SocialIcons />
