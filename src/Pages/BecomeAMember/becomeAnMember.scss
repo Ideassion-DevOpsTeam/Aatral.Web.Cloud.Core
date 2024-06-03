@@ -50,6 +50,14 @@ input#become__a__member_name {
   text-indent: 8.2rem;
 }
 
+.ant-input-outlined.ant-input-status-error:not(.ant-input-disabled) {
+  background: transparent !important;
+  border-bottom: 2px solid hsla(0, 0%, 0%, 0.25);
+  border-top: transparent;
+  border-right: transparent;
+  border-left: transparent;
+}
+
 input#become__a__member_email {
   text-indent: 5rem;
 }

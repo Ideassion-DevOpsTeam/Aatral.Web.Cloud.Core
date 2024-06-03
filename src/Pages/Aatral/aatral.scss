@@ -68,7 +68,7 @@
     }
     &__img-box {
       flex: 0 1 45%;
-      margin-bottom: -10%;
+      margin-top: -10%;
       svg {
         width: 41vw;
         max-width: fit-content;
@@ -198,7 +198,7 @@
           font-size: 13px;
           text-align: center;
           line-height: 1.3em;
-          margin-bottom: 1rem;
+          margin-bottom: 0rem;
           font-weight: 700;
         }
 
@@ -230,8 +230,9 @@
       align-items: center;
       label {
         color: $color__black;
-        font-size: $medium;
+        font-size: 14px;
         line-height: 1.5em;
+        font-weight: 700;
       }
 
       button {

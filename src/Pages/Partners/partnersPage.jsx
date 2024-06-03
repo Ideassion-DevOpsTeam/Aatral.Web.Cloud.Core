@@ -140,6 +140,7 @@ const PartnersPage = () => {
               className="mySwiper partners__logos--logos-swiper"
               loop={true}
               pagination={false}
+              slidesPerView= {1}
               autoplay={{ delay: 1500, disableOnInteraction: false }}
               modules={[Autoplay]}
               breakpoints={{

@@ -13,9 +13,9 @@ function SocialIconsComponent() {
       <div className="social-icon__item-box">
         <a href="https://www.linkedin.com/company/aatral-india/about/" target="_blank" rel="noreferrer"><Icon component={mainLinkedInIcon} /></a>
       </div>
-      <div className="social-icon__item-box">
-        <a href="https://www.instagram.com/aatralindia/" target="_blank" rel="noreferrer"><Icon component={mainInstagramIcon} /></a>
-      </div>
+      {/* <div className="social-icon__item-box">
+        <a href="https://www.instagram.com/aatralindia" target="_blank" rel="noreferrer"><Icon component={mainInstagramIcon} /></a>
+      </div> */}
       <div className="social-icon__item-box">
         <a href="https://x.com/AatralIndia" target="_blank" rel="noreferrer"><Icon component={mainXIcon} /></a>
       </div>
