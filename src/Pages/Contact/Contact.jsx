@@ -15,6 +15,7 @@ import { items } from "./static_data";
 
 // components
 import ButtonComponent from "../../components/UI/Button";
+import MailSucessComponent from "../../components/Sucess/mailSucess";
 
 // api
 import { createContact } from "../../api";
@@ -27,7 +28,9 @@ const Contact = () => {
   const { TextArea } = Input;
 
   const onFinish = async (values) => {
-    // console.log("values", values);
+    if (values.designation === "Others_Specify") {
+      values.otherDesignation = values.query;
+    }
     await addContact({ variables: values });
   };
   const onFinishFailed = (errorInfo) => {
@@ -35,7 +38,6 @@ const Contact = () => {
   };
 
   const handleSelect = (value) => {
-    // console.log(`Selected: ${value}`);
     setIsValueSelected(true);
   };
 
@@ -139,24 +141,7 @@ const Contact = () => {
   );
 
   if (data) {
-    disPlayContent = (
-      <div className="contact__sucess-cont">
-        <section className="contact__sucess-cont__desc-cont">
-          <label>
-            Your message has been sent! We’ll get back to you as soon as
-            possible.
-          </label>
-          <ButtonComponent>
-            <Link to="/">
-              Go to home <RightArrow />
-            </Link>
-          </ButtonComponent>
-        </section>
-        <section className="contact__sucess-cont__icon-cont">
-          <PaperFlight />;
-        </section>
-      </div>
-    );
+    disPlayContent = <MailSucessComponent />;
   }
 
   return (

@@ -158,13 +158,15 @@ export const createContact = gql`
     $firstname: String
     $lastname: String
     $query: String
-    $designation: String
+    $designation: ENUM_CONTACT_DESIGNATION
+    $otherDesignation: String
   ) {
     createContact(
       data: {
         FirstName: $firstname
         LastName: $lastname
         Email: $email
+        OtherDesignation: $otherDesignation
         Designation: $designation
         Query: $query
       }
@@ -175,9 +177,34 @@ export const createContact = gql`
           FirstName
           LastName
           Email
+          Designation
           OtherDesignation
           Query
         }
+      }
+    }
+  }
+`;
+
+export const joinMember = gql`
+  mutation createJoinMember(
+    $email: String
+    $name: String
+    $company: String
+    $designation: ENUM_JOINMEMBER_DESIGNATION
+    $otherDesignation: String
+  ) {
+    createJoinMember(
+      data: {
+        Name: $name
+        Email: $email
+        OtherDesignation: $otherDesignation
+        Designation: $designation
+        Company: $company
+      }
+    ) {
+      data {
+        id
       }
     }
   }
