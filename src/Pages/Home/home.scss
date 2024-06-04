@@ -1,20 +1,36 @@
 @use "../../styles/variables.scss" as *;
 
 .home {
-  display: flex;
   padding-top: 8rem;
-  // background-color: greenyellow;
   position: relative;
   min-height: 100vh;
+  overflow-y: auto;
+  background-color: $color__white_shade_1;
   width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(47rem, 1fr));
   &__map-box {
     height: 100%;
+    display: flex;
     section {
+      @media screen and (min-width: 50em) {
+        margin-left: auto;
+      }
+      @media screen and (max-width: 50em) {
+        margin-inline: auto;
+      }
       position: relative;
-      margin-left: auto;
+      margin-block: auto;
     }
 
     &__map-cont {
+      height: 85vh;
+      overflow: hidden;
+      margin-block: auto;
+      svg {
+        width: 100%;
+        height: 100%;
+      }
     }
 
     &__network-cont {
@@ -23,26 +39,28 @@
       top: 0%;
       bottom: 0%;
     }
-    svg {
-      width: 100%;
-      height: fit-content;
-    }
   }
 
   &__desc-box {
-    position: relative;
     height: 100%;
     display: flex;
-    align-items: center;
+    position: relative;
+    @media screen and (max-width: 50em) {
+      align-items: center;
+    }
     justify-content: center;
     flex-direction: column;
+    // background-color: green;
 
     &__desc-cont {
-      position: absolute;
-      z-index: 1;
+      // background-color: red;
       display: flex;
       flex-direction: column;
-      height: 70%;
+      @media screen and (max-width: 57em) {
+        align-self: center;
+        width: fit-content;
+        margin-block: 5rem;
+      }
       justify-content: space-between;
       gap: 1rem;
 
@@ -61,22 +79,29 @@
           width: 110px;
           margin-left: 2rem;
         }
-
       }
       h1 {
         font-size: clamp(1.5rem, 3.2vw, 4.1rem);
       }
       header {
         display: flex;
+        @media screen and (max-width: 57em) {
+          justify-content: center;
+        }
         h1 {
           text-wrap: nowrap;
+          width: fit-content;
           span {
             display: block;
             position: relative;
             padding: 0.6rem 0.9rem;
-            letter-spacing: .6px;
+            letter-spacing: 0.6px;
             width: fit-content;
             line-height: 0.8;
+
+            @media screen and (max-width: 30em) {
+              font-size: $medium;
+            }
             font-size: 33px;
             font-weight: 600;
             border-radius: 0 0 0.6rem 0.6rem;
@@ -101,9 +126,12 @@
       main {
         margin-block: 2rem 5rem;
         & > p {
-            font-size: 26px;
-            line-height: .8;
-            font-weight: 300;
+          font-size: 26px;
+          @media screen and (max-width: 30em) {
+            font-size: $medium;
+          }
+          line-height: 0.8;
+          font-weight: 300;
           span {
             color: $color__yellow;
             &:first-of-type {
@@ -113,12 +141,22 @@
           }
         }
       }
+
+      footer {
+        position: absolute;
+        top: 90%;
+        @media screen and (min-width: 50em) {
+          top: 77%;
+        }
+        z-index: 1;
+      }
     }
     &__icon-cont {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      bottom: -5%;
+      // z-index: -1;
+      right: 0%;
+
       // background-color: aqua;
       svg {
         width: 100%;
@@ -133,7 +171,6 @@
     display: flex;
     margin-block: 3.3rem;
     min-height: 90vh;
-    height: 90vh;
     // background-color: red;
     &__arrow-left {
       margin-left: 2rem;
@@ -150,12 +187,15 @@
 
     &__inner {
       margin-bottom: 2rem;
-      margin-right: 6rem;
-      // height: 90vh;
+      @media (min-width: 60em) {
+        margin-right: 6rem;
+      }
       display: grid;
       place-items: center;
-      // background-color: aquamarine;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(42rem, 1fr));
+      @media (max-width: 30em) {
+        grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+      }
     }
 
     &__icons-box {
@@ -223,8 +263,11 @@
       // position: absolute;
       &__top-sec {
         display: grid;
+        @media screen and (max-width: 40em) {
+          grid-template-columns: 1fr;
+        }
         grid-template-columns: 56% 42%;
-        column-gap: 2%;
+        gap: 2%;
         margin-block: 2rem;
       }
 
@@ -233,9 +276,6 @@
       }
     }
   }
-
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
 }
 
 .bigger_cursor {

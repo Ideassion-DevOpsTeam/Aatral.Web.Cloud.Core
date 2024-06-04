@@ -45,7 +45,7 @@ function Home() {
         <SocialIcons />
         <div className="home__map-box">
           {images ? (
-            <section className="wid-80">
+            <section className="wid-95">
               <div className="home__map-box__map-cont">
                 <Map />
               </div>
