@@ -25,6 +25,9 @@
 .m-x-auto {
   margin-inline: auto;
 }
+.m-y-auto {
+  margin-block: auto;
+}
 
 .color-black {
   color: $color__black;
@@ -69,10 +72,14 @@
   position: absolute;
 }
 
+.d-flex {
+  display: flex;
+}
+
 .pos-abs-y-center {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  position: fixed;
+  top: 55%;
+  transform: translateY(-55%);
 }
 
 .fade-in-from-bottom {
@@ -106,6 +113,7 @@
 
 .arrow__left_and_right_size {
   cursor: pointer;
+  z-index: 5;
   svg {
     width: 3.3rem !important;
   }

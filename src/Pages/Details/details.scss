@@ -1,7 +1,7 @@
 @use "../../styles/variables.scss" as *;
 
 .details {
-  padding-top: 5rem;
+  padding-top: 9rem;
   min-height: 100vh;
   overflow: hidden;
   display: flex;
@@ -48,11 +48,16 @@
     }
 
     &__content-box {
-      width: 45vw;
+      @media (min-width: 40em) {
+        width: 45vw;
+      }
       margin-right: auto;
     }
 
     &__img-box {
+      @media (max-width: 40em) {
+        display: none;
+      }
       position: absolute;
       width: 55vw;
       height: auto;

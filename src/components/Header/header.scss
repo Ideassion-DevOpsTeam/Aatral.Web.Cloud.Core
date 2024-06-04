@@ -8,7 +8,7 @@
   // filter: drop-shadow(2px 4px 6px hsla(0, 0%, 0%, 0.08));
   width: 100%;
   top: 0;
-  z-index: 2;
+  z-index: 5;
   &__inner-cont {
     display: flex;
     justify-content: space-between;
@@ -26,6 +26,13 @@
   &__details-cont {
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: 37em) {
+      label,
+      button {
+        display: none;
+      }
+    }
 
     label {
       font-size: calc($normal - 0.3vw);
