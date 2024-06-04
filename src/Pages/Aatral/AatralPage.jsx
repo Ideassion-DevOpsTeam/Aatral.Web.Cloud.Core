@@ -94,10 +94,12 @@ function AatralPage() {
   return (
     <section className="aatral">
       <SocialIcons />
+
       <section className="wid-80 m-x-auto aatral__inner">
         <AatralTopSection />
         <AatralNameSection />
       </section>
+
       <section className="aatral__vision-sec">
         <div className="aatral__vision-sec__main-cont">
           <div className="aatral__vision-sec__main-cont__icon-box-mike">

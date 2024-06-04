@@ -156,6 +156,7 @@
       bottom: 0%;
       height: 23.5rem;
       width: 100%;
+      background: linear-gradient(181deg, transparent 0%, white 40%, white 0%);
 
       svg {
         width: 100vw;
@@ -342,4 +343,129 @@ section.aatral__committe-sec.container__outer {
     right: 40px;
     bottom: 10px;
   }
+}
+
+@media screen and (max-width: 1100px) and (min-width: 769px) {
+
+  .aatral__join-sec svg {
+    width: 100%;
+    height: revert-layer;
+  }
+}
+
+
+@media screen and (max-width: 768px) and (min-width: 581px) {
+
+  .aatral__top-sec {
+    flex-direction: column;
+  }
+
+  .aatral__top-sec__img-box {
+    margin-top: 0;
+  }
+
+  .aatral__top-sec__img-box svg {
+    width: 90%;
+  }
+
+  .aatral__vision-sec__main-cont__icon-box-mike, .aatral__vision-sec__main-cont__icon-box-cup, .aatral__vision-sec footer {
+    display: none;
+  }
+
+  .aatral__vision-sec__main-cont__desc-box {
+    margin-right: 0;
+  }
+
+  .about___rise {
+    height: 100%;
+  }
+
+  .aatral__join-sec svg {
+    height: revert-layer;
+  }
+
+  .aatral__name-sec main p, .aatral__vision-sec__main-cont__desc-box P, .aatral__top-sec__desc-box main p {
+    font-size: 15px;
+  }
+
+
+}
+
+
+@media screen and (max-width: 580px) and (min-width: 260px) {
+  .aatral {
+    padding-top: 6rem;
+  }
+
+  section.wid-80.m-x-auto.aatral__inner {
+    width: 85%;
+  }
+
+  .aatral__top-sec {
+    flex-direction: column;
+  }
+
+  .heading-flex {
+    justify-content: center !important;
+  }
+
+  .aatral__name-sec main p, .aatral__vision-sec__main-cont__desc-box P, .aatral__top-sec__desc-box main p {
+    font-size: 1.4rem;
+    width: 100%;
+  }
+
+  .aatral__vision-sec__main-cont__desc-box {
+    margin-right: 0;
+  }
+
+  .aatral__vision-sec__main-cont__desc-box P {
+    width: 90%;
+  }
+
+  .aatral__top-sec__img-box svg {
+    width: 100%;
+  }
+
+  .aatral__vision-sec__main-cont__icon-box-cup, .aatral__vision-sec__main-cont__icon-box-mike, .aatral__vision-sec footer {
+    display: none;
+  }
+
+  .aatral__vision-sec__main-cont__desc-box {
+      width: 90%;
+      margin: 0 auto;
+  }
+
+  .about___rise {
+    margin-top: 0;
+    height: 100%;
+    max-width: 90%;
+  }
+
+  .about__rise {
+    flex-direction: column;
+  }
+
+  .aatral__join-sec svg {
+      height: revert-layer;
+  }
+
+  .aatral__join-sec__content-box button div {
+    margin: 0.6rem 1.3rem;
+    font-size: 1.2rem;
+  }
+
+  .aatral__join-sec__content-box button {
+      width: 120%;
+      display: flex;
+      justify-content: center;
+  }
+
+  .aatral__join-sec__content-box label {
+    text-align: center;
+  }
+
+  .icon-cont {
+    align-items: center;
+  }
+
 }
