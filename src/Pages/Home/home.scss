@@ -16,7 +16,9 @@
       @media screen and (min-width: 50em) {
         margin-left: auto;
       }
-      margin-inline: auto;
+      @media screen and (max-width: 50em) {
+        margin-inline: auto;
+      }
       position: relative;
       margin-block: auto;
     }
@@ -43,7 +45,9 @@
     height: 100%;
     display: flex;
     position: relative;
-    align-items: center;
+    @media screen and (max-width: 50em) {
+      align-items: center;
+    }
     justify-content: center;
     flex-direction: column;
     // background-color: green;
