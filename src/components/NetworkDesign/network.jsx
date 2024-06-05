@@ -6,7 +6,7 @@ import NetworkLogo from "../../assets/Icons/network/net_logo.svg";
 import DefaultImage from "../../assets/Icons/defaultPerson.svg";
 // api
 
-import { apiurl } from "../../api/API_URL";
+import { imageBaseURL } from "../../api/API_URL";
 
 import { edges, options, imagePostion, showImages } from "./network_setup";
 
@@ -41,7 +41,6 @@ const NetworkDesign = ({ handleGetImages, images }) => {
       displayImages = currentImages;
     } else {
       const remainingItemsNeeded = showImages - displayArraySize;
-      // const additionalItems = data.slice(0, remainingItemsNeeded);
       const additionalItems = new Array(remainingItemsNeeded)
         .fill(0)
         .map((item) => DefaultImage);
@@ -50,20 +49,14 @@ const NetworkDesign = ({ handleGetImages, images }) => {
     }
     let tempImage;
     for (let i = 0; i < showImages; i++) {
-      const { attributes } = displayImages[i];
-      const getImage = attributes?.Image?.data?.attributes?.url;
-      if (getImage) {
-        tempImage = getImage;
-      }
-
-      tempImage = getImage ? getImage : DefaultImage;
-      const displayImage = getImage ? `${apiurl}${tempImage}` : tempImage;
+      tempImage = displayImages[i] ? displayImages[i] : DefaultImage;
+      const displayImage = displayImages[i]
+        ? `${imageBaseURL}${tempImage}`
+        : tempImage;
       const nodeDetails = {
         id: i + 2,
         size: 90,
         borderWidth: 4,
-        // fixed: true,
-        // label: `${i + 1}`,
         shape: "circularImage",
         image: displayImage,
         shapeProperties: { useBorderWithImage: true },
@@ -81,8 +74,7 @@ const NetworkDesign = ({ handleGetImages, images }) => {
   const initializeNetwork = () => {
     let currentPage = 0;
     const networkInstance = new Network(container.current, {}, options);
-    const membersImages = images?.members?.data;
-    const segmentedData = segmentData(membersImages); // Only take the first segment
+    const segmentedData = segmentData(images); // Only take the first segment
     const initialData = {
       nodes: segmentedData,
       edges: edges, // Add edges if needed
@@ -109,9 +101,7 @@ const NetworkDesign = ({ handleGetImages, images }) => {
 
   const updateNetworkData = (networkInstance) => {
     if (networkInstance) {
-      const membersImages = images?.members?.data;
-      // return false;
-      const segmentedData = segmentData(membersImages); // Only take the first segment
+      const segmentedData = segmentData(images);
       const updatedData = {
         nodes: segmentedData,
         edges: edges,
@@ -119,7 +109,7 @@ const NetworkDesign = ({ handleGetImages, images }) => {
       networkInstance.setData(updatedData);
     }
   };
-
+  // return false;
   return <div ref={container} className="network-cont" />;
 };
 
