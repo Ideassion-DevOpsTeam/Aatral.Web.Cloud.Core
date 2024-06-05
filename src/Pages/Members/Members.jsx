@@ -69,7 +69,7 @@ const Members = () => {
   return (
     <Fragment>
       <section className="members__section">
-        <SocialIconsComponent />
+        {/* <SocialIconsComponent />  */}
         <div className="members__section__block">
           <p className="members__section__block__title">
             Our
