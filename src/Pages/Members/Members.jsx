@@ -22,7 +22,6 @@ const Members = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isMemberModal, setisMemberModal] = useState(false);
   const [viewMemberModal, setViewMemberModal] = useState({});
-  console.log("viewMemberModal", viewMemberModal);
   const navigateToWebsite = (website) => window.open(website, "_blank");
 
   const { founderData, setFounderData } = useMemberStore((state) => ({
