@@ -1,10 +1,11 @@
 @use "../../styles/variables.scss" as *;
 
 .home {
-  padding-top: 8rem;
-  position: relative;
-  min-height: 100vh;
-  overflow-y: hidden;
+  top: 8rem;
+  position: absolute;
+  min-height: 90vh;
+  height: 75rem;
+  overflow-y: scroll;
   background-color: $color__white_shade_1;
   width: 100%;
   display: grid;
@@ -285,19 +286,18 @@
 }
 
 @media screen and (max-width: 580px) and (min-width: 260px) {
-
   section.home.fade-in-from-bottom.show::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     background: transparent;
     width: 100%;
-}
+  }
 
   .home__desc-box__desc-cont header h1 span {
-      font-size: 20px;
+    font-size: 20px;
   }
 
   .home__get-page__arrow-right {
@@ -305,8 +305,8 @@
   }
 
   .home {
-    grid-template-columns: repeat(1, 1fr);
-    height: 100%;
-    overflow: hidden;
+    bottom: 0;
+    height: auto;
+    overflow-y: auto;
   }
 }

@@ -21,7 +21,7 @@ export const nav_menu = [
   },
   {
     title: "Blog",
-    path: "./blogs",
+    path: "/blogs",
   },
   {
     title: "Contact",

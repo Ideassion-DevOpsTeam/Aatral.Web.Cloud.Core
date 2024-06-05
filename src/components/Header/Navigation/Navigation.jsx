@@ -29,6 +29,7 @@ function Navigation({ setMenu }) {
       <header>
         <section className="wid-80 m-x-auto">
           <RightArrowYellow onClick={handleClose} />
+          <label className="color-black">Aatral-india</label>
         </section>
       </header>
       <main>

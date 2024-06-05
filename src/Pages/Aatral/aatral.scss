@@ -340,23 +340,20 @@ section.aatral__committe-sec.container__outer {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    position: absolute;
-    right: 40px;
-    bottom: 10px;
+    // position: absolute;
+    // right: 40px;
+    // bottom: 10px;
   }
 }
 
 @media screen and (max-width: 1100px) and (min-width: 769px) {
-
   .aatral__join-sec svg {
     width: 100%;
     height: revert-layer;
   }
 }
 
-
 @media screen and (max-width: 768px) and (min-width: 581px) {
-
   .aatral__top-sec {
     flex-direction: column;
   }
@@ -369,7 +366,9 @@ section.aatral__committe-sec.container__outer {
     width: 90%;
   }
 
-  .aatral__vision-sec__main-cont__icon-box-mike, .aatral__vision-sec__main-cont__icon-box-cup, .aatral__vision-sec footer {
+  .aatral__vision-sec__main-cont__icon-box-mike,
+  .aatral__vision-sec__main-cont__icon-box-cup,
+  .aatral__vision-sec footer {
     display: none;
   }
 
@@ -385,13 +384,12 @@ section.aatral__committe-sec.container__outer {
     height: revert-layer;
   }
 
-  .aatral__name-sec main p, .aatral__vision-sec__main-cont__desc-box P, .aatral__top-sec__desc-box main p {
+  .aatral__name-sec main p,
+  .aatral__vision-sec__main-cont__desc-box P,
+  .aatral__top-sec__desc-box main p {
     font-size: 15px;
   }
-
-
 }
-
 
 @media screen and (max-width: 580px) and (min-width: 260px) {
   .aatral {
@@ -410,7 +408,9 @@ section.aatral__committe-sec.container__outer {
     justify-content: center !important;
   }
 
-  .aatral__name-sec main p, .aatral__vision-sec__main-cont__desc-box P, .aatral__top-sec__desc-box main p {
+  .aatral__name-sec main p,
+  .aatral__vision-sec__main-cont__desc-box P,
+  .aatral__top-sec__desc-box main p {
     font-size: 1.4rem;
     width: 100%;
   }
@@ -427,13 +427,15 @@ section.aatral__committe-sec.container__outer {
     width: 100%;
   }
 
-  .aatral__vision-sec__main-cont__icon-box-cup, .aatral__vision-sec__main-cont__icon-box-mike, .aatral__vision-sec footer {
+  .aatral__vision-sec__main-cont__icon-box-cup,
+  .aatral__vision-sec__main-cont__icon-box-mike,
+  .aatral__vision-sec footer {
     display: none;
   }
 
   .aatral__vision-sec__main-cont__desc-box {
-      width: 90%;
-      margin: 0 auto;
+    width: 90%;
+    margin: 0 auto;
   }
 
   .about___rise {
@@ -447,7 +449,7 @@ section.aatral__committe-sec.container__outer {
   }
 
   .aatral__join-sec svg {
-      height: revert-layer;
+    height: revert-layer;
   }
 
   .aatral__join-sec__content-box button div {
@@ -456,9 +458,9 @@ section.aatral__committe-sec.container__outer {
   }
 
   .aatral__join-sec__content-box button {
-      width: 120%;
-      display: flex;
-      justify-content: center;
+    width: 120%;
+    display: flex;
+    justify-content: center;
   }
 
   .aatral__join-sec__content-box label {
@@ -468,5 +470,4 @@ section.aatral__committe-sec.container__outer {
   .icon-cont {
     align-items: center;
   }
-
 }

@@ -11,7 +11,6 @@ const Events = () => {
   const location = useLocation();
   const state = location.state;
 
-  console.log("location", location);
   return (
     <div className="events__section">
       <SocialIconsComponent />
