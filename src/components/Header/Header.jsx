@@ -17,7 +17,6 @@ function HeaderComponent() {
   const [menu, setMenu] = useState(false);
   const location = useLocation();
   const { pathname } = location;
-  let classNameForHeader = location.pathname.slice(1);
 
   return (
     <section
@@ -25,52 +24,25 @@ function HeaderComponent() {
         dropShowdowPaths.includes(pathname) ? "showdow" : ""
       }`}
     >
-      {classNameForHeader === "contact" ? (
-        <Fragment>
-          <div className={classNameForHeader}>
-            <div className={`contact_left ${classNameForHeader}`}></div>
-            <div>
-              <Link to="/">
-                <img
-                  className="contact__white_logo"
-                  src={`${ContactLogo}`}
-                  alt=""
-                />
-              </Link>
-            </div>
-            <div className="header__details-cont">
-              <label>Aatral - India</label>
-              <Link to="/become-a-member">
-                <Button optionalClasses="text-white">
-                  <p>Become a Member</p>
-                </Button>
-              </Link>
-              <Hambuger onClick={() => setMenu(!menu)} />
-              {menu ? <Navigation setMenu={setMenu} /> : null}
-            </div>
+      <Fragment>
+        <section className="wid-90 m-x-auto header__inner-cont">
+          <div className="header__logo-cont">
+            <Link to="/">
+              <AatralIcon />
+            </Link>
           </div>
-        </Fragment>
-      ) : (
-        <Fragment>
-          <section className="wid-90 m-x-auto header__inner-cont">
-            <div className="header__logo-cont">
-              <Link to="/">
-                <AatralIcon />
-              </Link>
-            </div>
-            <div className="header__details-cont">
-              <label>Aatral - India</label>
-              <Link to="/become-a-member">
-                <Button optionalClasses="text-white">
-                  <p>Become a Member</p>
-                </Button>
-              </Link>
-              <Hambuger onClick={() => setMenu(!menu)} />
-              {menu ? <Navigation setMenu={setMenu} /> : null}
-            </div>
-          </section>
-        </Fragment>
-      )}
+          <div className="header__details-cont">
+            <label>Aatral - India</label>
+            <Link to="/become-a-member">
+              <Button optionalClasses="text-white">
+                <p>Become a Member</p>
+              </Button>
+            </Link>
+            <Hambuger onClick={() => setMenu(!menu)} />
+            {menu ? <Navigation setMenu={setMenu} /> : null}
+          </div>
+        </section>
+      </Fragment>
     </section>
   );
 }

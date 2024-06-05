@@ -93,9 +93,10 @@
 .member__modal {
   display: flex;
   flex: 1 1 0;
+  column-gap: 3%;
 
   &__profile {
-    width: 30%;
+    flex-basis: 27%;
     padding-top: 1.5rem;
     padding-left: 1.5rem;
 
@@ -145,7 +146,7 @@
   }
 
   &__description {
-    width: 70%;
+    flex-basis: 70%;
     padding: 1rem 1rem 0 0rem;
     display: flex;
     flex-direction: column;
@@ -207,7 +208,6 @@
 }
 
 @media screen and (max-width: 580px) and (min-width: 260px) {
-
   .members__section__second__section__members--user {
     min-width: 270px;
   }
@@ -216,12 +216,12 @@
     width: 100%;
     height: auto;
     overflow: hidden;
-}
+  }
 
-.member__modal__description--logo > a {
-  width: 100%;
-  overflow: hidden;
-}
+  .member__modal__description--logo > a {
+    width: 100%;
+    overflow: hidden;
+  }
 
   .member__modal {
     display: flex;

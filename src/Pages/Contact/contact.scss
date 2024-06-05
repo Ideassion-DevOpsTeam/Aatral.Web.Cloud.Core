@@ -4,6 +4,7 @@
   display: flex;
   flex-wrap: wrap;
   height: 100vh;
+  overflow-y: hidden;
   // min-height: 100vh;
   // overflow: auto;
   // margin: 9rem 0 0 0;
@@ -11,8 +12,9 @@
   &--left {
     width: 30%;
     background: hsla(40, 97%, 55%, 1);
-    padding-top: 10rem;
+    // padding-top: 10rem;
     position: relative;
+    z-index: 5;
 
     &-side {
       position: absolute;
@@ -169,8 +171,8 @@ button.ant-btn.contact-form-submit-btn {
 }
 
 .contact {
-  width: 100vw;
-  display: flex;
+  // width: 100vw;
+  // display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 3rem;
@@ -179,9 +181,10 @@ button.ant-btn.contact-form-submit-btn {
 .contact_left.contact {
   height: 100%;
   background: #fcb11d;
-  position: absolute;
+  // position: absolute;
+  height: fit-content;
   left: 0;
-  width: 30vw;
+  // width: 30%;
   z-index: -1;
 }
 
@@ -221,16 +224,11 @@ button.ant-btn.contact-form-submit-btn {
 }
 
 @media screen and (max-width: 580px) and (min-width: 260px) {
-
   .contact {
     padding: 5px 3rem;
     background: #fcb11d;
   }
 
-  .contact__white_logo {
-    margin-left: 0;
-  }
-  
   .contact__section {
     flex-direction: column;
 

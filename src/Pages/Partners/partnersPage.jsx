@@ -120,7 +120,7 @@ const PartnersPage = () => {
     <Fragment>
       {/* Partners Highlighted */}
       <section className="partners__section">
-        <SocialIconsComponent />
+        {/* <SocialIconsComponent />  */}
         <div className="partners__section__top">
           <div className="partners__section__top--title">
             <CommonTitle firstWord="Our" secondWord="Partners" />

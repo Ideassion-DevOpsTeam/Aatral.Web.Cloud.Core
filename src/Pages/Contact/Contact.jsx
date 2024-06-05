@@ -7,8 +7,7 @@ import { useMutation } from "@apollo/client";
 import { rightArrow } from "../../constants/icons";
 
 // assets
-import { ReactComponent as PaperFlight } from "../../assets/Icons/Contact/papaer_flight.svg";
-import { ReactComponent as RightArrow } from "../../assets/Icons/Contact/right_yellow.svg";
+import ContactLogo from "../../assets/Images/contact_logo.svg";
 // static_data
 import { items } from "./static_data";
 // components
@@ -65,7 +64,7 @@ const Contact = () => {
                 },
                 {
                   pattern: new RegExp(/^[a-zA-Z]+$/),
-                  message: "No Numbers or Special Characters Allowed"
+                  message: "No Numbers or Special Characters Allowed",
                 },
               ]}
             >
@@ -83,7 +82,7 @@ const Contact = () => {
                 },
                 {
                   pattern: new RegExp(/^[a-zA-Z]+$/),
-                  message: "No Numbers or Special Characters Allowed"
+                  message: "No Numbers or Special Characters Allowed",
                 },
               ]}
             >
@@ -159,6 +158,20 @@ const Contact = () => {
       <section className="contact__section">
         <SocialIconsComponent />
         <div className="contact__section--left">
+          <Fragment>
+            <div className="contact">
+              <div className={`contact_left contact`}></div>
+              <div>
+                <Link to="/">
+                  <img
+                    className="contact__white_logo"
+                    src={`${ContactLogo}`}
+                    alt=""
+                  />
+                </Link>
+              </div>
+            </div>
+          </Fragment>
           <div className="contact__section--left-side">
             <h1>
               Know <span>More</span>
