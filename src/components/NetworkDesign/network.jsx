@@ -59,7 +59,11 @@ const NetworkDesign = ({ handleGetImages, images }) => {
         borderWidth: 4,
         shape: "circularImage",
         image: displayImage,
-        shapeProperties: { useBorderWithImage: true },
+        shapeProperties: {
+          interpolation: true,
+          useBorderWithImage: true,
+          coordinateOrigin: "center",
+        },
         color: {
           border: "#FBAF1A80",
         },
