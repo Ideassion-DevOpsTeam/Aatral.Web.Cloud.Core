@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Fragment, useEffect, useState } from "react";
 import "./members.scss";
-import { Modal, Pagination, Spin } from "antd";
+import { Modal, Pagination } from "antd";
 import Icon from "@ant-design/icons";
 import {
   faceboonIcon,
@@ -15,6 +15,7 @@ import { getMembers } from "../../api/index";
 import fallbackImage from "../../assets/Images/fallback.png";
 import SocialIconsComponent from "../../components/Social/SocialIcons";
 import { imageBaseURL } from "../../api/API_URL";
+import LoaderComponent from "../../components/Loader/loader";
 
 const Members = () => {
   const [isModalOpen, setIsModalOpen] = useState({ id: "", state: false });
@@ -81,7 +82,7 @@ const Members = () => {
         <div className="members__section__second__section">
           <div className="members__section__second__section__members">
             {membersData.length <= 0 ? (
-              <Spin />
+              <LoaderComponent />
             ) : (
               membersData &&
               membersData?.length &&

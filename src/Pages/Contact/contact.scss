@@ -221,6 +221,12 @@ button.ant-btn.contact-form-submit-btn {
 }
 
 @media screen and (max-width: 580px) and (min-width: 260px) {
+
+  .contact {
+    padding: 5px 3rem;
+    background: #fcb11d;
+  }
+  
   .contact__section {
     flex-direction: column;
 

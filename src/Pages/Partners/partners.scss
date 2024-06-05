@@ -278,3 +278,59 @@
             }
     }
 }
+
+@media screen and (max-width: 580px) and (min-width: 260px) {
+
+    .partners__section {
+        margin: 3rem auto 0 auto;
+    }
+
+    .partners__section__partner__images {
+        width: 80%;
+        margin: 3rem auto 0 auto;
+    }
+
+    .product__of__the__month__block--bottom-testimony {
+        width: 90%;
+    }
+
+    .product__of__the__month__block--top > h1 {
+        font-size: 26px;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .product__of__the__month__block--top > p {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .product__of__the__month__block--bottom-testimony-header-right-product-name {
+        font-size: 16px;
+    }
+
+    .product__of__the__month__block--bottom-testimony-header-right-company-name {
+        font-size: 13px;
+    }
+
+    .product__of__the__month__block--bottom-testimony-body > p {
+        line-height: 1.6;
+    }
+
+    .training__partners__top--description {
+        font-size: 13px;
+    }
+
+    .partners__logos--logo {
+        height: 100px;
+        width: 100%; 
+    }
+
+    .partners__logos--logo-link > img {
+        width: 100px;
+    }
+
+    .product__of__the__month {
+        padding: 2rem 0;
+    }
+}
