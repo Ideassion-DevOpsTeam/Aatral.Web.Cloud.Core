@@ -1,9 +1,11 @@
 @use "../../styles/variables.scss" as *;
 
 .home {
-  padding-top: 8rem;
-  position: relative;
-  min-height: 100vh;
+  // padding-top: 8rem;
+  // position: relative;
+  top: 8rem;
+  position: absolute;
+  min-height: 90vh;
   overflow-y: hidden;
   background-color: $color__white_shade_1;
   width: 100%;

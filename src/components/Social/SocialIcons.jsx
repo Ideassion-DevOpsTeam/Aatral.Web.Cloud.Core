@@ -13,7 +13,7 @@ import "./social.scss";
 
 function SocialIconsComponent() {
   const location = useLocation();
-  console.log("location", location);
+
   return (
     <section className="social-icon">
       <div className="social-icon__item-box">

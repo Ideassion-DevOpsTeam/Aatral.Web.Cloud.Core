@@ -64,8 +64,8 @@ const BecomeAnMember = () => {
                     message: "Please enter your Full name!",
                   },
                   {
-                    pattern: new RegExp(/^[a-zA-Z]+$/),
-                    message: "No Numbers or Special Characters Allowed"
+                    pattern: new RegExp(/^[a-zA-Z ]+$/),
+                    message: "No Numbers or Special Characters Allowed",
                   },
                 ]}
               >

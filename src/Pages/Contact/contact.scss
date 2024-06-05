@@ -178,10 +178,8 @@ button.ant-btn.contact-form-submit-btn {
 .contact_left.contact {
   height: 100%;
   background: #fcb11d;
-  // position: absolute;
   height: fit-content;
   left: 0;
-  // width: 30%;
   z-index: -1;
 }
 
@@ -269,6 +267,10 @@ button.ant-btn.contact-form-submit-btn {
     display: flex;
     width: 100%;
     justify-content: center;
+  }
+
+  textarea#ContactForm_query {
+    margin-top: -7px;
   }
 
   button.ant-btn.contact-form-submit-btn {
