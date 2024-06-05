@@ -18,11 +18,11 @@ import SocialIcons from "../../components/Social/SocialIcons";
 // ui
 import Image from "../../components/UI/Image";
 import Button from "../../components/UI/Button";
-import Icon from '@ant-design/icons';
+import Icon from "@ant-design/icons";
 // api
 import { getCommitteeMembers } from "../../api/index";
 import { apiurl } from "../../api/API_URL";
-import RiseLogo from '../../assets/Images/rise_logo.svg';
+import RiseLogo from "../../assets/Images/rise_logo.svg";
 import { rightArrow } from "../../constants/icons";
 
 function AatralPage() {
@@ -81,7 +81,8 @@ function AatralPage() {
           <div className="aatral__committe-sec__item-box__desc-cont">
             <label>{member.attributes.Name}</label>
             <blockquote>
-            {member.attributes.Designation}, {member.attributes.companies.data[0].Name}
+              {member.attributes.Designation},{" "}
+              {member.attributes.companies.data[0].Name}
               {member.attributes.companies.data[0].attributes.Name}
             </blockquote>
           </div>
@@ -113,9 +114,9 @@ function AatralPage() {
             />
             <p>
               To become the foremost collective leadership of national Tamil IT
-              entrepreneurs and professionals, catalysing transformative changes for the sustained
-              future growth of the IT ecosystem, and benefiting Tamils
-              nationwide.
+              entrepreneurs and professionals, catalysing transformative changes
+              for the sustained future growth of the IT ecosystem, and
+              benefiting Tamils nationwide.
             </p>
           </div>
           <div className="aatral__vision-sec__main-cont__icon-box-cup">
@@ -133,12 +134,16 @@ function AatralPage() {
             <img src={RiseLogo} alt="" />
           </div>
           <div className="about__rise--right">
-            <p>The RISE is the most expansive and embedded global network of Tamil
-              speaking entrepreneurs, investors, professionals, academia, researchers
-              artists and public intellectuals who believe in the ideals of shared
-              prosperity, impactful collaborations, empathy, environmental stewardship
-              and peace.</p>
-            <a href="https://tamilrise.org/" target="_blank" rel="noreferrer">Know more <Icon component={rightArrow} /></a>
+            <p>
+              The RISE is the most expansive and embedded global network of
+              Tamil speaking entrepreneurs, investors, professionals, academia,
+              researchers artists and public intellectuals who believe in the
+              ideals of shared prosperity, impactful collaborations, empathy,
+              environmental stewardship and peace.
+            </p>
+            <a href="https://tamilrise.org/" target="_blank" rel="noreferrer">
+              Know more <Icon component={rightArrow} />
+            </a>
           </div>
         </div>
       </div>
@@ -170,14 +175,14 @@ function AatralPage() {
       <section className="aatral__join-sec">
         <div className="aatral__join-sec__content-box">
           <label>Explore plans suitable for your business</label>
-          <Button>
-            <div>
-              <Link to="/become-a-member">
+          <Link to="/become-a-member">
+            <Button>
+              <div>
                 <p>Join The Community</p>
-              </Link>
-              <ArrowRight />
-            </div>
-          </Button>
+                <ArrowRight />
+              </div>
+            </Button>
+          </Link>
         </div>
         <div className="aatral__btm-svg">
           <Bottom />

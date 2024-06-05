@@ -29,6 +29,10 @@ function Home() {
     getImages({ variables: { currentPage: currentPage, pageSize: 9 } });
   };
 
+  const nodeImages = images?.members?.data.map(
+    (image) => image?.attributes?.Image?.data?.attributes?.url
+  );
+
   useEffect(() => {
     setIsVisible(true);
     handleGetImages(1);
@@ -44,14 +48,14 @@ function Home() {
       >
         <SocialIcons />
         <div className="home__map-box">
-          {images ? (
+          {nodeImages && nodeImages.length > 0 ? (
             <section className="wid-95">
               <div className="home__map-box__map-cont">
                 <Map />
               </div>
               <div className="home__map-box__network-cont">
                 <NetworkDesign
-                  images={images}
+                  images={nodeImages}
                   handleGetImages={handleGetImages}
                 />
               </div>

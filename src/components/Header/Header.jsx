@@ -40,9 +40,11 @@ function HeaderComponent() {
             </div>
             <div className="header__details-cont">
               <label>Aatral - India</label>
-              <Button>
-                <Link to="/become-a-member">Become a Member</Link>
-              </Button>
+              <Link to="/become-a-member">
+                <Button optionalClasses="text-white">
+                  <p>Become a Member</p>
+                </Button>
+              </Link>
               <Hambuger onClick={() => setMenu(!menu)} />
               {menu ? <Navigation setMenu={setMenu} /> : null}
             </div>
@@ -58,9 +60,11 @@ function HeaderComponent() {
             </div>
             <div className="header__details-cont">
               <label>Aatral - India</label>
-              <Button>
-                <Link to="/become-a-member">Become a Member</Link>
-              </Button>
+              <Link to="/become-a-member">
+                <Button optionalClasses="text-white">
+                  <p>Become a Member</p>
+                </Button>
+              </Link>
               <Hambuger onClick={() => setMenu(!menu)} />
               {menu ? <Navigation setMenu={setMenu} /> : null}
             </div>

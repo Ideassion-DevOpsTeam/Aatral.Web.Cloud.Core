@@ -18,6 +18,11 @@ export const options = {
     color: "#49494ACF",
     width: 4,
   },
+  nodes: {
+    shapeProperties: {
+      interpolation: false,
+    },
+  },
   physics: false,
   interaction: {
     dragNodes: false,

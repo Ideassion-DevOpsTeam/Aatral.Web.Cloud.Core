@@ -99,3 +99,11 @@
 .showdow {
   filter: drop-shadow(2px 4px 6px hsla(0, 0%, 0%, 0.08));
 }
+
+.text-white {
+  p {
+    font-size: calc($normal - 0.3vw);
+    font-family: "Manrope", sans-serif;
+    color: $color__white;
+  }
+}

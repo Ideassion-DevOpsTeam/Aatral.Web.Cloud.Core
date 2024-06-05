@@ -22,7 +22,6 @@ const Members = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isMemberModal, setisMemberModal] = useState(false);
   const [viewMemberModal, setViewMemberModal] = useState({});
-
   const navigateToWebsite = (website) => window.open(website, "_blank");
 
   const { founderData, setFounderData } = useMemberStore((state) => ({
@@ -81,34 +80,40 @@ const Members = () => {
 
         <div className="members__section__second__section">
           <div className="members__section__second__section__members">
-            {membersData.length  <= 0 ? <Spin /> : (membersData && membersData?.length && membersData?.map((item, index) => (
-              <Fragment key={index}>
-                <div
-                  onClick={() => showModal(item.id, item)}
-                  className="members__section__second__section__members--user"
-                >
-                  {item?.attributes?.Image?.data === null ? (
-                    <img src={fallbackImage} alt="fallback" />
-                  ) : (
-                    <img
-                      src={`${imageBaseURL}${item?.attributes?.Image?.data?.attributes?.url}`}
-                      alt="Founder_Photo"
-                    />
-                  )}
-                  <div className="members__section__second__section__members--user-details">
-                    <p className="members__section__second__section__members--user-details-name">
-                      {item?.attributes?.Name}
-                    </p>
-                    <p
-                      key={index}
-                      className="members__section__second__section__members--user-details-company"
-                    >
-                      {item?.attributes?.companies?.data[0]?.attributes?.Name}
-                    </p>
+            {membersData.length <= 0 ? (
+              <Spin />
+            ) : (
+              membersData &&
+              membersData?.length &&
+              membersData?.map((item, index) => (
+                <Fragment key={index}>
+                  <div
+                    onClick={() => showModal(item.id, item)}
+                    className="members__section__second__section__members--user"
+                  >
+                    {item?.attributes?.Image?.data === null ? (
+                      <img src={fallbackImage} alt="fallback" />
+                    ) : (
+                      <img
+                        src={`${imageBaseURL}${item?.attributes?.Image?.data?.attributes?.url}`}
+                        alt="Founder_Photo"
+                      />
+                    )}
+                    <div className="members__section__second__section__members--user-details">
+                      <p className="members__section__second__section__members--user-details-name">
+                        {item?.attributes?.Name}
+                      </p>
+                      <p
+                        key={index}
+                        className="members__section__second__section__members--user-details-company"
+                      >
+                        {item?.attributes?.companies?.data[0]?.attributes?.Name}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </Fragment>
-            )))}
+                </Fragment>
+              ))
+            )}
           </div>
           {totalMembers && (
             <section className="m-x-auto member-pagination">
@@ -153,13 +158,17 @@ const Members = () => {
                 </div>
                 <div className="member__modal__profile--details-social">
                   <span className="member__modal__profile--details-social-link">
-                    {viewMemberModal?.attributes?.Image?.data === null ? null : (<a
-                      href={viewMemberModal?.attributes?.Social[0]?.Link}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <Icon component={linkedInIcon} />
-                    </a>)}
+                    {viewMemberModal?.attributes?.Image?.data ===
+                    null ? null : viewMemberModal?.attributes?.Social.length >
+                      0 ? (
+                      <a
+                        href={viewMemberModal?.attributes?.Social[0]?.Link}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Icon component={linkedInIcon} />
+                      </a>
+                    ) : null}
                   </span>
                 </div>
               </div>
