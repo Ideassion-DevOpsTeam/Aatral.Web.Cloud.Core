@@ -57,7 +57,6 @@ const Members = () => {
     setViewMemberModal(data);
     setisMemberModal(!isMemberModal);
   };
-
   const handleCancel = () => {
     setisMemberModal(!isMemberModal);
     setIsModalOpen({

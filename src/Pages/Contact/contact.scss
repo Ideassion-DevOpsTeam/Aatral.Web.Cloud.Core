@@ -12,7 +12,6 @@
   &--left {
     width: 30%;
     background: hsla(40, 97%, 55%, 1);
-    // padding-top: 10rem;
     position: relative;
     z-index: 5;
 
@@ -171,8 +170,6 @@ button.ant-btn.contact-form-submit-btn {
 }
 
 .contact {
-  // width: 100vw;
-  // display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 3rem;
@@ -225,30 +222,19 @@ button.ant-btn.contact-form-submit-btn {
 
 @media screen and (max-width: 580px) and (min-width: 260px) {
   .contact {
-    padding: 5px 3rem;
+    position: absolute;
+    width: 100%;
+    top: 0%;
+    height: 5rem;
     background: #fcb11d;
   }
 
   .contact__section {
     flex-direction: column;
+    padding-top: 12rem;
 
     &--left {
-      width: 100%;
-      padding-top: 12rem;
-
-      &-side {
-        position: absolute;
-        right: 11rem;
-        top: 8rem;
-
-        & > h1 {
-          font-size: 2.5rem;
-
-          & > span {
-            color: #fff;
-          }
-        }
-      }
+      display: none;
     }
 
     &--right {
@@ -325,5 +311,29 @@ button.ant-btn.contact-form-submit-btn {
     content: "*  :" !important;
     margin-inline-start: 0.2rem !important;
     color: #575757 !important;
+  }
+}
+
+.mobile-header-contact {
+  background-color: $color__yellow;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  width: 100%;
+  padding: 0.5rem 10% 0.5rem 0;
+  z-index: 5;
+  position: absolute;
+
+  svg {
+    width: 3.2rem;
+    path {
+      stroke: $color__white;
+    }
+  }
+}
+
+@media screen and (min-width: 580px) {
+  .mobile-header-contact {
+    display: none;
   }
 }
