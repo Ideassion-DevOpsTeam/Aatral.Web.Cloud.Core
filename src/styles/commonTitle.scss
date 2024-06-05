@@ -9,3 +9,15 @@
         color: hsla(40, 97%, 55%, 1);
     }
 }
+
+@media screen and (max-width: 580px) and (min-width: 260px) {
+    .div-title {
+        font-size: 26px;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    .div-title > span {
+        font-size: 26px;
+    }
+}

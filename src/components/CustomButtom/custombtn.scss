@@ -2,10 +2,10 @@
 .cutom-btn-yellow {
   background-color: $color__yellow;
   border-radius: 2.4rem;
-  padding: 1rem 3.3rem;
   box-shadow: 0px 4px 8px 0px hsla(0, 0%, 0%, 0.16);
-
+  
   a {
+    padding: 1rem 3.3rem;
     border-radius: 2.4rem;
     div {
       display: flex;

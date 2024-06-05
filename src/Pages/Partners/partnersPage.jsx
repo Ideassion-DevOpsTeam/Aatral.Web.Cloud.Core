@@ -13,7 +13,7 @@ import { getPartners } from "../../api";
 import product_Logo from "../../assets/Images/POM/POM.png";
 import SocialIconsComponent from "../../components/Social/SocialIcons";
 import { imageBaseURL } from "../../api/API_URL";
-import { Spin } from "antd";
+import LoaderComponent from "../../components/Loader/loader";
 
 const PartnersPage = () => {
   const { partners, setPartners } = usePartnersStore((state) => ({
@@ -131,7 +131,7 @@ const PartnersPage = () => {
         </div>
         <div className="partners__section__partner__images">
           {partnersInfo.length <= 0 ? (
-            <Spin />
+            <LoaderComponent />
           ) : (
             partnersInfo &&
             partnersInfo.length &&
@@ -171,7 +171,7 @@ const PartnersPage = () => {
         </div>
         <div className="training__partners__images">
           {partnersInfo.length <= 0 ? (
-            <Spin />
+            <LoaderComponent />
           ) : (
             partnersInfo &&
             partnersInfo?.map((item) =>
