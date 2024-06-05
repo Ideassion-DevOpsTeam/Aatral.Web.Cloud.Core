@@ -208,8 +208,17 @@
 }
 
 @media screen and (max-width: 580px) and (min-width: 260px) {
+
   .members__section__second__section__members--user {
     min-width: 270px;
+  }
+
+  .members__section__block__title {
+    font-size: 3rem;
+  }
+
+  .members__section__block__title--span {
+    margin-left: 10px;
   }
 
   .member__modal__description--logo > a {

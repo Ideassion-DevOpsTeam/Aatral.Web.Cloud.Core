@@ -285,6 +285,21 @@
 }
 
 @media screen and (max-width: 580px) and (min-width: 260px) {
+
+  section.home.fade-in-from-bottom.show::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: transparent;
+    width: 100%;
+}
+
+  .home__desc-box__desc-cont header h1 span {
+      font-size: 20px;
+  }
+
   .home__get-page__arrow-right {
     top: 50%;
   }
