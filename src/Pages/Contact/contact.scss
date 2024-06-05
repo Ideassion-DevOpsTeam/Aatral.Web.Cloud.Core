@@ -235,24 +235,6 @@ button.ant-btn.contact-form-submit-btn {
 
     &--left {
       display: none;
-      // width: max(50%, 24rem);
-      // position: absolute;
-      // top: 0%;
-      // padding: 3rem 0rem;
-      // display: none;
-      // &-side {
-      //   position: absolute;
-      //   right: 11rem;
-      //   top: 8rem;
-
-      //   & > h1 {
-      //     font-size: 2.5rem;
-
-      //     & > span {
-      //       color: #fff;
-      //     }
-      //   }
-      // }
     }
 
     &--right {
@@ -334,12 +316,11 @@ button.ant-btn.contact-form-submit-btn {
 
 .mobile-header-contact {
   background-color: $color__yellow;
-  height: 9rem;
   display: flex;
   justify-content: space-between;
   top: 0;
   width: 100%;
-  padding: 2rem 10% 2rem 0;
+  padding: 0.5rem 10% 0.5rem 0;
   z-index: 5;
   position: absolute;
 
