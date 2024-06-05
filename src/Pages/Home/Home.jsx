@@ -48,7 +48,7 @@ function Home() {
       >
         <SocialIcons />
         <div className="home__map-box">
-          {nodeImages && nodeImages.length > 0 ? (
+          {nodeImages && nodeImages?.length > 0 ? (
             <section className="wid-95">
               <div className="home__map-box__map-cont">
                 <Map />
