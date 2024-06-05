@@ -8,10 +8,13 @@ import { rightArrow } from "../../constants/icons";
 
 // assets
 import ContactLogo from "../../assets/Images/contact_logo.svg";
+import { ReactComponent as Hambuger } from "../../assets/Icons/hambuger.svg";
+
 // static_data
 import { items } from "./static_data";
 // components
 import MailSucessComponent from "../../components/Sucess/mailSucess";
+import Navigation from "../../components/Header/Navigation/Navigation";
 //loader
 import Loader from "../../components/Loader/loader";
 // api
@@ -20,6 +23,7 @@ import SocialIconsComponent from "../../components/Social/SocialIcons";
 
 const Contact = () => {
   const [addContact, { data, loading }] = useMutation(createContact);
+  const [menu, setMenu] = useState(false);
   console.log("loading ", loading);
   const [isValueSelected, setIsValueSelected] = useState(false);
 
@@ -156,22 +160,33 @@ const Contact = () => {
   return (
     <Fragment>
       <section className="contact__section">
+        <section className="mobile-header-contact">
+          <div>
+            <Link to="/">
+              <img
+                className="contact__white_logo"
+                src={`${ContactLogo}`}
+                alt=""
+              />
+            </Link>
+          </div>
+          <Hambuger onClick={() => setMenu(!menu)} />
+          {menu ? <Navigation setMenu={setMenu} /> : null}
+        </section>
         <SocialIconsComponent />
         <div className="contact__section--left">
-          <Fragment>
-            <div className="contact">
-              <div className={`contact_left contact`}></div>
-              <div>
-                <Link to="/">
-                  <img
-                    className="contact__white_logo"
-                    src={`${ContactLogo}`}
-                    alt=""
-                  />
-                </Link>
-              </div>
+          <div className="contact">
+            <div className={`contact_left contact`}></div>
+            <div>
+              <Link to="/">
+                <img
+                  className="contact__white_logo"
+                  src={`${ContactLogo}`}
+                  alt=""
+                />
+              </Link>
             </div>
-          </Fragment>
+          </div>
           <div className="contact__section--left-side">
             <h1>
               Know <span>More</span>

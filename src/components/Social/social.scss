@@ -22,9 +22,11 @@
 }
 
 .white-icon {
-  .anticon svg {
-    path {
-      fill: white !important;
+  @media screen and (min-width: 580px) {
+    .anticon svg {
+      path {
+        fill: white !important;
+      }
     }
   }
 }
