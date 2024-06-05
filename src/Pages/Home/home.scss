@@ -4,7 +4,7 @@
   padding-top: 8rem;
   position: relative;
   min-height: 100vh;
-  overflow-y: auto;
+  overflow-y: hidden;
   background-color: $color__white_shade_1;
   width: 100%;
   display: grid;
@@ -291,5 +291,7 @@
 
   .home {
     grid-template-columns: repeat(1, 1fr);
+    height: 100%;
+    overflow: hidden;
   }
 }
