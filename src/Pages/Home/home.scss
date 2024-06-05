@@ -305,8 +305,8 @@
   }
 
   .home {
-    grid-template-columns: repeat(1, 1fr);
-    height: 75rem;
-    overflow-y: scroll;
+    bottom: 0;
+    height: auto;
+    overflow-y: auto;
   }
 }
