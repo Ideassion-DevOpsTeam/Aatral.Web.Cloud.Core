@@ -303,6 +303,13 @@
     bottom: 0;
     height: auto;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .home__map-box {
+    height: 90%;
   }
 
   .home__desc-box__icon-cont {
@@ -312,11 +319,11 @@
   }
 
   .home__map-box__map-cont {
-    width: 80%;
+    width: 100%;
   }
 
   .home__map-box__network-cont {
-    width: 90%;
+    width: 100%;
   }
 
 }
