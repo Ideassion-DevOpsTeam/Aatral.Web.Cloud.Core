@@ -41,9 +41,6 @@ function Home() {
     };
   }, []);
 
-  console.log('nodeImages', nodeImages?.length);
-  console.log('handleGetImages', handleGetImages?.length);
-
   return (
     <Fragment>
       <section
