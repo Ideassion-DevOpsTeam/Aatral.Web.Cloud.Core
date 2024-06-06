@@ -138,8 +138,18 @@
 }
 
 @media screen and (max-width: 580px) and (min-width: 260px) {
+
   .navigation {
     width: 100vw;
+  }
+
+  .navigation header section {
+    height: 30px;
+  }
+
+  .navigation header section svg {
+      position: absolute;
+      left: 0;
   }
 
   .navigation footer section ul {

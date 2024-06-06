@@ -6,12 +6,14 @@
   min-height: 90vh;
   height: 75rem;
   overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
   background-color: $color__white_shade_1;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(47rem, 1fr));
   &__map-box {
-    height: 100%;
+    height: 80%;
     display: flex;
     section {
       @media screen and (min-width: 50em) {
@@ -43,24 +45,25 @@
   }
 
   &__desc-box {
-    height: 100%;
+    height: 90%;
     display: flex;
     position: relative;
+    align-items: center;
     @media screen and (max-width: 50em) {
       align-items: center;
     }
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
-    // background-color: green;
 
     &__desc-cont {
-      // background-color: red;
       display: flex;
       flex-direction: column;
+      height: 70%;
       @media screen and (max-width: 57em) {
         align-self: center;
         width: fit-content;
         margin-block: 5rem;
+        width: 90%;
       }
       justify-content: space-between;
       gap: 1rem;
@@ -87,7 +90,7 @@
       header {
         display: flex;
         @media screen and (max-width: 57em) {
-          justify-content: center;
+          justify-content: flex-start;
         }
         h1 {
           text-wrap: nowrap;
@@ -144,21 +147,16 @@
       }
 
       footer {
-        position: absolute;
+        // position: absolute;
         top: 90%;
         @media screen and (min-width: 50em) {
-          top: 77%;
+          // top: 77%;
         }
         z-index: 1;
       }
     }
     &__icon-cont {
-      position: absolute;
-      bottom: -5%;
-      // z-index: -1;
-      right: 0%;
-
-      // background-color: aqua;
+      margin-top: -22rem;
       svg {
         width: 100%;
         height: fit-content;
@@ -172,7 +170,6 @@
     display: flex;
     margin-block: 3.3rem;
     min-height: 90vh;
-    // background-color: red;
     &__arrow-left {
       margin-left: 2rem;
       cursor: pointer;
@@ -183,7 +180,6 @@
       right: 25px;
       z-index: 1;
       top: 50%;
-      // margin-right: 2rem;
     }
 
     &__inner {
@@ -261,7 +257,6 @@
 
     &__desc-box {
       z-index: 1;
-      // position: absolute;
       &__top-sec {
         display: grid;
         @media screen and (max-width: 40em) {
@@ -307,6 +302,21 @@
   .home {
     bottom: 0;
     height: auto;
-    overflow-y: auto;
+    overflow-x: hidden;
   }
+
+  .home__desc-box__icon-cont {
+      position: absolute;
+      bottom: -8%;
+      right: 0%;
+  }
+
+  .home__map-box__map-cont {
+    width: 80%;
+  }
+
+  .home__map-box__network-cont {
+    width: 90%;
+  }
+
 }
