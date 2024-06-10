@@ -17,19 +17,23 @@ import Loader from "../../components/Loader/loader";
 
 const BecomeAnMember = () => {
   const [addMember, { data, loading }] = useMutation(joinMember);
-  const [isValueSelected, setIsValueSelected] = useState(false);
+  const [isValueSelected, setIsValueSelected] = useState(null);
+  const [form] = Form.useForm();
+
   const onFinish = async (values) => {
-    // console.log("values-become", values);
-    if (values.designation === "Others_Specify") {
-      values.otherDesignation = values.query;
+    if (isValueSelected === "Others") {
+      values.otherDesignation = values.designation;
+      values.designation = null;
     }
     await addMember({ variables: values });
   };
 
   const handleSelect = (value) => {
-    setIsValueSelected(true);
+    setIsValueSelected(value);
+    if (value === "Others") {
+      form.setFieldsValue({ designation: null });
+    }
   };
-
   let displayCont = data ? (
     <MailSucessComponent />
   ) : (
@@ -43,6 +47,7 @@ const BecomeAnMember = () => {
       <div className="become__a__member__section__block--bottom">
         <div className="contact__section--right-form become__a__member--form">
           <Form
+            form={form}
             className="become__a__member__section__block-contact-form"
             name="become__a__member"
             initialValues={{
@@ -91,7 +96,11 @@ const BecomeAnMember = () => {
               <Form.Item
                 className="contact-form-input"
                 name="designation"
-                label={!isValueSelected ? "Designation" : null}
+                label={
+                  !isValueSelected || isValueSelected === "Others"
+                    ? "Designation"
+                    : null
+                }
                 rules={[
                   {
                     required: true,
@@ -99,7 +108,11 @@ const BecomeAnMember = () => {
                   },
                 ]}
               >
-                <Select onChange={handleSelect} options={items} />
+                {isValueSelected === "Others" ? (
+                  <Input className="contact-input" />
+                ) : (
+                  <Select onChange={handleSelect} options={items} />
+                )}
               </Form.Item>
 
               <Form.Item

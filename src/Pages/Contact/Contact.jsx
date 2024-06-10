@@ -24,15 +24,17 @@ import SocialIconsComponent from "../../components/Social/SocialIcons";
 const Contact = () => {
   const [addContact, { data, loading }] = useMutation(createContact);
   const [menu, setMenu] = useState(false);
-  console.log("loading ", loading);
-  const [isValueSelected, setIsValueSelected] = useState(false);
+  const [form] = Form.useForm();
+  const [isValueSelected, setIsValueSelected] = useState(null);
 
   const { TextArea } = Input;
 
   const onFinish = async (values) => {
-    if (values.designation === "Others_Specify") {
-      values.otherDesignation = values.query;
+    if (isValueSelected === "Others") {
+      values.otherDesignation = values.designation;
+      values.designation = null;
     }
+
     await addContact({ variables: values });
   };
   const onFinishFailed = (errorInfo) => {
@@ -40,13 +42,17 @@ const Contact = () => {
   };
 
   const handleSelect = (value) => {
-    setIsValueSelected(true);
+    setIsValueSelected(value);
+    if (value === "Others") {
+      form.setFieldsValue({ designation: null });
+    }
   };
 
   let disPlayContent = (
     <div className="contact__section--right-side">
       <div className="contact__section--right-form">
         <Form
+          form={form}
           className="contact-form"
           name="ContactForm"
           initialValues={{
@@ -112,7 +118,11 @@ const Contact = () => {
             <Form.Item
               className="contact-form-input"
               name="designation"
-              label={!isValueSelected ? "Designation" : null}
+              label={
+                !isValueSelected || isValueSelected === "Others"
+                  ? "Designation"
+                  : null
+              }
               rules={[
                 {
                   required: true,
@@ -120,7 +130,11 @@ const Contact = () => {
                 },
               ]}
             >
-              <Select onChange={handleSelect} options={items} />
+              {isValueSelected === "Others" ? (
+                <Input className="contact-input" />
+              ) : (
+                <Select onChange={handleSelect} options={items} />
+              )}
             </Form.Item>
           </div>
 
