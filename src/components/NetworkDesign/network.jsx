@@ -11,13 +11,14 @@ import { imageBaseURL } from "../../api/API_URL";
 import { edges, options, imagePostion, showImages } from "./network_setup";
 
 import "./network.scss";
+import LoaderComponent from "../Loader/loader";
 
 const NetworkDesign = ({ handleGetImages, images }) => {
   const container = useRef(null);
   const initializedRef = useRef(false);
 
   useEffect(() => {
-    handleGetImages(1);
+      handleGetImages(1);
   }, []);
 
   const segmentData = (data) => {

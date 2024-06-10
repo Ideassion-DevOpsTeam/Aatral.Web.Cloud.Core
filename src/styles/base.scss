@@ -18,6 +18,8 @@ body {
   line-height: 1.3em;
   background-color: #fbfbfb;
   scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
 }
 
 button,
@@ -29,7 +31,9 @@ a {
 .App {
   min-height: 100vh;
   position: relative;
-  overflow: auto;
+  overflow: hidden;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
 }
 
 h1,

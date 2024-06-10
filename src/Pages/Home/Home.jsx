@@ -48,21 +48,19 @@ function Home() {
       >
         <SocialIcons />
         <div className="home__map-box">
-          {nodeImages && nodeImages?.length > 0 ? (
             <section className="wid-95">
               <div className="home__map-box__map-cont">
                 <Map />
               </div>
               <div className="home__map-box__network-cont">
+              {nodeImages?.length === undefined ? <LoaderComponent /> : (
                 <NetworkDesign
                   images={nodeImages}
                   handleGetImages={handleGetImages}
                 />
+                )}
               </div>
             </section>
-          ) : (
-            <LoaderComponent />
-          )}
         </div>
         <div className="home__desc-box">
           <div className="home__desc-box__desc-cont">

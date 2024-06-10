@@ -76,7 +76,7 @@ export const imagePostion = [
   },
   {
     id: 9,
-    x: -710,
+    x: -500,
     y: 450,
   },
 ];
