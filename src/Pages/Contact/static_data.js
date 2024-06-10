@@ -42,5 +42,5 @@ export const items = [
     label: "Chief Strategy Officer (CSO)",
     value: "Chief_Strategy_Officer_CSO",
   },
-  { label: "Others (Specify in query)", value: "Others_Specify" },
+  { label: "Others", value: "Others" },
 ];
