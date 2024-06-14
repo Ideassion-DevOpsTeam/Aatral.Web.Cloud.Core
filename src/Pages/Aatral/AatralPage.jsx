@@ -20,18 +20,22 @@ import Image from "../../components/UI/Image";
 import Button from "../../components/UI/Button";
 import Icon from "@ant-design/icons";
 // api
-import { getCommitteeMembers } from "../../api/index";
+import { getCommitteeMembers, getContents } from "../../api/index";
 import { apiurl } from "../../api/API_URL";
 import RiseLogo from "../../assets/Images/rise_logo.svg";
 import { rightArrow } from "../../constants/icons";
+import useContentStore from "../../store/Content/contentStore";
 
 function AatralPage() {
-  const [getCommittee, { loading, error, data: committeeMembers }] =
-    useLazyQuery(getCommitteeMembers);
+  const [getCommittee, { loading, error, data: committeeMembers }] = useLazyQuery(getCommitteeMembers);
+  const {contentData} = useContentStore()
+
 
   useEffect(() => {
     getCommittee();
   }, []);
+
+  
 
   let executiveCommitteeMembers = [];
   let streeingCommitteeMembers = [];
@@ -42,6 +46,7 @@ function AatralPage() {
       : streeingCommitteeMembers.push(member)
   );
 
+  
   let exec_members;
 
   if (executiveCommitteeMembers.length > 0) {
@@ -51,6 +56,7 @@ function AatralPage() {
         <div key={member?.id} className="aatral__committe-sec__item-box">
           <div className="aatral__committe-sec__item-box__img-cont">
             <Image
+              loading="lazy"
               src={image ? `${apiurl}${image}` : DefaultImage}
               alt="default"
             />
@@ -74,6 +80,7 @@ function AatralPage() {
         <div key={member?.id} className="aatral__committe-sec__item-box">
           <div className="aatral__committe-sec__item-box__img-cont">
             <Image
+              loading="lazy"
               src={image ? `${apiurl}${image}` : DefaultImage}
               alt="default"
             />
@@ -97,8 +104,8 @@ function AatralPage() {
       <SocialIcons />
 
       <section className="wid-80 m-x-auto aatral__inner">
-        <AatralTopSection />
-        <AatralNameSection />
+        <AatralTopSection Description={contentData?.Description} />
+        <AatralNameSection TheName={contentData?.TheName} />
       </section>
 
       <section className="aatral__vision-sec">
@@ -113,10 +120,7 @@ function AatralPage() {
               optionalClasses={"heading-flex"}
             />
             <p>
-              To become the foremost collective leadership of national Tamil IT
-              entrepreneurs and professionals, catalysing transformative changes
-              for the sustained future growth of the IT ecosystem, and
-              benefiting Tamils nationwide.
+              {contentData?.OurVision}
             </p>
           </div>
           <div className="aatral__vision-sec__main-cont__icon-box-cup">
@@ -135,11 +139,7 @@ function AatralPage() {
           </div>
           <div className="about__rise--right">
             <p>
-              The RISE is the most expansive and embedded global network of
-              Tamil speaking entrepreneurs, investors, professionals, academia,
-              researchers artists and public intellectuals who believe in the
-              ideals of shared prosperity, impactful collaborations, empathy,
-              environmental stewardship and peace.
+              {contentData?.TheRise}
             </p>
             <a href="https://tamilrise.org/" target="_blank" rel="noreferrer">
               Know more <Icon component={rightArrow} />

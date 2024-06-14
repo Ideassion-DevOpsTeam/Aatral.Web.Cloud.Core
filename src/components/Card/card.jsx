@@ -25,6 +25,7 @@ function CardComponent({ card_details }) {
         <div className="card__heading-box">
           <div className="card__heading-box__image-cont">
             <Image
+              loading="lazy"
               src={image ? image : DefaultImage}
               title={"Testinomal member"}
             />

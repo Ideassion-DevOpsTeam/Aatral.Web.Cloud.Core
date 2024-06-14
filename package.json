@@ -2,6 +2,7 @@
   "name": "aatral",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@ant-design/icons": "^5.3.7",
     "@apollo/client": "^3.10.4",

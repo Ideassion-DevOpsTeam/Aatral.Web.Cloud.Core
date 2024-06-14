@@ -68,6 +68,7 @@ function Home() {
               <p className="home__desc-box__desc-cont-Powered__by">
                 Powered by
                 <img
+                  loading="lazy"
                   className="home__desc-box__desc-cont-Powered__by-img"
                   src={`${RiseLogo}`}
                   alt=""

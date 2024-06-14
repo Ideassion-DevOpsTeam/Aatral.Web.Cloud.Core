@@ -92,7 +92,7 @@ const Members = () => {
                     className="members__section__second__section__members--user"
                   >
                     {item?.attributes?.Image?.data === null ? (
-                      <img src={fallbackImage} alt="fallback" />
+                      <img loading="lazy" src={fallbackImage} alt="fallback" />
                     ) : (
                       <img
                         src={`${imageBaseURL}${item?.attributes?.Image?.data?.attributes?.url}`}
@@ -138,7 +138,7 @@ const Members = () => {
             <div className="member__modal__profile">
               <div className="member__modal__profile--picture">
                 {viewMemberModal?.attributes?.Image?.data === null ? (
-                  <img src={fallbackImage} alt="fallback" />
+                  <img loading="lazy" src={fallbackImage} alt="fallback" />
                 ) : (
                   <img
                     src={`${imageBaseURL}${viewMemberModal?.attributes?.Image?.data?.attributes?.url}`}

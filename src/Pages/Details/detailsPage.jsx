@@ -13,6 +13,7 @@ import SocialIconsComponent from "../../components/Social/SocialIcons";
 import { ReactComponent as RightBlackArrow } from "../../assets/Icons/rightBlackArrow.svg";
 import { ReactComponent as LeftBlackArrow } from "../../assets/Icons/leftBlackArrow.svg";
 import detailsPagePersonImage from "../../assets/Images/detailPagePerson.png";
+import useContentStore from "../../store/Content/contentStore";
 
 function DetailsPage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -20,6 +21,8 @@ function DetailsPage() {
   const { aatral_details } = useAatralStore((state) => ({
     aatral_details: state.aatral_details,
   }));
+  const { contentData } = useContentStore();
+
 
   useEffect(() => {
     setIsVisible(true);
@@ -44,9 +47,10 @@ function DetailsPage() {
             />
           </header>
           <main>
-            <p>A pivotal part of Tamil RISE, is a vibrant community, specifically designed for Tamil IT entrepreneurs and professionals seeking to connect, thrive and expand their horizons.</p>
+            <p>{ contentData?.WhyAatralIndia}</p>
+            {/* <p>A pivotal part of Tamil RISE, is a vibrant community, specifically designed for Tamil IT entrepreneurs and professionals seeking to connect, thrive and expand their horizons.</p>
               <p>By understanding challenges and opportunities inherent in the dynamic IT industry we have created a nurturing environment where like-minded individuals can come together to share insights, forge partnerships, and inspire one another to reach new heights of success.</p>
-              <p>Whether you're a seasoned entrepreneur or just starting out, you'll find support, and gain access to resources, mentorship, and friendship in our community.</p>
+              <p>Whether you're a seasoned entrepreneur or just starting out, you'll find support, and gain access to resources, mentorship, and friendship in our community.</p> */}
           </main>
           <footer>
             <CustomButton
@@ -61,7 +65,7 @@ function DetailsPage() {
           }`}
         >
           <div>
-            <Image src={detailsPagePersonImage} title="detailsPerson" />
+            <Image loading="lazy" src={detailsPagePersonImage} title="detailsPerson" />
           </div>
         </div>
       </section>

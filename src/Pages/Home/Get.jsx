@@ -15,30 +15,29 @@ import SocialIconsComponent from "../../components/Social/SocialIcons";
 // store
 import useAatralHomeStore from "../../store/Home/homeStore";
 import { getTestimonials } from "../../api";
+import useContentStore from "../../store/Content/contentStore";
 
 function HomeGetPage() {
-  const [fetchTestimonials, { loading, error, data: testimonials }] =
-    useLazyQuery(getTestimonials);
-  const { icons_details } = useAatralHomeStore((state) => ({
-    icons_details: state.home_get_sec_icons_cont,
-  }));
+  const [fetchTestimonials, { loading, error, data: testimonials }] = useLazyQuery(getTestimonials);
+  const { icons_details } = useAatralHomeStore((state) => ({ icons_details: state.home_get_sec_icons_cont, }));
+  const { contentData } = useContentStore();
 
   useEffect(() => {
     fetchTestimonials();
   }, []);
-  let descDisplay;
+
+  // let descDisplay;
 
   const cardDetails = testimonials ? testimonials?.testimonials?.data : [];
-  // console.log("cardDetails", cardDetails);
-  if (icons_details.desc) {
-    descDisplay = (
-      <div>
-        {icons_details.desc.map((para, ind) => (
-          <p key={ind}>{para}</p>
-        ))}
-      </div>
-    );
-  }
+  // if (icons_details.desc) {
+  //   descDisplay = (
+  //     <div>
+  //       {icons_details.desc.map((para, ind) => (
+  //         <p key={ind}>{contentData?.WhatYouGet}</p>
+  //       ))}
+  //     </div>
+  //   );
+  // }
 
   // return false;
   return (
@@ -59,7 +58,7 @@ function HomeGetPage() {
                 heading_last={icons_details.heading_last}
               />
             </header>
-            <main>{descDisplay}</main>
+            <main><p>{contentData?.WhatYouGet}</p></main>
             <footer>
               {icons_details.icon_div.map((item, ind) => (
                 <div key={ind}>

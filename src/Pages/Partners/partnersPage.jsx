@@ -49,8 +49,6 @@ const PartnersPage = () => {
 
   const partnersInfo = data ? data?.companies?.data : [];
 
-  console.log("partnersInfo", partnersInfo);
-
   useEffect(() => {
     setPartners();
     setTrainingPartners();
@@ -104,6 +102,7 @@ const PartnersPage = () => {
                     rel="noreferrer"
                   >
                     <img
+                      loading="lazy"
                       src={`${imageBaseURL}${item?.attributes?.Logo?.data?.attributes?.url}`}
                       alt="partner-logo"
                     />
