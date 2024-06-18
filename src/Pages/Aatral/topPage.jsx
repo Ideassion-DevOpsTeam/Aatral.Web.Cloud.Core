@@ -9,7 +9,7 @@ import useAatralStore from "../../store/AatralPage/aatralStore";
 import IconsComponent from "../../components/IconsComponents/IconsComponent";
 import SplitHeading from "../../components/SplitHeading/SplitHeading";
 
-function AatralTopSection() {
+function AatralTopSection({Description}) {
   const { aatral_top_sec_desc_cont } = useAatralStore((state) => ({
     aatral_top_sec_desc_cont: state.aatral_top_sec_desc_cont,
   }));
@@ -25,7 +25,7 @@ function AatralTopSection() {
 
   let descSection = (
     <main>
-      <p>{aatral_top_sec_desc_cont.desc}</p>
+      <p>{ Description }</p>
     </main>
   );
 

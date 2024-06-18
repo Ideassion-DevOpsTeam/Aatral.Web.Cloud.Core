@@ -240,3 +240,16 @@ export const getCommitteeMembers = gql`
     }
   }
 `;
+
+export const getContents = gql`
+  query AatralPage {
+    aatralPages(pagination: { pageSize: 15 }) {
+        data {
+            id
+            attributes {
+                Key
+                Value
+            }
+        }
+    }
+}`

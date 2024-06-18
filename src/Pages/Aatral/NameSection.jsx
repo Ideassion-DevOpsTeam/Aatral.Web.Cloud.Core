@@ -7,7 +7,7 @@ import useAatralStore from "../../store/AatralPage/aatralStore";
 // components
 import SplitHeading from "../../components/SplitHeading/SplitHeading";
 
-function AatralNameSection() {
+function AatralNameSection({TheName}) {
   const { setNameSection, nameSection } = useAatralStore((state) => ({
     setNameSection: state.setNameSection,
     nameSection: state.nameSection,
@@ -27,7 +27,7 @@ function AatralNameSection() {
         />
       </header>
       <main>
-        <p>{nameSection.desc}</p>
+        <p>{TheName}</p>
       </main>
     </section>
   );

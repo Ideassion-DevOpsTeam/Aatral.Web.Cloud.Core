@@ -108,7 +108,11 @@ const Contact = () => {
               rules={[
                 {
                   required: true,
-                  message: "Please enter your email!",
+                  message: "Please enter your email",
+                },
+                {
+                  pattern: new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g),
+                  message: "Enter a valid email address",
                 },
               ]}
             >
