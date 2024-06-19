@@ -3,7 +3,7 @@
   flex-direction: column;
   position: fixed;
   z-index: 6;
-  top: 70%;
+  top: 60%;
   left: 2%;
 
   &__item-box {
@@ -17,7 +17,7 @@
 
 @media screen and (max-width: 580px) and (min-width: 260px) {
   .social-icon {
-    top: 74%;
+    top: 80%;
     z-index: 4;
   }
 }
