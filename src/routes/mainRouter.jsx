@@ -11,7 +11,8 @@ import Contact from "../Pages/Contact/Contact";
 import Events from "../Pages/Events/events";
 import BecomeAnMember from "../Pages/BecomeAMember/becomeAnMember";
 import BlogPage from "../Pages/Blogs/blogs";
-
+import AdminLogin from "../Pages/AdminLogin/AdminLogin"
+import AdminTable from "../Pages/AdminLogin/AdminTable"
 function MainRouter() {
   return (
     <Routes>
@@ -25,6 +26,8 @@ function MainRouter() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/blogs" element={<BlogPage />} />
       <Route path="/become-a-member" element={<BecomeAnMember />} />
+      <Route path="/admin-login" element={<AdminLogin />} />
+      <Route path="/admin-table" element={<AdminTable />} />
     </Routes>
   );
 }

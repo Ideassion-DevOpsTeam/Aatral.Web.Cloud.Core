@@ -1,0 +1,229 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.login-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    align-items: center
+}
+
+.login-left {
+    width: 50%;
+    margin-top: 40px;
+}
+
+.logo {
+      height: 10%;
+      width: 10%;
+}
+
+.login-text {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 10px;
+}
+
+.login-subtext {
+    font-size: 16px;
+    color: #5E6282;
+    margin-top: 2px;
+}
+
+.login-right {
+    width: 50%;
+    height: 100%;
+}
+
+.login-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.input-container {
+    position: relative;
+    margin-top: 15px;
+}
+
+.formText {
+    width: 265px;
+    border: 1px solid #D8DADC;
+    border-radius: 7px;
+    font-size: 13px;
+    padding: 4px 10px;
+    height: 45px;
+    padding-left: 40px;
+    box-sizing: border-box;
+    box-shadow: inset 0px 0px 4px 0px #80808040;
+}
+
+.formText:focus {
+    outline: none;
+    border: 1px solid #fcb01a;
+}
+
+.errorFocus:focus {
+    outline: none;
+    border: 1px solid red;
+}
+
+.input-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    margin-right: 5px;
+}
+
+.input-container::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 35px;
+    height: 13px;
+    width: 1px;
+    background-color: #00000080;
+    transform: translateY(-50%);
+}
+
+.or-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55%;
+    margin-top: 30px;
+}
+
+.line {
+    flex-grow: 1;
+    border-top: 1px solid #5E6282;
+    margin: 0 10px;
+}
+
+.or-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: #5E6282;
+    white-space: nowrap;
+}
+
+.gradient-button {
+    background-color: #fcb01a;
+    width: 200px;
+    height: 40px;
+    margin-top: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+
+    &:hover {
+        background-color: #edaa24;
+    }
+
+    &:disabled {
+        background-color: #f0a500; 
+        color: #d28a00; 
+        cursor: not-allowed;
+    }
+}
+
+.appLogos {
+    height: 40px;
+    margin-left: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+// .ant-notification-notice {
+//     margin-Left: 'auto';
+//     margin-Right: 'auto';
+//     border-Left: '5px solid #fcb01a';
+//     border-Radius: '10px';
+//     width: '300px';
+//     padding: '10px';
+//     font-Size: '14px';
+//     line-Height: '1.5'
+//   }
+
+.eye-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    color: #fcb01a;
+
+    .anticon {
+        color: #fcb01a !important;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: #edaa24;
+        }
+    }
+}
+
+
+// Custom scrollbar for the Ant Design Table scroll area
+.scrollview {
+    overflow-x: auto;
+  
+    &::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+      margin-right: 10px;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background-color: #fcb01a;
+      border-radius: 10px;
+      border: 2px solid #e59100;
+    }
+  
+    &::-webkit-scrollbar-track {
+      background-color: #f1f1f1;
+      border-radius: 10px;
+    }
+  
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #e59100;
+    }
+  
+    &::-webkit-scrollbar-thumb:active {
+      background-color: #d47b00;
+    }
+  }
+
+@media only screen and (max-width: 599px) {
+
+    .login-right {
+        display: none;
+    }
+
+    .login-left {
+        width: 100%;
+    }
+
+    .logo {
+        position: relative;
+        bottom: 30px;
+    }
+
+}

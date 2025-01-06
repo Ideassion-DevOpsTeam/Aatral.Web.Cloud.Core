@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 80%;
+    height: 50%;
 
     &--top {
       margin: 3rem 0;
@@ -46,9 +46,188 @@
   transform: translate(10%, 0%);
 }
 
-input#become__a__member_name {
-  text-indent: 8.2rem;
+input#become__a__member_firstName {
+  text-indent: 10rem;
 }
+
+input#become__a__member_lastName {
+  text-indent: 10rem;
+}
+
+input#become__a__member_email {
+  text-indent: 6rem;
+}
+
+textArea#become__a__member_address1{
+  text-indent: 8rem;
+}
+
+textArea#become__a__member_address2{
+  text-indent: 8rem;
+}
+
+input#become__a__member_company {
+  text-indent: 13rem;
+}
+
+input#become__a__member_companyLogo {
+  text-indent: 12rem;
+}
+
+input#become__a__member_designation {
+  text-indent: 12rem;
+}
+
+input#become__a__member_subDesignation {
+  text-indent: 14rem;
+}
+
+input#become__a__member_industry {
+  text-indent: 10rem;
+}
+
+input#become__a__member_subCategory {
+  text-indent: 12rem;
+}
+
+input#become__a__member_website {
+  text-indent: 12rem;
+}
+
+input#become__a__member_gstNumber {
+  text-indent: 10rem;
+}
+
+input#become__a__member_employeeCount {
+  text-indent: 12rem;
+}
+
+textArea#become__a__member_remarks {
+  text-indent: 6rem;
+}
+
+input#become__a__member_country {
+  text-indent: 8rem;
+}
+
+input#become__a__member_state {
+  text-indent: 6rem;
+}
+
+input#become__a__member_city {
+  text-indent: 6rem;
+}
+
+input#become__a__member_pincode {
+  text-indent: 9rem;
+}
+
+.width {
+  width: "25%"; 
+}
+
+.choose-button::file-selector-button {
+  background-color: #fcb01a;
+  color: white;
+  font-size: 12px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.PhoneInputCountrySelect {
+  border: none;
+  background: none; 
+  font-size: 14px;
+  font-family: "Manrope", sans-serif;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center; 
+  width: auto;
+  margin-left: 0; 
+  padding: 0;
+
+  &:hover,
+  &:focus {
+    border: none;
+    outline: none;
+    box-shadow: none; 
+  }
+
+}
+
+.PhoneInput {
+  display: flex;
+  align-items: center; 
+  justify-content: flex-start;
+
+  & .PhoneInputCountry {
+    border: none;
+    background: none;
+    padding: 0;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    width: auto; 
+    margin-right: 5px; 
+    display: flex;
+    align-items: center; 
+  }
+
+  & .PhoneInputInput {
+    border: none;
+    background: none;
+    padding: 0;
+    font-size: 16px;
+    color: #333; 
+    flex-grow: 1; 
+    margin-left: 5px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  & .PhoneInputCountryIcon {
+    width: 16px; 
+    height: auto;
+    margin-right: 5px; 
+    vertical-align: middle; 
+  }
+}
+
+.scrollview {
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #fcb01a;
+    border-radius: 10px;
+    border: 2px solid #e59100;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #e59100;
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background-color: #d47b00;
+  }
+}
+
+
 
 .ant-input-outlined.ant-input-status-error:not(.ant-input-disabled) {
   background: transparent !important;
@@ -57,19 +236,6 @@ input#become__a__member_name {
   border-right: transparent;
   border-left: transparent;
 }
-
-input#become__a__member_email {
-  text-indent: 5rem;
-}
-
-input#become__a__member_designation {
-  text-indent: 9.5rem;
-}
-
-input#become__a__member_company {
-  text-indent: 11rem;
-}
-
 .contact__section--right-form-inputs.become__a__member > div > div label {
   color: hsla(0, 0%, 27%, 0.7) !important;
   font-weight: 500;
@@ -86,5 +252,26 @@ input#become__a__member_company {
 
   .contact__section--right-form-inputs.become__a__member {
     gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .PhoneInput {
+    flex-direction: column; /* Stack elements on smaller screens */
+    align-items: flex-start; /* Align items to the left */
+  }
+
+  .PhoneInputInput,
+  .PhoneInputCountrySelect {
+    width: 100%; /* Ensure both elements take up full width */
+    margin-left: 0; /* Remove margin to keep the input aligned with the dropdown */
+  }
+
+  .PhoneInputCountry {
+    margin-right: 0; /* Remove space between the flag and input on small screens */
+  }
+
+  .PhoneInputCountrySelect {
+    margin-top: 10px; /* Add space on top of the country select */
   }
 }
