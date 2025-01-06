@@ -12,7 +12,7 @@ import { dropShowdowPaths } from "./Navigation/static_data";
 import "./header.scss";
 import ContactLogo from "../../assets/Images/contact_logo.svg";
 import { imageBaseURL } from "../../api/API_URL";
-
+import LogoutDropdown from '../../Pages/AdminLogin/LogoutDropdown'
 function HeaderComponent() {
   const [menu, setMenu] = useState(false);
   const location = useLocation();
@@ -31,6 +31,7 @@ function HeaderComponent() {
               <AatralIcon />
             </Link>
           </div>
+          {window.location.pathname !== '/admin-table' ? (
           <div className="header__details-cont">
             <label>Aatral - India</label>
             <Link to="/become-a-member">
@@ -40,7 +41,11 @@ function HeaderComponent() {
             </Link>
             <Hambuger onClick={() => setMenu(!menu)} />
             {menu ? <Navigation setMenu={setMenu} /> : null}
-          </div>
+          </div>) : (
+            <div className="header__details-cont">
+              <LogoutDropdown />
+            </div>
+          )}
         </section>
       </Fragment>
     </section>

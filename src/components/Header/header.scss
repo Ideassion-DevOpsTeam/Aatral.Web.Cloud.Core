@@ -108,3 +108,13 @@
     color: $color__white;
   }
 }
+
+.log-out {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: $color__white;
+  font-size: calc($normal - 0.3vw);
+  font-weight: 500;
+  font-family: "Manrope", sans-serif;
+}

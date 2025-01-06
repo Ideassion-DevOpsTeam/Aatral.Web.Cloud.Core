@@ -189,18 +189,38 @@ export const createContact = gql`
 export const joinMember = gql`
   mutation createJoinMember(
     $email: String
-    $name: String
+    $firstName: String
+    $lastName: String
     $company: String
-    $designation: ENUM_JOINMEMBER_DESIGNATION
-    $otherDesignation: String
+    $designation: String
+    $subDesignation: String
+    $phone: String
+    $address: String
+    $industry: String
+    $subCategory: String
+    $website: String
+    $gstNumber: String
+    $employeeCount: String
+    $remarks: String
+    $companyLogo: String
   ) {
     createJoinMember(
       data: {
-        Name: $name
-        Email: $email
-        OtherDesignation: $otherDesignation
-        Designation: $designation
-        Company: $company
+        firstName: $firstName
+        lastName: $lastName
+        email: $email
+        phone: $phone
+        address: $address
+        industry: $industry
+        subCategory: $subCategory
+        website: $website
+        gstNumber: $gstNumber
+        employeeCount: $employeeCount
+        remarks: $remarks
+        company: $company
+        designation: $designation
+        subDesignation: $subDesignation
+        companyLogo: $companyLogo
       }
     ) {
       data {
